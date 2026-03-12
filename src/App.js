@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import JobDetails from "./Pages/Jobs/JobDetails";
+import ApplyJob from "./Pages/Jobs/ApplyJob";
+import Login from "./Pages/Auth/Login";
+import Register from "./Pages/Auth/Register";
+import Navbar from "./components/Navbar";
+// import NotFound from "./Pages/NotFound";
+import Homepage from "./Pages/Homepage";
+import JobList from "./Pages/Jobs/JobList";
+export default function App() {
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={ <Homepage/>} />
+        <Route path="/jobs" element={<JobList/>} />        
+        <Route path="/jobs/:id" element={<JobDetails />} />
+        <Route path="/apply/:id" element={<ApplyJob />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+    </>
+  )
 
-export default App;
+}

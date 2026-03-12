@@ -1,0 +1,587 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Rohit Sharma",
+            "email": "rohit@gmail.com",
+            "password": "123456",
+            "role": "user",
+            "phone": "9876543210",
+            "location": "Delhi",
+            "profileImage": "",
+            "resumeId": 1,
+            "savedJobs": [
+                1,
+                2
+            ],
+            "createdAt": "2026-03-01"
+        }
+    ],
+    "employers": [
+        {
+            "id": 2,
+            "name": "Amit Mehra",
+            "email": "amit@google.com",
+            "password": "123456",
+            "role": "employer",
+            "companyId": 1,
+            "createdAt": "2026-03-02"
+        }
+    ],
+    "admins": [
+        {
+            "id": 1,
+            "name": "Admin",
+            "email": "admin@gmail.com",
+            "password": "admin123",
+            "role": "admin"
+        }
+    ],
+    "companies": [
+        {
+            "id": 1,
+            "name": "Google",
+            "logo": "",
+            "website": "https://google.com",
+            "location": "Delhi",
+            "description": "Tech company",
+            "industry": "IT",
+            "size": "10000+",
+            "createdBy": 2
+        }
+    ],
+    "jobs": [
+        {
+            "id": 1,
+            "title": "React Developer",
+            "companyId": 1,
+            "companyName": "TechNova Solutions",
+            "location": "Delhi",
+            "salary": "10 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "React",
+                "JavaScript",
+                "HTML",
+                "CSS"
+            ],
+            "description": "React developer required for modern web apps.",
+            "postedBy": 2,
+            "createdAt": "2026-03-05",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 2,
+            "title": "Frontend Developer",
+            "companyId": 2,
+            "companyName": "CodeCraft Technologies",
+            "location": "Noida",
+            "salary": "8 LPA",
+            "type": "Full Time",
+            "experience": "1 Year",
+            "skills": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "description": "Frontend developer for responsive UI.",
+            "postedBy": 3,
+            "createdAt": "2026-03-04",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 3,
+            "title": "Node.js Developer",
+            "companyId": 3,
+            "companyName": "NextGen Software",
+            "location": "Gurgaon",
+            "salary": "12 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Node.js",
+                "Express",
+                "MongoDB"
+            ],
+            "description": "Backend developer for scalable APIs.",
+            "postedBy": 1,
+            "createdAt": "2026-03-03",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 4,
+            "title": "Full Stack Developer",
+            "companyId": 4,
+            "companyName": "InnovateX Labs",
+            "location": "Bangalore",
+            "salary": "15 LPA",
+            "type": "Full Time",
+            "experience": "4 Years",
+            "skills": [
+                "React",
+                "Node.js",
+                "MongoDB"
+            ],
+            "description": "Full stack developer for SaaS product.",
+            "postedBy": 2,
+            "createdAt": "2026-03-02",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 5,
+            "title": "UI Developer",
+            "companyId": 5,
+            "companyName": "PixelPerfect Studio",
+            "location": "Hyderabad",
+            "salary": "7 LPA",
+            "type": "Full Time",
+            "experience": "1.5 Years",
+            "skills": [
+                "HTML",
+                "CSS",
+                "Figma"
+            ],
+            "description": "UI developer for modern interfaces.",
+            "postedBy": 4,
+            "createdAt": "2026-03-01",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 6,
+            "title": "Angular Developer",
+            "companyId": 6,
+            "companyName": "Skyline Tech",
+            "location": "Pune",
+            "salary": "9 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "Angular",
+                "TypeScript",
+                "HTML"
+            ],
+            "description": "Angular developer for enterprise apps.",
+            "postedBy": 3,
+            "createdAt": "2026-02-28",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 7,
+            "title": "Backend Developer",
+            "companyId": 7,
+            "companyName": "DataBridge Systems",
+            "location": "Delhi",
+            "salary": "11 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Node.js",
+                "MongoDB",
+                "API"
+            ],
+            "description": "Backend developer for database systems.",
+            "postedBy": 2,
+            "createdAt": "2026-02-27",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 8,
+            "title": "React Native Developer",
+            "companyId": 8,
+            "companyName": "AppWave Technologies",
+            "location": "Chandigarh",
+            "salary": "10 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "React Native",
+                "JavaScript"
+            ],
+            "description": "Mobile developer for cross platform apps.",
+            "postedBy": 1,
+            "createdAt": "2026-02-26",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 9,
+            "title": "Java Developer",
+            "companyId": 9,
+            "companyName": "SoftEdge Pvt Ltd",
+            "location": "Mumbai",
+            "salary": "12 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Java",
+                "Spring Boot",
+                "MySQL"
+            ],
+            "description": "Java backend developer required.",
+            "postedBy": 2,
+            "createdAt": "2026-02-25",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 10,
+            "title": "Python Developer",
+            "companyId": 10,
+            "companyName": "AI Core Labs",
+            "location": "Bangalore",
+            "salary": "14 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Python",
+                "Django",
+                "API"
+            ],
+            "description": "Python developer for AI applications.",
+            "postedBy": 3,
+            "createdAt": "2026-02-24",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 11,
+            "title": "Web Designer",
+            "companyId": 11,
+            "companyName": "CreativePixel",
+            "location": "Delhi",
+            "salary": "6 LPA",
+            "type": "Full Time",
+            "experience": "1 Year",
+            "skills": [
+                "Figma",
+                "HTML",
+                "CSS"
+            ],
+            "description": "Creative web designer needed.",
+            "postedBy": 2,
+            "createdAt": "2026-02-23",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 12,
+            "title": "DevOps Engineer",
+            "companyId": 12,
+            "companyName": "CloudSync Tech",
+            "location": "Hyderabad",
+            "salary": "16 LPA",
+            "type": "Full Time",
+            "experience": "4 Years",
+            "skills": [
+                "AWS",
+                "Docker",
+                "CI/CD"
+            ],
+            "description": "DevOps engineer for cloud infrastructure.",
+            "postedBy": 4,
+            "createdAt": "2026-02-22",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 13,
+            "title": "QA Engineer",
+            "companyId": 13,
+            "companyName": "QualitySoft",
+            "location": "Noida",
+            "salary": "7 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "Testing",
+                "Selenium",
+                "Automation"
+            ],
+            "description": "Software tester required.",
+            "postedBy": 3,
+            "createdAt": "2026-02-21",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 14,
+            "title": "PHP Developer",
+            "companyId": 14,
+            "companyName": "WebCore Systems",
+            "location": "Jaipur",
+            "salary": "8 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "PHP",
+                "Laravel",
+                "MySQL"
+            ],
+            "description": "Laravel developer needed.",
+            "postedBy": 2,
+            "createdAt": "2026-02-20",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 15,
+            "title": "Data Analyst",
+            "companyId": 15,
+            "companyName": "Insight Analytics",
+            "location": "Pune",
+            "salary": "9 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "SQL",
+                "Excel",
+                "Power BI"
+            ],
+            "description": "Data analyst for business insights.",
+            "postedBy": 1,
+            "createdAt": "2026-02-19",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 16,
+            "title": "Machine Learning Engineer",
+            "companyId": 16,
+            "companyName": "FutureAI Labs",
+            "location": "Bangalore",
+            "salary": "18 LPA",
+            "type": "Full Time",
+            "experience": "4 Years",
+            "skills": [
+                "Python",
+                "TensorFlow",
+                "ML"
+            ],
+            "description": "ML engineer for AI models.",
+            "postedBy": 4,
+            "createdAt": "2026-02-18",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 17,
+            "title": "iOS Developer",
+            "companyId": 17,
+            "companyName": "AppleSoft India",
+            "location": "Mumbai",
+            "salary": "13 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Swift",
+                "iOS",
+                "Xcode"
+            ],
+            "description": "iOS app developer required.",
+            "postedBy": 3,
+            "createdAt": "2026-02-17",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 18,
+            "title": "Android Developer",
+            "companyId": 18,
+            "companyName": "MobileFirst Tech",
+            "location": "Delhi",
+            "salary": "11 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "Kotlin",
+                "Android",
+                "Firebase"
+            ],
+            "description": "Android app developer needed.",
+            "postedBy": 2,
+            "createdAt": "2026-02-16",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 19,
+            "title": "Cloud Engineer",
+            "companyId": 19,
+            "companyName": "Nimbus Cloud",
+            "location": "Hyderabad",
+            "salary": "17 LPA",
+            "type": "Full Time",
+            "experience": "4 Years",
+            "skills": [
+                "AWS",
+                "Cloud",
+                "Terraform"
+            ],
+            "description": "Cloud infrastructure engineer.",
+            "postedBy": 4,
+            "createdAt": "2026-02-15",
+            "status": "active",
+             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+        },
+        {
+            "id": 20,
+            "title": "Cyber Security Analyst",
+            "companyId": 20,
+            "companyName": "SecureNet Solutions",
+            "location": "Delhi",
+            "salary": "15 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Security",
+                "PenTesting",
+                "Network"
+            ],
+            "description": "Security analyst to protect systems.",
+            "postedBy": 1,
+            "createdAt": "2026-02-14",
+            "status": "active"
+        },
+        {
+            "id": 21,
+            "title": "Product Manager",
+            "companyId": 21,
+            "companyName": "VisionTech",
+            "location": "Bangalore",
+            "salary": "20 LPA",
+            "type": "Full Time",
+            "experience": "5 Years",
+            "skills": [
+                "Management",
+                "Agile",
+                "Product"
+            ],
+            "description": "Product manager for SaaS platform.",
+            "postedBy": 3,
+            "createdAt": "2026-02-13",
+            "status": "active"
+        },
+        {
+            "id": 22,
+            "title": "UI/UX Designer",
+            "companyId": 22,
+            "companyName": "DesignHive",
+            "location": "Noida",
+            "salary": "9 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "Figma",
+                "Adobe XD",
+                "UX"
+            ],
+            "description": "UI/UX designer for product design.",
+            "postedBy": 2,
+            "createdAt": "2026-02-12",
+            "status": "active"
+        },
+        {
+            "id": 23,
+            "title": "Software Engineer",
+            "companyId": 23,
+            "companyName": "CodeBase Systems",
+            "location": "Pune",
+            "salary": "11 LPA",
+            "type": "Full Time",
+            "experience": "2 Years",
+            "skills": [
+                "Java",
+                "Spring",
+                "SQL"
+            ],
+            "description": "Software engineer for backend systems.",
+            "postedBy": 4,
+            "createdAt": "2026-02-11",
+            "status": "active"
+        },
+        {
+            "id": 24,
+            "title": "Technical Support Engineer",
+            "companyId": 24,
+            "companyName": "HelpDesk IT",
+            "location": "Delhi",
+            "salary": "6 LPA",
+            "type": "Full Time",
+            "experience": "1 Year",
+            "skills": [
+                "Support",
+                "Networking"
+            ],
+            "description": "Technical support for IT systems.",
+            "postedBy": 3,
+            "createdAt": "2026-02-10",
+            "status": "active"
+        },
+        {
+            "id": 25,
+            "title": "System Administrator",
+            "companyId": 25,
+            "companyName": "NetCore Technologies",
+            "location": "Gurgaon",
+            "salary": "10 LPA",
+            "type": "Full Time",
+            "experience": "3 Years",
+            "skills": [
+                "Linux",
+                "Server",
+                "Networking"
+            ],
+            "description": "System admin to manage servers.",
+            "postedBy": 2,
+            "createdAt": "2026-02-09",
+            "status": "active"
+        }
+    ],
+    "applications": [
+        {
+            "id": 1,
+            "jobId": 1,
+            "userId": 1,
+            "resumeId": 1,
+            "coverLetter": "I am interested in this job",
+            "status": "pending",
+            "appliedAt": "2026-03-07"
+        }
+    ],
+    "savedJobs": [
+        {
+            "id": 1,
+            "userId": 1,
+            "jobId": 1,
+            "savedAt": "2026-03-07"
+        }
+    ],
+    "resumes": [
+        {
+            "id": 1,
+            "userId": 1,
+            "title": "Frontend Resume",
+            "fileUrl": "/resumes/resume1.pdf",
+            "skills": [
+                "React",
+                "Node",
+                "CSS"
+            ],
+            "experience": "2 Years"
+        }
+    ],
+    "analytics": {
+        "totalUsers": 10,
+        "totalEmployers": 3,
+        "totalJobs": 20,
+        "totalApplications": 50
+    }
+}
