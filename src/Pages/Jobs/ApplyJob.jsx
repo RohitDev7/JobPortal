@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import API from "../../config/apiConfig";
+import  API  from "../../config/apiConfig"
 
 export default function ApplyJob() {
     const { id } = useParams()

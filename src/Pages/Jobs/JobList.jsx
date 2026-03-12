@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import API from "../../config/apiConfig";
+import  API  from "../../config/apiConfig"
 import { Link } from "react-router-dom";
 export default function JobList() {
     const { data, isLoading } = useQuery({
