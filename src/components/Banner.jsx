@@ -36,8 +36,8 @@ export default function Banner() {
                                 </p>
 
                                 <div className="searchBar">
-                                    <input type="text" placeholder="Search Job Title" defaultValue="Product Designer" />
-                                    <input type="text" placeholder="Location" defaultValue="San Francisco" />
+                                    <input type="text" placeholder="Search Job Title" defaultValue="React Developer" />
+                                    <input type="text" placeholder="Location" defaultValue="Gurugram" />
                                     <select defaultValue="Experience">
                                         <option disabled>Experience</option>
                                         <option>0-1 Years</option>
