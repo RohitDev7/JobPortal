@@ -5,7 +5,7 @@ export default function NavigationBar() {
     return (
         <Navbar expand="lg" className="main-navbar">
             <Container>
-                <Navbar.Brand as={Link} to="/">JobPortal</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">TravelAgency</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
@@ -15,13 +15,13 @@ export default function NavigationBar() {
                             </Nav.Link>
                         </div>
                         <div className="nav-parent">
-                            <Nav.Link as={Link} to="/jobs">
-                                Jobs
+                            <Nav.Link as={Link} to="/services">
+                                Services
                             </Nav.Link>
                         </div>
                         <div className="nav-parent">
-                            <Nav.Link as={Link} to="/saved-jobs">
-                                Saved Jobs
+                            <Nav.Link as={Link} to="/book/:id">
+                                My Bookings
                             </Nav.Link>
                         </div>
                         <div className="nav-parent">

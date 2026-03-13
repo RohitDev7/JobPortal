@@ -1,0 +1,1654 @@
+{
+  "serviceDetails": [
+    {
+      "id": 1,
+      "title": "Delhi to Jaipur Luxury Cab",
+      "slug": "delhi-jaipur-luxury-cab",
+      "provider": {
+        "id": 1,
+        "name": "GoCabs Luxury",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://gocabs.com",
+        "serviceType": "Luxury Cab Rental",
+        "companySize": "100-250 employees",
+        "founded": 2015,
+        "headOffice": "Delhi, India",
+        "about": "GoCabs Luxury is premium cab service provider specializing in inter-city luxury travel. With fleet of Mercedes, BMW, and Audi cars, we ensure your journey is comfortable and stylish. Our professional drivers are trained in hospitality and defensive driving. We operate across North India with 24/7 customer support and real-time tracking. Whether it's business trip or family vacation, we make your travel memorable with complimentary water, WiFi, and entertainment systems. Our commitment to punctuality and safety has made us the preferred choice for corporate clients and families. We also offer customized tour packages with stopovers at popular tourist attractions. Book with us for a hassle-free travel experience with transparent pricing and no hidden charges."
+      },
+      "route": {
+        "from": "Delhi",
+        "to": "Jaipur",
+        "distance": "280 km",
+        "stops": ["Gurgaon (30 min break)", "Neemrana Fort (sightseeing)", "Shahpura (lunch stop)", "Amer Fort (optional)", "Jaipur Airport"],
+        "duration": "5 hours 30 minutes (with breaks)",
+        "highway": "Delhi-Jaipur Expressway (NE4)",
+        "tollCharges": "₹450 included",
+        "bestTimeToTravel": "Early morning (6 AM) to avoid traffic"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Mercedes Benz E-Class",
+      "vehicleDetails": {
+        "model": "Mercedes-Benz E 220d",
+        "year": 2024,
+        "color": "Black",
+        "registration": "DL 01 XX 1234",
+        "features": ["Leather seats", "Ambient lighting", "Dual-zone AC", "Massage seats", "Panoramic sunroof", "WiFi hotspot", "Entertainment screens", "Mini fridge"]
+      },
+      "price": {
+        "min": 5500,
+        "max": 7500,
+        "currency": "₹",
+        "period": "one-way",
+        "discounts": {
+          "roundTrip": "10% off on round trips",
+          "weekly": "15% off for weekly rentals",
+          "corporate": "Special corporate rates available"
+        },
+        "additionalCharges": {
+          "nightTrip": "₹500 (11 PM - 6 AM)",
+          "extraHour": "₹300 per hour",
+          "extraKm": "₹18 per km beyond 300 km"
+        }
+      },
+      "duration": {
+        "hours": 5,
+        "minutes": 30,
+        "flexible": true,
+        "maxWaitingTime": "30 minutes free, ₹100 per 15 mins after"
+      },
+      "amenities": [
+        "Air Conditioning with temperature control",
+        "High-speed WiFi (up to 50 MBPS)",
+        "Complimentary mineral water (2 liters)",
+        "Charging ports (USB-C and regular)",
+        "Entertainment system with Netflix",
+        "First aid kit",
+        "Phone charging cables (all types)",
+        "Tissues and sanitizer",
+        "Snacks box (premium cookies and chips)",
+        "Magazines and newspapers",
+        "Blanket and pillows (for night trips)",
+        "Umbrella (in case of rain)"
+      ],
+      "serviceHighlights": [
+        "Doorstep pickup from any location in Delhi NCR",
+        "Professional, uniformed driver with 10+ years experience",
+        "Clean and sanitized car guaranteed",
+        "24/7 customer support via call/chat",
+        "Real-time GPS tracking for safety",
+        "Flexible payment options (PayTM, Card, Cash, UPI)",
+        "Free cancellation up to 2 hours before trip",
+        "Trip insurance included (up to ₹5 lakhs cover)",
+        "Sightseeing stops included (Neemrana, Amer Fort)",
+        "Complimentary pickup from airport/railway station",
+        "Child seats available on request",
+        "Pet-friendly option available (with prior notice)"
+      ],
+      "description": "Comfortable sedan cab from Delhi to Jaipur. Experience royal comfort with our Delhi to Jaipur luxury cab service. Travel in style with our Mercedes Benz E-Class, featuring leather interiors, ambient lighting, and entertainment system. Our professional driver ensures a smooth journey on the Delhi-Jaipur Expressway with planned breaks at scenic locations. Perfect for business travelers, families, and tourists who value comfort and punctuality. The 5.5-hour journey includes optional sightseeing stops at Neemrana Fort and Amer Fort. We provide complimentary WiFi, mineral water, and snacks to make your journey enjoyable. Our cabs are sanitized before every trip and drivers follow strict safety protocols. Whether you're heading to Jaipur for business meeting, wedding, or vacation, our luxury cab service ensures you reach refreshed and relaxed. Book now and experience the difference premium travel makes!",
+      "driverDetails": {
+        "name": "Rajveer Singh Rathore",
+        "age": 42,
+        "experience": "15 years",
+        "languages": ["Hindi", "English", "Punjabi", "Rajasthani"],
+        "rating": 4.9,
+        "totalTrips": 3450,
+        "badges": ["Safe Driver Award 2024", "5-Star Rated", "Punctuality King"],
+        "phone": "+91-9876543210 (for emergency)",
+        "photo": "https://randomuser.me/api/portraits/men/42.jpg",
+        "specialties": ["Long drives", "Tour guide", "Defensive driving", "First aid trained"]
+      },
+      "cancellationPolicy": "Free cancellation up to 2 hours before scheduled pickup. 50% refund if cancelled between 2 hours and 30 minutes. No refund for cancellations within 30 minutes of pickup or no-show. In case of cab breakdown, we provide alternative cab within 30 minutes or full refund. Bad weather cancellations are fully refundable. To cancel, call our support or use the app.",
+      "paymentOptions": ["Cash", "Credit Card", "Debit Card", "UPI (Google Pay, PhonePe, PayTM)", "Net Banking", "PayPal", "EMI options available for bookings above ₹5000"],
+      "contactPerson": {
+        "id": 101,
+        "name": "Vikram Rathore",
+        "designation": "Customer Experience Manager",
+        "email": "vikram@gocabs.com",
+        "phone": "+91-9876543210",
+        "available": "24/7",
+        "responseTime": "Within 5 minutes"
+      },
+      "bookingInfo": {
+        "method": "Book on portal or call",
+        "externalUrl": null,
+        "deadline": "2026-12-31",
+        "minAdvance": 1000,
+        "confirmationTime": "Instant",
+        "peakSeasonSurcharge": "Oct-Mar: 15% extra for weekend bookings"
+      },
+      "stats": {
+        "views": 15420,
+        "bookings": 1250,
+        "cancelled": 45,
+        "avgRating": 4.8,
+        "fiveStarRatings": 980,
+        "reviews": 1120
+      },
+      "reviews": [
+        {
+          "user": "Amit Sharma",
+          "rating": 5,
+          "comment": "Best cab service ever! Car was spotless and driver was very professional.",
+          "date": "2026-02-15"
+        },
+        {
+          "user": "Priya Singh",
+          "rating": 5,
+          "comment": "Luxury experience at affordable price. Loved the WiFi and snacks!",
+          "date": "2026-02-10"
+        },
+        {
+          "user": "Rahul Verma",
+          "rating": 4.5,
+          "comment": "Driver was very knowledgeable about Jaipur. Showed us good places.",
+          "date": "2026-02-05"
+        }
+      ],
+      "tags": [
+        "Delhi to Jaipur Cab",
+        "Luxury Cab Service",
+        "Mercedes Rental",
+        "Intercity Taxi",
+        "Rajasthan Tour",
+        "Airport Pickup",
+        "Wedding Transportation",
+        "Corporate Travel"
+      ],
+      "postedBy": 2,
+      "createdAt": "2026-01-01",
+      "updatedAt": "2026-03-15",
+      "status": "active",
+      "seasonalOffers": "Summer special: 10% off on bookings before April",
+      "nearbyAttractions": ["Neemrana Fort", "Amer Fort", "Hawa Mahal", "City Palace", "Jantar Mantar", "Chokhi Dhani"]
+    },
+    {
+      "id": 2,
+      "title": "Mumbai to Pune Volvo Bus",
+      "slug": "mumbai-pune-volvo-bus",
+      "provider": {
+        "id": 2,
+        "name": "RedBus Premium",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://redbus.in",
+        "serviceType": "Luxury Bus Service",
+        "companySize": "1000+ employees",
+        "founded": 2006,
+        "headOffice": "Bangalore, India",
+        "about": "RedBus Premium is the luxury arm of India's largest bus ticketing platform. We partner with top bus operators to provide Volvo multi-axle buses with amenities like personal entertainment screens, charging points, and onboard washrooms. Our buses feature reclining seats (160 degrees) with ample legroom, making overnight journeys comfortable. We maintain strict hygiene standards with sanitized buses and temperature checks for staff. Real-time bus tracking and 24/7 customer support ensure peace of mind. With 98% on-time performance and professional drivers, we've become the preferred choice for Mumbai-Pune commuters. Our partnership with MSRTC and private operators ensures multiple daily departures. Book with us for guaranteed seats, zero booking fees, and instant cancellation options."
+      },
+      "route": {
+        "from": "Mumbai",
+        "to": "Pune",
+        "distance": "150 km",
+        "stops": ["Dadar East", "Bandra Kurla Complex", "Chembur", "Panvel (15 min break)", "Khalapur", "Talegaon", "Pune Station", "Shivajinagar"],
+        "duration": "3 hours 45 minutes (with one break)",
+        "highway": "Mumbai-Pune Expressway (India's first 6-lane expressway)",
+        "tollCharges": "Included in ticket",
+        "frequency": "Every 30 minutes (peak hours), Every hour (off-peak)"
+      },
+      "serviceType": "Bus",
+      "vehicleType": "Volvo Multi-Axle 9600",
+      "vehicleDetails": {
+        "model": "Volvo 9600 Multi-Axle",
+        "year": 2024,
+        "color": "White/Blue",
+        "registration": "MH 01 XX 5678",
+        "features": ["Push-back seats (160° reclining)", "Personal entertainment screens", "Individual AC vents", "Reading lights", "USB charging ports", "Onboard washroom", "GPS tracking", "CCTV cameras", "First aid kit", "Fire extinguisher"]
+      },
+      "price": {
+        "min": 700,
+        "max": 1200,
+        "currency": "₹",
+        "period": "one-way",
+        "discounts": {
+          "roundTrip": "5% off on return tickets",
+          "student": "10% off with valid ID",
+          "seniorCitizen": "8% off",
+          "group": "15% off for 4+ tickets"
+        },
+        "additionalCharges": {
+          "cancellationFee": "₹100 cancellation fee",
+          "reschedulingFee": "₹50 rescheduling fee",
+          "extraLuggage": "₹100 per bag beyond 15kg"
+        }
+      },
+      "duration": {
+        "hours": 3,
+        "minutes": 45,
+        "flexible": false,
+        "trafficNote": "Add 30 mins during peak hours (5 PM - 9 PM)"
+      },
+      "amenities": [
+        "Individual AC vents with temperature control",
+        "Personal 7-inch entertainment screen",
+        "USB charging port at every seat",
+        "Reading light with dimmer",
+        "Coat hanger and magazine pocket",
+        "Foot rest and lumbar support",
+        "Blanket and pillow (night buses only)",
+        "Complementary water bottle (500ml)",
+        "Snack box (biscuits and juice)",
+        "Sanitizer and wet wipes",
+        "Emergency window hammer",
+        "Fire extinguisher and first aid"
+      ],
+      "serviceHighlights": [
+        "Multiple daily departures (5 AM to 12 AM)",
+        "Real-time bus tracking via app",
+        "Preferred seating available (front seats)",
+        "Female passenger preference (front seats)",
+        "Zero convenience fee on app bookings",
+        "Instant cancellation and refund",
+        "24/7 customer support (call/chat)",
+        "Luggage allowance: 15kg + 7kg hand baggage",
+        "Pet policy: Small pets allowed in carriers",
+        "Wheelchair accessible (request in advance)",
+        "Food and beverages available at rest stops",
+        "Clean washrooms at Panvel stop"
+      ],
+      "description": "Volvo AC bus with comfortable seating. Experience the most comfortable bus journey between Mumbai and Pune with our Volvo Multi-Axle buses. These modern buses feature push-back seats that recline up to 160 degrees, giving you almost a flat-bed experience for overnight travel. Each seat has its own 7-inch entertainment screen with latest movies, music, and games. The journey takes approximately 3 hours 45 minutes on the Mumbai-Pune Expressway, with one refreshment break at Panvel. Our buses maintain 98% on-time record and are driven by experienced drivers who prioritize safety. The 150 km route offers scenic views of the Western Ghats with 6 tunnels and beautiful valleys. Whether you're a daily commuter, student, or tourist, our Volvo buses provide the perfect balance of comfort and affordability. Book early to get your preferred seat!",
+      "driverDetails": {
+        "name": "Prakash Kamble",
+        "age": 48,
+        "experience": "22 years",
+        "languages": ["Marathi", "Hindi", "English"],
+        "rating": 4.8,
+        "totalTrips": 8900,
+        "badges": ["Best Driver Award 2023", "Zero Accident Record", "Safety Champion"],
+        "phone": "+91-9876543211",
+        "photo": "https://randomuser.me/api/portraits/men/45.jpg",
+        "specialties": ["Expressway expert", "Defensive driving", "Mountain routes"]
+      },
+      "cancellationPolicy": "Free cancellation up to 4 hours before departure. 75% refund between 4 hours and 1 hour. 50% refund within 1 hour. No refund for no-show. Cancellation fee ₹100 applies for online cancellations. Tickets can be rescheduled for free up to 2 hours before departure (subject to availability). In case of bus breakdown, alternative bus provided within 1 hour or full refund. Weather-related cancellations fully refunded.",
+      "paymentOptions": ["Credit Card", "Debit Card", "UPI (GPay, PhonePe, PayTM)", "Net Banking", "Wallet (Amazon Pay, Mobikwik)", "EMI on select cards"],
+      "contactPerson": {
+        "id": 102,
+        "name": "Sneha Patil",
+        "designation": "Customer Support Lead",
+        "email": "sneha@redbus.in",
+        "phone": "+91-9876543212",
+        "available": "6 AM - 12 AM",
+        "responseTime": "Within 10 minutes"
+      },
+      "bookingInfo": {
+        "method": "Book online or app",
+        "externalUrl": "https://redbus.in",
+        "deadline": "2026-12-31",
+        "minAdvance": "Full payment",
+        "boardingPoint": "Multiple locations in Mumbai",
+        "droppingPoint": "Pune Station / Shivajinagar"
+      },
+      "stats": {
+        "views": 45200,
+        "bookings": 18200,
+        "cancelled": 890,
+        "avgRating": 4.6,
+        "fiveStarRatings": 12400,
+        "reviews": 15600
+      },
+      "reviews": [
+        {
+          "user": "Suresh Iyer",
+          "rating": 5,
+          "comment": "Very comfortable journey. Bus was on time and very clean.",
+          "date": "2026-03-01"
+        },
+        {
+          "user": "Neha Gupta",
+          "rating": 4,
+          "comment": "Good service but the entertainment system wasn't working on my seat.",
+          "date": "2026-02-28"
+        },
+        {
+          "user": "Amol Desai",
+          "rating": 5,
+          "comment": "Best bus service on Mumbai-Pune route. Always book with RedBus.",
+          "date": "2026-02-25"
+        }
+      ],
+      "tags": [
+        "Mumbai to Pune Bus",
+        "Volvo Bus",
+        "AC Bus",
+        "Expressway Travel",
+        "Commuter Bus",
+        "Luxury Bus",
+        "Overnight Bus",
+        "Maharashtra Travel"
+      ],
+      "postedBy": 3,
+      "createdAt": "2026-01-05",
+      "updatedAt": "2026-03-14",
+      "status": "active",
+      "seasonalOffers": "Monsoon special: 20% off on all bookings in July-August"
+    },
+    {
+      "id": 3,
+      "title": "Delhi to Goa Direct Flight",
+      "slug": "delhi-goa-direct-flight",
+      "provider": {
+        "id": 3,
+        "name": "IndiGo Airlines",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://goindigo.in",
+        "serviceType": "Low-cost Airline",
+        "companySize": "20000+ employees",
+        "founded": 2005,
+        "headOffice": "Gurgaon, India",
+        "about": "IndiGo is India's largest and most preferred airline with a fleet of over 300 aircraft. We operate 1800+ daily flights connecting 85+ domestic and 30+ international destinations. Known for on-time performance, clean aircraft, and friendly service, IndiGo has won numerous awards including 'Best Low-Cost Airline in Central Asia & India' at the Skytrax World Airline Awards. Our Delhi-Goa route is one of our busiest, with 12 daily direct flights. We offer a mix of Airbus A320neo and A321neo aircraft featuring comfortable 3-3 seating with 29-30 inch seat pitch. Our '6E' experience includes hassle-free booking, smooth check-in, and punctual departures. Onboard, you can enjoy our 'Cafe 6E' buy-on-board menu featuring hot meals, snacks, and beverages. We prioritize safety above everything with modern fleet and highly trained crew."
+      },
+      "route": {
+        "from": "Delhi (DEL)",
+        "to": "Goa (GOI)",
+        "distance": "1740 km",
+        "stops": ["Non-stop direct flight"],
+        "duration": "2 hours 40 minutes (flying time)",
+        "aircraft": "Airbus A320neo",
+        "altitude": "35,000 feet",
+        "route": "DEL - ATA - GOI (over central India)"
+      },
+      "serviceType": "Flight",
+      "vehicleType": "Airbus A320neo",
+      "vehicleDetails": {
+        "model": "Airbus A320neo",
+        "registration": "VT-IFA",
+        "year": 2023,
+        "configuration": "3-3 seating",
+        "seats": 186,
+        "features": ["Recaro slimline seats", "Largest overhead bins", "LED ambient lighting", "Quiet engines (15% less noise)", "Fuel-efficient", "USB ports (select aircraft)", "Personal device holders"]
+      },
+      "price": {
+        "min": 4500,
+        "max": 9500,
+        "currency": "₹",
+        "period": "one-way",
+        "discounts": {
+          "earlyBird": "30% off if booked 60+ days ahead",
+          "student": "10% off with valid ID",
+          "armedForces": "15% off",
+          "group": "20% off for 9+ passengers"
+        },
+        "fareTypes": {
+          "saver": "Basic fare with 7kg hand baggage only",
+          "combo": "Includes 15kg check-in + meal",
+          "flex": "Free cancellation + 25kg baggage + meal + priority"
+        },
+        "additionalCharges": {
+          "excessBaggage": "₹700 per kg",
+          "seatSelection": "₹200-₹500 per seat",
+          "mealPrebook": "₹350-₹600 per meal",
+          "sportsEquipment": "₹1500-₹2500 per item"
+        }
+      },
+      "duration": {
+        "hours": 2,
+        "minutes": 40,
+        "flexible": false,
+        "boardingTime": "Boarding starts 45 minutes before departure",
+        "checkInCloses": "60 minutes before departure (web), 45 minutes (airport)"
+      },
+      "amenities": [
+        "Comfortable reclining seats with 29-inch pitch",
+        "Overhead reading lights",
+        "Individual air vents",
+        "Fold-down tray table",
+        "Seatback pocket with safety card and magazine",
+        "Window shades",
+        "Clean lavatories with baby changing tables",
+        "Cabin crew assistance",
+        "In-flight magazine 'Hello 6E'",
+        "Buy-on-board food and beverages (Cafe 6E)",
+        "Duty-free shopping catalog",
+        "First aid and medical assistance"
+      ],
+      "serviceHighlights": [
+        "12 daily direct flights between Delhi and Goa",
+        "Most punctual airline in India (85%+ on-time)",
+        "Youngest fleet in India (average age 3.5 years)",
+        "Seamless web and app booking experience",
+        "Self check-in kiosks at all airports",
+        "Priority boarding for seniors and families",
+        "Wheelchair assistance available",
+        "Unaccompanied minor service",
+        "Pet travel allowed in cabin (small dogs/cats)",
+        "Special meals (vegetarian, vegan, Jain, kosher)",
+        "Business class not available (all-economy)",
+        "6E Rewards loyalty program"
+      ],
+      "description": "Direct flight from Delhi to Goa. Fly non-stop from Delhi to Goa with India's most preferred airline. Our direct flights operate 12 times daily, giving you flexibility to choose morning, afternoon, evening, or red-eye flights. The 2 hour 40 minute journey takes you from the bustling capital to Goa's pristine beaches. Our Airbus A320neo aircraft features comfortable 3-3 seating, large windows for scenic views, and quiet engines for a peaceful flight. As you cross central India, enjoy aerial views of the Vindhyas and Western Ghats before descending into Goa. Onboard, you can purchase snacks, meals, and beverages from our Cafe 6E menu. From traditional Indian snacks to sandwiches and hot meals, there's something for everyone. Our cabin crew ensures your comfort and safety throughout the flight. Whether you're heading to North Goa's party scene or South Goa's serene beaches, start your vacation right with IndiGo.",
+      "flightSchedule": [
+        {"flight": "6E-101", "departure": "06:00", "arrival": "08:40", "days": "Daily"},
+        {"flight": "6E-205", "departure": "09:15", "arrival": "11:55", "days": "Daily"},
+        {"flight": "6E-307", "departure": "12:30", "arrival": "15:10", "days": "Daily"},
+        {"flight": "6E-409", "departure": "15:45", "arrival": "18:25", "days": "Daily"},
+        {"flight": "6E-512", "departure": "18:20", "arrival": "21:00", "days": "Daily"},
+        {"flight": "6E-614", "departure": "21:30", "arrival": "00:10+1", "days": "Daily"}
+      ],
+      "cancellationPolicy": "Cancellation charges vary by fare type: Saver: Non-refundable; Combo: ₹1500 + fare difference; Flex: Free cancellation up to 4 hours before departure. After 4 hours, Saver and Combo are non-refundable, Flex charges ₹500. Flight cancellations by airline: Full refund or free rescheduling. No-show: No refund. Refund processed within 7-10 working days.",
+      "paymentOptions": ["Credit Card", "Debit Card", "UPI", "Net Banking", "Wallets", "EMI", "PayPal", "Amazon Pay"],
+      "contactPerson": {
+        "id": 103,
+        "name": "IndiGo Customer Care",
+        "designation": "24/7 Support",
+        "email": "care@goindigo.in",
+        "phone": "1800-123-1111",
+        "available": "24/7",
+        "responseTime": "Within 2 minutes"
+      },
+      "bookingInfo": {
+        "method": "Book online, app, or travel agent",
+        "externalUrl": "https://goindigo.in",
+        "deadline": "Book until 4 hours before departure",
+        "checkIn": "Web check-in opens 48 hours before departure",
+        "baggageAllowance": "Saver: 7kg hand baggage; Combo/Flex: 15kg check-in + 7kg hand"
+      },
+      "stats": {
+        "views": 128500,
+        "bookings": 45200,
+        "cancelled": 3400,
+        "avgRating": 4.4,
+        "onTimePerformance": "85%",
+        "reviews": 28900
+      },
+      "reviews": [
+        {
+          "user": "Vikram Chopra",
+          "rating": 5,
+          "comment": "Great flight, on time departure and smooth landing. Crew was very courteous.",
+          "date": "2026-03-10"
+        },
+        {
+          "user": "Anjali Menon",
+          "rating": 4,
+          "comment": "Good experience but legroom is a bit tight for tall passengers.",
+          "date": "2026-03-08"
+        },
+        {
+          "user": "Rajesh Khanna",
+          "rating": 4,
+          "comment": "Clean aircraft and professional crew. Snacks were reasonably priced.",
+          "date": "2026-03-05"
+        }
+      ],
+      "tags": [
+        "Delhi to Goa Flight",
+        "Direct Flight",
+        "IndiGo Airlines",
+        "Beach Vacation",
+        "Air Travel",
+        "Domestic Flight",
+        "Goa Tourism",
+        "Flight Booking"
+      ],
+      "postedBy": 1,
+      "createdAt": "2026-01-10",
+      "updatedAt": "2026-03-12",
+      "status": "active",
+      "seasonalOffers": "Summer sale: Up to 40% off on flights booked for April-June"
+    },
+    {
+      "id": 4,
+      "title": "Manali Royal Enfield Bike Rental",
+      "slug": "manali-royal-enfield-bike-rental",
+      "provider": {
+        "id": 4,
+        "name": "Royal Riders Manali",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://royalriders.in",
+        "serviceType": "Bike Rental & Tours",
+        "companySize": "25-50 employees",
+        "founded": 2012,
+        "headOffice": "Manali, Himachal Pradesh",
+        "about": "Royal Riders Manali is the premier bike rental service in the Himalayas. With a fleet of 200+ Royal Enfield motorcycles including Classic 350, Himalayan, Interceptor 650, and Bullet, we cater to adventure seekers from around the world. Our workshop is staffed by expert mechanics who ensure every bike is in perfect condition before each rental. We offer customized Leh-Ladakh tours, Spiti valley expeditions, and self-drive rentals. Safety is our priority - we provide high-quality riding gear (helmets, jackets, gloves) and 24/7 roadside assistance. Our team of experienced riders conducts pre-ride briefings and shares route knowledge. With 12+ years of Himalayan experience, we've served over 50,000 happy customers. We also arrange accommodations and backup vehicles for group tours. Join us for the ride of a lifetime through the world's highest motorable passes!"
+      },
+      "route": {
+        "from": "Manali",
+        "to": "Multiple destinations",
+        "popularRoutes": [
+          {"name": "Manali - Leh - Manali", "distance": "900 km", "duration": "8-10 days"},
+          {"name": "Manali - Spiti - Manali", "distance": "650 km", "duration": "6-7 days"},
+          {"name": "Manali - Rohtang Pass", "distance": "51 km", "duration": "1 day"},
+          {"name": "Manali - Keylong - Manali", "distance": "240 km", "duration": "2-3 days"},
+          {"name": "Manali - Khardung La - Nubra", "distance": "450 km", "duration": "4-5 days"}
+        ],
+        "terrain": "High altitude mountains, river crossings, hairpin bends",
+        "maxAltitude": "Khardung La: 18,380 ft",
+        "bestSeason": "June to September"
+      },
+      "serviceType": "Bike",
+      "vehicleType": "Royal Enfield Motorcycles",
+      "vehicleDetails": [
+        {
+          "model": "Royal Enfield Classic 350",
+          "engine": "349cc",
+          "price": "₹1200/day",
+          "features": ["Classic look", "Low maintenance", "Good for beginners"]
+        },
+        {
+          "model": "Royal Enfield Himalayan 450",
+          "engine": "452cc",
+          "price": "₹1800/day",
+          "features": ["Adventure tourer", "Long travel suspension", "Best for Ladakh"]
+        },
+        {
+          "model": "Royal Enfield Interceptor 650",
+          "engine": "648cc",
+          "price": "₹2500/day",
+          "features": ["Powerful engine", "Highway cruiser", "Twin exhaust"]
+        },
+        {
+          "model": "Royal Enfield Bullet 500",
+          "engine": "499cc",
+          "price": "₹1500/day",
+          "features": ["Classic thump", "Raw feel", "Vintage appeal"]
+        }
+      ],
+      "price": {
+        "min": 1200,
+        "max": 2500,
+        "currency": "₹",
+        "period": "per day",
+        "discounts": {
+          "weekly": "7 days = 6 days price",
+          "group": "10% off for 5+ bikes",
+          "offSeason": "20% off (Dec-Feb)",
+          "student": "5% off with valid ID"
+        },
+        "additionalCharges": {
+          "securityDeposit": "₹5000-10000 (refundable)",
+          "damageCover": "Optional insurance ₹200/day",
+          "extraKm": "Not applicable (unlimited km)",
+          "oneWayDrop": "₹5000-15000 depending on route"
+        }
+      },
+      "duration": {
+        "minDays": 1,
+        "maxDays": 30,
+        "flexible": true,
+        "extensionPolicy": "24 hours notice for extension"
+      },
+      "includedGear": [
+        "ISI certified helmet with visor",
+        "Riding jacket with armor (optional)",
+        "Waterproof riding gloves",
+        "Knee and elbow guards",
+        "Rain poncho (during monsoon)",
+        "Bike cover",
+        "Basic tool kit",
+        "First aid kit",
+        "Mobile charger with USB",
+        "Bungee cords (2 pairs)",
+        "Tank bag (on request)",
+        "Saddle bags (for long tours)"
+      ],
+      "amenities": [
+        "Unlimited kilometers",
+        "Roadside assistance 24/7",
+        "Backup vehicle for group tours",
+        "Accommodation booking assistance",
+        "Route maps and guides",
+        "Permit assistance (for Ladakh)",
+        "Fuel station guidance",
+        "Mechanic support on call",
+        "WhatsApp support group",
+        "Pickup and drop from bus stand/airport",
+        "Parking facility at our premises",
+        "Riding tips and briefing"
+      ],
+      "serviceHighlights": [
+        "Well-maintained bikes serviced after every trip",
+        "No hidden charges (transparent pricing)",
+        "Flexible rental periods (daily/weekly/monthly)",
+        "Option to buy the bike at end of rental",
+        "International driving permit accepted",
+        "English-speaking guides available",
+        "Group tour packages with experienced lead",
+        "Photography package available",
+        "Cash on arrival accepted",
+        "Credit card payments accepted",
+        "Ladakh permit included in tour packages",
+        "Spiti permit assistance provided"
+      ],
+      "description": "Royal Enfield bike rental for Manali trip. Embark on the ultimate Himalayan adventure with our Royal Enfield bike rentals in Manali. Choose from our fleet of perfectly maintained Royal Enfields - from the thumping Classic 350 to the adventure-ready Himalayan. Whether you're dreaming of conquering the high passes of Ladakh, exploring the stark beauty of Spiti, or just doing a day trip to Rohtang Pass, we have the perfect bike for you. Each rental includes essential riding gear, unlimited kilometers, and 24/7 roadside assistance. Our experienced team provides a thorough pre-ride briefing about routes, weather conditions, and riding tips. We understand the challenges of high-altitude riding and prepare you for every scenario. For first-time riders, we recommend starting with a shorter trip to familiarize yourself with the bike and terrain. Our workshop is open 7 AM to 10 PM for any assistance. Come feel the freedom of the open road with the wind in your hair and the Himalayas as your backdrop!",
+      "driverDetails": {
+        "name": "No driver (self-drive)",
+        "guideAvailable": {
+          "name": "Karma Dorje",
+          "experience": "18 years",
+          "languages": ["English", "Hindi", "Ladakhi", "Punjabi"],
+          "rating": 4.9,
+          "specialties": ["Ladakh expert", "High altitude specialist", "Mechanic", "Photographer"]
+        }
+      },
+      "cancellationPolicy": "Free cancellation up to 7 days before pickup. 50% refund between 7 days and 48 hours. No refund within 48 hours. In case of bad weather/road closure, 100% refund or reschedule. Bike breakdown: We provide replacement bike within 24 hours or refund for unused days. Security deposit refunded within 48 hours after bike return inspection. Early return: Refund for unused days subject to re-rental possibility.",
+      "paymentOptions": ["Cash", "Credit Card (3% fee)", "UPI", "Bank Transfer", "PayPal (5% fee)"],
+      "contactPerson": {
+        "id": 104,
+        "name": "Tsering Wangyal",
+        "designation": "Operations Manager",
+        "email": "tsering@royalriders.in",
+        "phone": "+91-9876543213",
+        "whatsapp": "+91-9876543213",
+        "available": "7 AM - 10 PM"
+      },
+      "bookingInfo": {
+        "method": "Book online or call",
+        "externalUrl": "https://royalriders.in",
+        "advanceRequired": "50% advance",
+        "documentsRequired": ["Driving License", "ID Proof (Aadhar/Passport)", "Passport size photo (2 copies)", "Security deposit"],
+        "ageRequirement": "21+ years with 2+ years driving experience"
+      },
+      "stats": {
+        "views": 87500,
+        "bookings": 12500,
+        "cancelled": 450,
+        "avgRating": 4.9,
+        "repeatCustomers": "45%",
+        "reviews": 8230
+      },
+      "reviews": [
+        {
+          "user": "Arjun Rathore",
+          "rating": 5,
+          "comment": "Best bike rental in Manali! The Himalayan was in perfect condition and the team was very helpful with route planning.",
+          "date": "2026-02-28"
+        },
+        {
+          "user": "Jennifer Smith",
+          "rating": 5,
+          "comment": "International traveler and they made everything easy. Great bikes and amazing support throughout Ladakh trip.",
+          "date": "2026-02-20"
+        },
+        {
+          "user": "Vikram Jeet",
+          "rating": 4.5,
+          "comment": "Great experience overall. Bike was well maintained. Suggestion: Include basic tool kit knowledge briefing.",
+          "date": "2026-02-15"
+        }
+      ],
+      "tags": [
+        "Manali Bike Rental",
+        "Royal Enfield",
+        "Ladakh Trip",
+        "Himalayan Adventure",
+        "Spiti Valley",
+        "Motorcycle Tour",
+        "Self Drive",
+        "Leh Bike Rental"
+      ],
+      "postedBy": 4,
+      "createdAt": "2026-01-15",
+      "updatedAt": "2026-03-10",
+      "status": "active",
+      "seasonalOffers": "Pre-monsoon special: Free riding jacket with 7+ day rentals"
+    },
+    {
+      "id": 5,
+      "title": "Bangalore to Mysore Cab",
+      "slug": "bangalore-mysore-cab",
+      "provider": {
+        "id": 5,
+        "name": "ZoomCar",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://zoomcar.com",
+        "serviceType": "Self-Drive & Cab Rental",
+        "companySize": "500-1000 employees",
+        "founded": 2013,
+        "headOffice": "Bangalore, India",
+        "about": "ZoomCar is India's largest self-drive car rental company. We also offer chauffeur-driven outstation cabs for comfortable inter-city travel. Our fleet includes hatchbacks, sedans, and SUVs maintained to the highest standards. With 24/7 roadside assistance and transparent pricing, we make travel hassle-free."
+      },
+      "route": {
+        "from": "Bangalore",
+        "to": "Mysore",
+        "distance": "150 km",
+        "stops": ["Ramanagara", "Channapatna", "Srirangapatna", "Mysore Palace"],
+        "duration": "3 hours",
+        "highway": "Bangalore-Mysore Highway (NH 275)",
+        "tollCharges": "Included",
+        "bestTimeToTravel": "Morning 7 AM to avoid traffic"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Toyota Etios / Dzire",
+      "vehicleDetails": {
+        "model": "Toyota Etios",
+        "year": 2024,
+        "color": "Silver",
+        "registration": "KA 01 XX 5678",
+        "features": ["AC", "Music system", "USB charging", "Spacious boot"]
+      },
+      "price": {
+        "min": 2500,
+        "max": 3500,
+        "currency": "₹",
+        "period": "one-way",
+        "discounts": {
+          "roundTrip": "15% off on round trips"
+        },
+        "additionalCharges": {
+          "extraKm": "₹14 per km beyond 300 km",
+          "nightTrip": "₹300 (11 PM - 6 AM)"
+        }
+      },
+      "duration": {
+        "hours": 3,
+        "minutes": 0,
+        "flexible": true
+      },
+      "amenities": [
+        "AC",
+        "Music System",
+        "Charging point",
+        "Bottle water",
+        "Tissues",
+        "First aid"
+      ],
+      "serviceHighlights": [
+        "Professional driver",
+        "Toll included",
+        "Mysore Palace visit included",
+        "Toy train stop at Channapatna",
+        "Flexible return options"
+      ],
+      "description": "One-way cab from Bangalore to Mysore. Comfortable sedan with professional driver. Visit Srirangapatna and Mysore Palace enroute. Perfect for day trips and weekend getaways.",
+      "driverDetails": {
+        "name": "Kumaraswamy",
+        "age": 45,
+        "experience": "12 years",
+        "languages": ["Kannada", "English", "Tamil", "Telugu"],
+        "rating": 4.7,
+        "specialties": ["Mysore local expert", "Palace guide"]
+      },
+      "cancellationPolicy": "Free cancellation up to 4 hours before. 50% refund after.",
+      "paymentOptions": ["Cash", "Card", "UPI", "Net Banking"],
+      "contactPerson": {
+        "id": 105,
+        "name": "ZoomCar Support",
+        "designation": "Customer Care",
+        "phone": "+91-9876543214"
+      },
+      "bookingInfo": {
+        "method": "Book on app or website",
+        "minAdvance": 500
+      },
+      "stats": {
+        "views": 34500,
+        "bookings": 8900,
+        "avgRating": 4.6
+      },
+      "reviews": [
+        {
+          "user": "Ravi Kumar",
+          "rating": 5,
+          "comment": "Very smooth ride. Driver knew all the good spots.",
+          "date": "2026-02-20"
+        }
+      ],
+      "tags": ["Bangalore to Mysore", "Mysore Cab", "One-way Cab", "ZoomCar", "Mysore Palace"],
+      "postedBy": 2,
+      "createdAt": "2026-03-01",
+      "updatedAt": "2026-03-10",
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "title": "Hyderabad to Vijayawada Bus",
+      "slug": "hyderabad-vijayawada-bus",
+      "provider": {
+        "id": 6,
+        "name": "Orange Travels",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://orangetravels.in",
+        "serviceType": "Bus Operator",
+        "companySize": "100-250 employees",
+        "founded": 2008,
+        "headOffice": "Hyderabad, Telangana"
+      },
+      "route": {
+        "from": "Hyderabad",
+        "to": "Vijayawada",
+        "distance": "275 km",
+        "stops": ["Suryapet", "Kodad", "Vijayawada Bypass"],
+        "duration": "5 hours",
+        "highway": "NH 65",
+        "frequency": "Every 2 hours"
+      },
+      "serviceType": "Bus",
+      "vehicleType": "Volvo Multi-Axle Sleeper",
+      "vehicleDetails": {
+        "model": "Volvo 9600",
+        "year": 2024,
+        "features": ["Sleeper berths", "Personal AC", "Reading lights", "Charging points"]
+      },
+      "price": {
+        "min": 700,
+        "max": 900,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Sleeper berth",
+        "Water bottle",
+        "Blanket",
+        "Charging point"
+      ],
+      "description": "Overnight sleeper bus service from Hyderabad to Vijayawada. Comfortable Volvo multi-axle bus with AC and personal charging points. Safe and punctual service.",
+      "stats": {
+        "views": 28700,
+        "bookings": 12300,
+        "avgRating": 4.3
+      },
+      "tags": ["Hyderabad to Vijayawada", "Sleeper Bus", "Volvo", "Orange Travels"],
+      "postedBy": 3,
+      "createdAt": "2026-02-28",
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "title": "Mumbai to Delhi Flight",
+      "slug": "mumbai-delhi-flight",
+      "provider": {
+        "id": 7,
+        "name": "SpiceJet",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://spicejet.com",
+        "serviceType": "Airline",
+        "companySize": "10000+ employees",
+        "founded": 2005,
+        "headOffice": "Gurgaon, India"
+      },
+      "route": {
+        "from": "Mumbai (BOM)",
+        "to": "Delhi (DEL)",
+        "distance": "1150 km",
+        "duration": "2 hours",
+        "frequency": "12 daily flights"
+      },
+      "serviceType": "Flight",
+      "vehicleType": "Boeing 737",
+      "price": {
+        "min": 5500,
+        "max": 8500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "Meal included",
+        "15kg baggage",
+        "WiFi on select flights",
+        "Entertainment app"
+      ],
+      "description": "Daily direct flights between Mumbai and Delhi. SpiceJet offers comfortable Boeing 737 aircraft with hot meals and baggage included. Multiple departures throughout the day.",
+      "stats": {
+        "views": 56700,
+        "bookings": 23400,
+        "avgRating": 4.2
+      },
+      "tags": ["Mumbai to Delhi", "Flight", "SpiceJet", "Direct Flight"],
+      "postedBy": 2,
+      "createdAt": "2026-02-27",
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "title": "Leh Bike Rental",
+      "slug": "leh-bike-rental",
+      "provider": {
+        "id": 8,
+        "name": "Leh Riders",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://lehr riders.com",
+        "serviceType": "Bike Rental",
+        "companySize": "10-20 employees",
+        "headOffice": "Leh, Ladakh"
+      },
+      "route": {
+        "from": "Leh",
+        "to": "Khardung La / Nubra / Pangong",
+        "duration": "Per Day",
+        "terrain": "High altitude mountains"
+      },
+      "serviceType": "Bike",
+      "vehicleType": "Royal Enfield Himalayan",
+      "vehicleDetails": {
+        "model": "Royal Enfield Himalayan 450",
+        "engine": "452cc"
+      },
+      "price": {
+        "min": 2000,
+        "max": 2500,
+        "currency": "₹",
+        "period": "per day"
+      },
+      "amenities": [
+        "Helmet",
+        "Rain coat",
+        "Tool kit",
+        "Roadside assistance"
+      ],
+      "description": "Royal Enfield Himalayan for Leh-Ladakh trip. Perfect for high altitude passes. Well-maintained bikes with 24/7 roadside assistance. Ladakh permit assistance included.",
+      "stats": {
+        "views": 43200,
+        "bookings": 8900,
+        "avgRating": 4.8
+      },
+      "tags": ["Leh Bike Rental", "Royal Enfield", "Ladakh", "Himalayan"],
+      "postedBy": 1,
+      "createdAt": "2026-02-26",
+      "status": "active"
+    },
+    {
+      "id": 9,
+      "title": "Chennai to Bangalore Cab",
+      "slug": "chennai-bangalore-cab",
+      "provider": {
+        "id": 9,
+        "name": "Savaari",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://savaari.com",
+        "serviceType": "Cab Rental",
+        "companySize": "500 employees",
+        "founded": 2006,
+        "headOffice": "Bangalore"
+      },
+      "route": {
+        "from": "Chennai",
+        "to": "Bangalore",
+        "distance": "350 km",
+        "duration": "6 hours",
+        "highway": "NH 48"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Toyota Innova",
+      "price": {
+        "min": 4000,
+        "max": 5500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Music system",
+        "Charging",
+        "Bottle water"
+      ],
+      "description": "Inter-city cab with professional driver from Chennai to Bangalore. Comfortable Innova with ample space for 6 passengers. Toll charges included.",
+      "stats": {
+        "views": 29800,
+        "bookings": 7600,
+        "avgRating": 4.5
+      },
+      "tags": ["Chennai to Bangalore", "Innova", "Savaari", "Outstation Cab"],
+      "postedBy": 2,
+      "createdAt": "2026-02-25",
+      "status": "active"
+    },
+    {
+      "id": 10,
+      "title": "Kolkata to Digha Bus",
+      "slug": "kolkata-digha-bus",
+      "provider": {
+        "id": 10,
+        "name": "SBSTC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://sbstc.co.in",
+        "serviceType": "Government Bus Service",
+        "headOffice": "Kolkata"
+      },
+      "route": {
+        "from": "Kolkata (Esplanade)",
+        "to": "Digha",
+        "distance": "185 km",
+        "duration": "4 hours"
+      },
+      "serviceType": "Bus",
+      "vehicleType": "Non-AC Bus",
+      "price": {
+        "min": 400,
+        "max": 500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "Local sightseeing stops",
+        "Rest rooms at stations"
+      ],
+      "description": "Government bus service to Digha beach town. Economical option for budget travelers. Multiple departures daily from Esplanade.",
+      "stats": {
+        "views": 18700,
+        "bookings": 14300,
+        "avgRating": 3.8
+      },
+      "tags": ["Kolkata to Digha", "SBSTC", "Beach Trip", "Budget Bus"],
+      "postedBy": 3,
+      "createdAt": "2026-02-24",
+      "status": "active"
+    },
+    {
+      "id": 11,
+      "title": "Goa to Mumbai Flight",
+      "slug": "goa-mumbai-flight",
+      "provider": {
+        "id": 11,
+        "name": "Akasa Air",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://akasaair.com",
+        "serviceType": "Budget Airline",
+        "founded": 2021,
+        "headOffice": "Mumbai"
+      },
+      "route": {
+        "from": "Goa (GOI)",
+        "to": "Mumbai (BOM)",
+        "distance": "450 km",
+        "duration": "1.5 hours"
+      },
+      "serviceType": "Flight",
+      "vehicleType": "Boeing 737 MAX",
+      "price": {
+        "min": 3800,
+        "max": 5500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "Snacks",
+        "Hand baggage 7kg",
+        "Check-in baggage optional"
+      ],
+      "description": "Budget flight from Goa to Mumbai. New Boeing 737 MAX aircraft with comfortable seating. Multiple daily departures.",
+      "stats": {
+        "views": 34500,
+        "bookings": 12300,
+        "avgRating": 4.4
+      },
+      "tags": ["Goa to Mumbai", "Akasa Air", "Budget Flight"],
+      "postedBy": 2,
+      "createdAt": "2026-02-23",
+      "status": "active"
+    },
+    {
+      "id": 12,
+      "title": "Rishikesh Bike Rental",
+      "slug": "rishikesh-bike-rental",
+      "provider": {
+        "id": 12,
+        "name": "Rishikesh Bikes",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://rishikeshbikes.com",
+        "serviceType": "Bike Rental",
+        "headOffice": "Rishikesh"
+      },
+      "route": {
+        "from": "Rishikesh",
+        "to": "Local sightseeing",
+        "duration": "Per Day"
+      },
+      "serviceType": "Bike",
+      "vehicleType": "Scooty / Motorcycle",
+      "price": {
+        "min": 800,
+        "max": 1200,
+        "currency": "₹",
+        "period": "per day"
+      },
+      "amenities": [
+        "Helmet",
+        "Lock",
+        "Fuel option available"
+      ],
+      "description": "Scooty and bike rental for Rishikesh local sightseeing. Perfect for visiting temples, ashrams, and nearby waterfalls.",
+      "stats": {
+        "views": 15600,
+        "bookings": 7800,
+        "avgRating": 4.3
+      },
+      "tags": ["Rishikesh", "Bike Rental", "Scooty", "Local Sightseeing"],
+      "postedBy": 4,
+      "createdAt": "2026-02-22",
+      "status": "active"
+    },
+    {
+      "id": 13,
+      "title": "Ahmedabad to Rajkot Cab",
+      "slug": "ahmedabad-rajkot-cab",
+      "provider": {
+        "id": 13,
+        "name": "CabExpress",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://cabexpress.in",
+        "serviceType": "Cab Rental",
+        "headOffice": "Ahmedabad"
+      },
+      "route": {
+        "from": "Ahmedabad",
+        "to": "Rajkot",
+        "distance": "220 km",
+        "duration": "4 hours"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Sedan",
+      "price": {
+        "min": 2800,
+        "max": 3500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Bottle water",
+        "Toll included"
+      ],
+      "description": "Sedan cab for Gujarat travel. Professional driver, comfortable journey on NH 47.",
+      "stats": {
+        "views": 12300,
+        "bookings": 4500,
+        "avgRating": 4.4
+      },
+      "tags": ["Ahmedabad to Rajkot", "Gujarat Cab", "Sedan"],
+      "postedBy": 3,
+      "createdAt": "2026-02-21",
+      "status": "active"
+    },
+    {
+      "id": 14,
+      "title": "Lucknow to Delhi Bus",
+      "slug": "lucknow-delhi-bus",
+      "provider": {
+        "id": 14,
+        "name": "UPSRTC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://upsrtc.com",
+        "serviceType": "Government Bus",
+        "headOffice": "Lucknow"
+      },
+      "route": {
+        "from": "Lucknow",
+        "to": "Delhi",
+        "distance": "550 km",
+        "duration": "7 hours"
+      },
+      "serviceType": "Bus",
+      "vehicleType": "Volvo AC Bus",
+      "price": {
+        "min": 600,
+        "max": 800,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Charging point",
+        "Rest stops"
+      ],
+      "description": "Overnight Volvo bus service from Lucknow to Delhi. Comfortable seating, safe driving, and affordable rates.",
+      "stats": {
+        "views": 19800,
+        "bookings": 8700,
+        "avgRating": 4.1
+      },
+      "tags": ["Lucknow to Delhi", "UPSRTC", "Volvo Bus"],
+      "postedBy": 2,
+      "createdAt": "2026-02-20",
+      "status": "active"
+    },
+    {
+      "id": 15,
+      "title": "Jaipur to Udaipur Cab",
+      "slug": "jaipur-udaipur-cab",
+      "provider": {
+        "id": 15,
+        "name": "Rajasthan Cabs",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://rajasthancabs.com",
+        "serviceType": "Cab Rental",
+        "headOffice": "Jaipur"
+      },
+      "route": {
+        "from": "Jaipur",
+        "to": "Udaipur",
+        "distance": "400 km",
+        "duration": "5.5 hours",
+        "stops": ["Ajmer", "Pushkar", "Nathdwara"]
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Toyota Innova",
+      "price": {
+        "min": 3200,
+        "max": 4500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Driver",
+        "Sightseeing stops"
+      ],
+      "description": "Full day cab with sightseeing options. Visit Pushkar and Nathdwara enroute to Udaipur.",
+      "stats": {
+        "views": 26700,
+        "bookings": 8900,
+        "avgRating": 4.7
+      },
+      "tags": ["Jaipur to Udaipur", "Rajasthan Cab", "Innova"],
+      "postedBy": 1,
+      "createdAt": "2026-02-19",
+      "status": "active"
+    },
+    {
+      "id": 16,
+      "title": "Amritsar to Delhi Flight",
+      "slug": "amritsar-delhi-flight",
+      "provider": {
+        "id": 16,
+        "name": "Air India",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://airindia.in",
+        "serviceType": "Full Service Airline",
+        "headOffice": "New Delhi"
+      },
+      "route": {
+        "from": "Amritsar (ATQ)",
+        "to": "Delhi (DEL)",
+        "duration": "1.5 hours"
+      },
+      "serviceType": "Flight",
+      "vehicleType": "Airbus A320",
+      "price": {
+        "min": 4200,
+        "max": 6500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "Meal",
+        "15kg baggage",
+        "Entertainment"
+      ],
+      "description": "Direct flight from Amritsar to Delhi. Full service airline with meals and baggage included.",
+      "stats": {
+        "views": 18700,
+        "bookings": 5600,
+        "avgRating": 4.3
+      },
+      "tags": ["Amritsar to Delhi", "Air India", "Flight"],
+      "postedBy": 4,
+      "createdAt": "2026-02-18",
+      "status": "active"
+    },
+    {
+      "id": 17,
+      "title": "Coorg Bike Rental",
+      "slug": "coorg-bike-rental",
+      "provider": {
+        "id": 17,
+        "name": "Coorg Riders",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://coorgriders.com",
+        "serviceType": "Bike Rental",
+        "headOffice": "Madikeri"
+      },
+      "route": {
+        "from": "Coorg",
+        "to": "Coffee estates",
+        "duration": "Per Day"
+      },
+      "serviceType": "Bike",
+      "vehicleType": "Honda CB Hornet / Royal Enfield",
+      "price": {
+        "min": 1000,
+        "max": 1500,
+        "currency": "₹",
+        "period": "per day"
+      },
+      "amenities": [
+        "Helmet",
+        "Raincoat",
+        "Mobile holder"
+      ],
+      "description": "Bike rental for Coorg coffee estate tours. Explore the lush green hills and waterfalls at your own pace.",
+      "stats": {
+        "views": 14500,
+        "bookings": 6200,
+        "avgRating": 4.5
+      },
+      "tags": ["Coorg", "Bike Rental", "Coffee Estate", "Madikeri"],
+      "postedBy": 3,
+      "createdAt": "2026-02-17",
+      "status": "active"
+    },
+    {
+      "id": 18,
+      "title": "Patna to Ranchi Cab",
+      "slug": "patna-ranchi-cab",
+      "provider": {
+        "id": 18,
+        "name": "Bihar Cabs",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://biharcabs.com",
+        "serviceType": "Cab Rental",
+        "headOffice": "Patna"
+      },
+      "route": {
+        "from": "Patna",
+        "to": "Ranchi",
+        "distance": "350 km",
+        "duration": "6 hours"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Sedan / SUV",
+      "price": {
+        "min": 3500,
+        "max": 4500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Driver",
+        "Music system"
+      ],
+      "description": "Inter-city cab service in Bihar-Jharkhand. Comfortable journey with professional driver.",
+      "stats": {
+        "views": 9800,
+        "bookings": 3400,
+        "avgRating": 4.2
+      },
+      "tags": ["Patna to Ranchi", "Bihar Cabs", "Jharkhand Travel"],
+      "postedBy": 2,
+      "createdAt": "2026-02-16",
+      "status": "active"
+    },
+    {
+      "id": 19,
+      "title": "Pune to Shirdi Bus",
+      "slug": "pune-shirdi-bus",
+      "provider": {
+        "id": 19,
+        "name": "MSRTC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://msrtc.maharashtra.gov.in",
+        "serviceType": "Government Bus",
+        "headOffice": "Mumbai"
+      },
+      "route": {
+        "from": "Pune",
+        "to": "Shirdi",
+        "distance": "200 km",
+        "duration": "4 hours"
+      },
+      "serviceType": "Bus",
+      "vehicleType": "AC / Non-AC Bus",
+      "price": {
+        "min": 350,
+        "max": 500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "Devotional music",
+        "Rest stops"
+      ],
+      "description": "Pilgrimage bus service to Shirdi. Regular departures from Pune for Sai Baba temple visit.",
+      "stats": {
+        "views": 22300,
+        "bookings": 16700,
+        "avgRating": 4.0
+      },
+      "tags": ["Pune to Shirdi", "MSRTC", "Pilgrimage Bus"],
+      "postedBy": 4,
+      "createdAt": "2026-02-15",
+      "status": "active"
+    },
+    {
+      "id": 20,
+      "title": "Kerala Backwaters Houseboat",
+      "slug": "kerala-backwaters-houseboat",
+      "provider": {
+        "id": 20,
+        "name": "Kerala Tourism",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://keralatourism.org",
+        "serviceType": "Houseboat Rentals",
+        "headOffice": "Thiruvananthapuram"
+      },
+      "route": {
+        "from": "Alleppey",
+        "to": "Kumarakom",
+        "duration": "1 night"
+      },
+      "serviceType": "Boat",
+      "vehicleType": "Kettuvallam Houseboat",
+      "price": {
+        "min": 6000,
+        "max": 12000,
+        "currency": "₹",
+        "period": "per night"
+      },
+      "amenities": [
+        "Bedroom",
+        "Kitchen",
+        "Crew",
+        "Kerala meals"
+      ],
+      "description": "Luxury houseboat stay in Alleppey backwaters. Experience the beauty of Kerala with traditional cuisine and scenic cruise.",
+      "stats": {
+        "views": 45600,
+        "bookings": 8900,
+        "avgRating": 4.9
+      },
+      "tags": ["Kerala", "Houseboat", "Alleppey", "Backwaters"],
+      "postedBy": 1,
+      "createdAt": "2026-02-14",
+      "status": "active"
+    },
+    {
+      "id": 21,
+      "title": "Varanasi to Gaya Cab",
+      "slug": "varanasi-gaya-cab",
+      "provider": {
+        "id": 21,
+        "name": "Yatra Cabs",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://yatracabs.com",
+        "serviceType": "Cab Rental",
+        "headOffice": "Varanasi"
+      },
+      "route": {
+        "from": "Varanasi",
+        "to": "Gaya",
+        "distance": "250 km",
+        "duration": "4 hours"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Sedan",
+      "price": {
+        "min": 3000,
+        "max": 3800,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Temple visits included"
+      ],
+      "description": "Pilgrimage cab for Bodh Gaya visit. Visit Mahabodhi Temple and other Buddhist sites.",
+      "stats": {
+        "views": 11200,
+        "bookings": 4300,
+        "avgRating": 4.4
+      },
+      "tags": ["Varanasi to Gaya", "Bodh Gaya", "Pilgrimage Cab"],
+      "postedBy": 3,
+      "createdAt": "2026-02-13",
+      "status": "active"
+    },
+    {
+      "id": 22,
+      "title": "Shimla to Manali Bus",
+      "slug": "shimla-manali-bus",
+      "provider": {
+        "id": 22,
+        "name": "HRTC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://hrtc.gov.in",
+        "serviceType": "Government Bus",
+        "headOffice": "Shimla"
+      },
+      "route": {
+        "from": "Shimla",
+        "to": "Manali",
+        "distance": "250 km",
+        "duration": "6 hours"
+      },
+      "serviceType": "Bus",
+      "vehicleType": "HRTC Bus",
+      "price": {
+        "min": 500,
+        "max": 700,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "Mountain views",
+        "Rest stops"
+      ],
+      "description": "Scenic bus route through mountains from Shimla to Manali. Enjoy beautiful views of the Himalayas.",
+      "stats": {
+        "views": 17800,
+        "bookings": 8900,
+        "avgRating": 4.2
+      },
+      "tags": ["Shimla to Manali", "HRTC", "Mountain Bus"],
+      "postedBy": 2,
+      "createdAt": "2026-02-12",
+      "status": "active"
+    },
+    {
+      "id": 23,
+      "title": "Chennai to Pondicherry Cab",
+      "slug": "chennai-pondicherry-cab",
+      "provider": {
+        "id": 23,
+        "name": "Pondy Cabs",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://pondycabs.com",
+        "serviceType": "Cab Rental",
+        "headOffice": "Pondicherry"
+      },
+      "route": {
+        "from": "Chennai",
+        "to": "Pondicherry",
+        "distance": "150 km",
+        "duration": "3 hours",
+        "highway": "East Coast Road"
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Etios / Dzire",
+      "price": {
+        "min": 2800,
+        "max": 3500,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "French Quarter tour option"
+      ],
+      "description": "Cab service to Pondicherry with local guide option. Drive along scenic ECR with beach stops.",
+      "stats": {
+        "views": 23400,
+        "bookings": 9800,
+        "avgRating": 4.6
+      },
+      "tags": ["Chennai to Pondicherry", "ECR Drive", "Pondy Cabs"],
+      "postedBy": 4,
+      "createdAt": "2026-02-11",
+      "status": "active"
+    },
+    {
+      "id": 24,
+      "title": "Mumbai to Pune Bike Rental",
+      "slug": "mumbai-pune-bike-rental",
+      "provider": {
+        "id": 24,
+        "name": "Wheelstreet",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://wheelstreet.com",
+        "serviceType": "Bike Rental",
+        "headOffice": "Mumbai"
+      },
+      "route": {
+        "from": "Mumbai",
+        "to": "Pune",
+        "duration": "Per Day"
+      },
+      "serviceType": "Bike",
+      "vehicleType": "Royal Enfield / KTM",
+      "price": {
+        "min": 900,
+        "max": 2000,
+        "currency": "₹",
+        "period": "per day"
+      },
+      "amenities": [
+        "Helmet",
+        "Pannier",
+        "Breakdown support"
+      ],
+      "description": "One-way bike rental for Mumbai-Pune highway trip. Perfect for weekend rides on the expressway.",
+      "stats": {
+        "views": 16700,
+        "bookings": 5400,
+        "avgRating": 4.3
+      },
+      "tags": ["Mumbai to Pune", "Bike Rental", "Expressway Ride"],
+      "postedBy": 3,
+      "createdAt": "2026-02-10",
+      "status": "active"
+    },
+    {
+      "id": 25,
+      "title": "Kochi to Munnar Cab",
+      "slug": "kochi-munnar-cab",
+      "provider": {
+        "id": 25,
+        "name": "Kerala Cabs",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "website": "https://keralacabs.com",
+        "serviceType": "Cab Rental",
+        "headOffice": "Kochi"
+      },
+      "route": {
+        "from": "Kochi",
+        "to": "Munnar",
+        "distance": "130 km",
+        "duration": "4.5 hours",
+        "stops": ["Tea estates", "Photo points"]
+      },
+      "serviceType": "Cab",
+      "vehicleType": "Toyota Innova",
+      "price": {
+        "min": 4000,
+        "max": 5000,
+        "currency": "₹",
+        "period": "one-way"
+      },
+      "amenities": [
+        "AC",
+        "Tea estate visits",
+        "Photo stops"
+      ],
+      "description": "Hill station cab with sightseeing stops. Visit tea plantations and waterfalls enroute to Munnar.",
+      "stats": {
+        "views": 28900,
+        "bookings": 8700,
+        "avgRating": 4.7
+      },
+      "tags": ["Kochi to Munnar", "Kerala Cabs", "Hill Station"],
+      "postedBy": 2,
+      "createdAt": "2026-02-09",
+      "status": "active"
+    }
+  ]
+}

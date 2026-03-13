@@ -1,30 +1,30 @@
 {
-    "users": [
+    "customers": [
         {
             "id": 1,
             "name": "Rohit Sharma",
             "email": "rohit@gmail.com",
             "password": "123456",
-            "role": "user",
+            "role": "customer",
             "phone": "9876543210",
             "location": "Delhi",
             "profileImage": "",
-            "resumeId": 1,
-            "savedJobs": [
+            "travelDocumentId": 1,
+            "savedServices": [
                 1,
                 2
             ],
             "createdAt": "2026-03-01"
         }
     ],
-    "employers": [
+    "travelAgencies": [
         {
             "id": 2,
             "name": "Amit Mehra",
-            "email": "amit@google.com",
+            "email": "amit@makemytrip.com",
             "password": "123456",
-            "role": "employer",
-            "companyId": 1,
+            "role": "agency",
+            "providerId": 1,
             "createdAt": "2026-03-02"
         }
     ],
@@ -37,415 +37,411 @@
             "role": "admin"
         }
     ],
-    "companies": [
+    "transportProviders": [
         {
             "id": 1,
-            "name": "Google",
+            "name": "Makemytrip",
             "logo": "",
-            "website": "https://google.com",
+            "website": "https://makemytrip.com",
             "location": "Delhi",
-            "description": "Tech company",
-            "industry": "IT",
+            "description": "Online travel aggregator",
+            "serviceType": "Flights, Hotels, Cabs",
             "size": "10000+",
             "createdBy": 2
         }
     ],
-    "jobs": [
+    "services": [
         {
             "id": 1,
-            "title": "React Developer",
-            "companyId": 1,
-            "companyName": "TechNova Solutions",
-            "location": "Delhi",
-            "salary": "10 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "React",
-                "JavaScript",
-                "HTML",
-                "CSS"
+            "title": "Delhi to Jaipur Cab",
+            "providerId": 1,
+            "providerName": "GoCabs",
+            "location": "Delhi → Jaipur",
+            "price": "₹3500",
+            "type": "Cab",
+            "duration": "5 Hours",
+            "amenities": [
+                "AC",
+                "Water Bottle",
+                "Music System"
             ],
-            "description": "React developer required for modern web apps.",
+            "description": "Comfortable sedan cab from Delhi to Jaipur.",
             "postedBy": 2,
             "createdAt": "2026-03-05",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 2,
-            "title": "Frontend Developer",
-            "companyId": 2,
-            "companyName": "CodeCraft Technologies",
-            "location": "Noida",
-            "salary": "8 LPA",
-            "type": "Full Time",
-            "experience": "1 Year",
-            "skills": [
-                "HTML",
-                "CSS",
-                "JavaScript"
+            "title": "Mumbai to Pune Bus",
+            "providerId": 2,
+            "providerName": "RedBus",
+            "location": "Mumbai → Pune",
+            "price": "₹500",
+            "type": "Bus",
+            "duration": "3.5 Hours",
+            "amenities": [
+                "AC",
+                "Charging Point",
+                "WiFi"
             ],
-            "description": "Frontend developer for responsive UI.",
+            "description": "Volvo AC bus with comfortable seating.",
             "postedBy": 3,
             "createdAt": "2026-03-04",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 3,
-            "title": "Node.js Developer",
-            "companyId": 3,
-            "companyName": "NextGen Software",
-            "location": "Gurgaon",
-            "salary": "12 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Node.js",
-                "Express",
-                "MongoDB"
+            "title": "Delhi to Goa Flight",
+            "providerId": 3,
+            "providerName": "IndiGo",
+            "location": "DEL → GOI",
+            "price": "₹4500",
+            "type": "Flight",
+            "duration": "2.5 Hours",
+            "amenities": [
+                "Meal",
+                "Baggage",
+                "Entertainment"
             ],
-            "description": "Backend developer for scalable APIs.",
+            "description": "Direct flight from Delhi to Goa.",
             "postedBy": 1,
             "createdAt": "2026-03-03",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 4,
-            "title": "Full Stack Developer",
-            "companyId": 4,
-            "companyName": "InnovateX Labs",
-            "location": "Bangalore",
-            "salary": "15 LPA",
-            "type": "Full Time",
-            "experience": "4 Years",
-            "skills": [
-                "React",
-                "Node.js",
-                "MongoDB"
+            "title": "Manali Bike Rental",
+            "providerId": 4,
+            "providerName": "Royal Riders",
+            "location": "Manali",
+            "price": "₹1200/day",
+            "type": "Bike",
+            "duration": "Per Day",
+            "amenities": [
+                "Helmet",
+                "Insurance",
+                "Roadside Assistance"
             ],
-            "description": "Full stack developer for SaaS product.",
+            "description": "Royal Enfield bike rental for Manali trip.",
             "postedBy": 2,
             "createdAt": "2026-03-02",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 5,
-            "title": "UI Developer",
-            "companyId": 5,
-            "companyName": "PixelPerfect Studio",
-            "location": "Hyderabad",
-            "salary": "7 LPA",
-            "type": "Full Time",
-            "experience": "1.5 Years",
-            "skills": [
-                "HTML",
-                "CSS",
-                "Figma"
+            "title": "Bangalore to Mysore Cab",
+            "providerId": 5,
+            "providerName": "ZoomCar",
+            "location": "Bangalore → Mysore",
+            "price": "₹2500",
+            "type": "Cab",
+            "duration": "3 Hours",
+            "amenities": [
+                "AC",
+                "Driver",
+                "Toll Included"
             ],
-            "description": "UI developer for modern interfaces.",
+            "description": "One-way cab from Bangalore to Mysore.",
             "postedBy": 4,
             "createdAt": "2026-03-01",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 6,
-            "title": "Angular Developer",
-            "companyId": 6,
-            "companyName": "Skyline Tech",
-            "location": "Pune",
-            "salary": "9 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "Angular",
-                "TypeScript",
-                "HTML"
+            "title": "Hyderabad to Vijayawada Bus",
+            "providerId": 6,
+            "providerName": "Orange Travels",
+            "location": "Hyderabad → Vijayawada",
+            "price": "₹700",
+            "type": "Bus",
+            "duration": "5 Hours",
+            "amenities": [
+                "AC",
+                "Sleeper",
+                "Water Bottle"
             ],
-            "description": "Angular developer for enterprise apps.",
+            "description": "Overnight sleeper bus service.",
             "postedBy": 3,
             "createdAt": "2026-02-28",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 7,
-            "title": "Backend Developer",
-            "companyId": 7,
-            "companyName": "DataBridge Systems",
-            "location": "Delhi",
-            "salary": "11 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Node.js",
-                "MongoDB",
-                "API"
+            "title": "Mumbai to Delhi Flight",
+            "providerId": 7,
+            "providerName": "SpiceJet",
+            "location": "BOM → DEL",
+            "price": "₹5500",
+            "type": "Flight",
+            "duration": "2 Hours",
+            "amenities": [
+                "Meal",
+                "WiFi",
+                "Extra Baggage"
             ],
-            "description": "Backend developer for database systems.",
+            "description": "Daily direct flights between Mumbai and Delhi.",
             "postedBy": 2,
             "createdAt": "2026-02-27",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 8,
-            "title": "React Native Developer",
-            "companyId": 8,
-            "companyName": "AppWave Technologies",
-            "location": "Chandigarh",
-            "salary": "10 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "React Native",
-                "JavaScript"
+            "title": "Leh Bike Rental",
+            "providerId": 8,
+            "providerName": "Leh Riders",
+            "location": "Leh",
+            "price": "₹2000/day",
+            "type": "Bike",
+            "duration": "Per Day",
+            "amenities": [
+                "Helmet",
+                "Rain Coat",
+                "Tool Kit"
             ],
-            "description": "Mobile developer for cross platform apps.",
+            "description": "Royal Enfield Himalayan for Leh-Ladakh trip.",
             "postedBy": 1,
             "createdAt": "2026-02-26",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 9,
-            "title": "Java Developer",
-            "companyId": 9,
-            "companyName": "SoftEdge Pvt Ltd",
-            "location": "Mumbai",
-            "salary": "12 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Java",
-                "Spring Boot",
-                "MySQL"
+            "title": "Chennai to Bangalore Cab",
+            "providerId": 9,
+            "providerName": "Savaari",
+            "location": "Chennai → Bangalore",
+            "price": "₹4000",
+            "type": "Cab",
+            "duration": "6 Hours",
+            "amenities": [
+                "AC",
+                "Music",
+                "Charging"
             ],
-            "description": "Java backend developer required.",
+            "description": "Inter-city cab with professional driver.",
             "postedBy": 2,
             "createdAt": "2026-02-25",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 10,
-            "title": "Python Developer",
-            "companyId": 10,
-            "companyName": "AI Core Labs",
-            "location": "Bangalore",
-            "salary": "14 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Python",
-                "Django",
-                "API"
+            "title": "Kolkata to Digha Bus",
+            "providerId": 10,
+            "providerName": "SBSTC",
+            "location": "Kolkata → Digha",
+            "price": "₹400",
+            "type": "Bus",
+            "duration": "4 Hours",
+            "amenities": [
+                "Non-AC",
+                "Local Sightseeing"
             ],
-            "description": "Python developer for AI applications.",
+            "description": "Government bus service to beach town.",
             "postedBy": 3,
             "createdAt": "2026-02-24",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 11,
-            "title": "Web Designer",
-            "companyId": 11,
-            "companyName": "CreativePixel",
-            "location": "Delhi",
-            "salary": "6 LPA",
-            "type": "Full Time",
-            "experience": "1 Year",
-            "skills": [
-                "Figma",
-                "HTML",
-                "CSS"
+            "title": "Goa to Mumbai Flight",
+            "providerId": 11,
+            "providerName": "Akasa Air",
+            "location": "GOI → BOM",
+            "price": "₹3800",
+            "type": "Flight",
+            "duration": "1.5 Hours",
+            "amenities": [
+                "Snacks",
+                "Hand Baggage"
             ],
-            "description": "Creative web designer needed.",
+            "description": "Budget flight from Goa to Mumbai.",
             "postedBy": 2,
             "createdAt": "2026-02-23",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 12,
-            "title": "DevOps Engineer",
-            "companyId": 12,
-            "companyName": "CloudSync Tech",
-            "location": "Hyderabad",
-            "salary": "16 LPA",
-            "type": "Full Time",
-            "experience": "4 Years",
-            "skills": [
-                "AWS",
-                "Docker",
-                "CI/CD"
+            "title": "Rishikesh Bike Rental",
+            "providerId": 12,
+            "providerName": "Rishikesh Bikes",
+            "location": "Rishikesh",
+            "price": "₹800/day",
+            "type": "Bike",
+            "duration": "Per Day",
+            "amenities": [
+                "Helmet",
+                "Lock",
+                "Fuel Option"
             ],
-            "description": "DevOps engineer for cloud infrastructure.",
+            "description": "Scooty and bike rental for Rishikesh local sightseeing.",
             "postedBy": 4,
             "createdAt": "2026-02-22",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 13,
-            "title": "QA Engineer",
-            "companyId": 13,
-            "companyName": "QualitySoft",
-            "location": "Noida",
-            "salary": "7 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "Testing",
-                "Selenium",
-                "Automation"
+            "title": "Ahmedabad to Rajkot Cab",
+            "providerId": 13,
+            "providerName": "CabExpress",
+            "location": "Ahmedabad → Rajkot",
+            "price": "₹2800",
+            "type": "Cab",
+            "duration": "4 Hours",
+            "amenities": [
+                "AC",
+                "Bottle Water",
+                "Toll"
             ],
-            "description": "Software tester required.",
+            "description": "Sedan cab for Gujarat travel.",
             "postedBy": 3,
             "createdAt": "2026-02-21",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 14,
-            "title": "PHP Developer",
-            "companyId": 14,
-            "companyName": "WebCore Systems",
-            "location": "Jaipur",
-            "salary": "8 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "PHP",
-                "Laravel",
-                "MySQL"
+            "title": "Lucknow to Delhi Bus",
+            "providerId": 14,
+            "providerName": "UPSRTC",
+            "location": "Lucknow → Delhi",
+            "price": "₹600",
+            "type": "Bus",
+            "duration": "7 Hours",
+            "amenities": [
+                "AC",
+                "Charging",
+                "Rest Stops"
             ],
-            "description": "Laravel developer needed.",
+            "description": "Overnight Volvo bus service.",
             "postedBy": 2,
             "createdAt": "2026-02-20",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 15,
-            "title": "Data Analyst",
-            "companyId": 15,
-            "companyName": "Insight Analytics",
-            "location": "Pune",
-            "salary": "9 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "SQL",
-                "Excel",
-                "Power BI"
+            "title": "Jaipur to Udaipur Cab",
+            "providerId": 15,
+            "providerName": "Rajasthan Cabs",
+            "location": "Jaipur → Udaipur",
+            "price": "₹3200",
+            "type": "Cab",
+            "duration": "5.5 Hours",
+            "amenities": [
+                "AC",
+                "Driver",
+                "Sightseeing"
             ],
-            "description": "Data analyst for business insights.",
+            "description": "Full day cab with sightseeing options.",
             "postedBy": 1,
             "createdAt": "2026-02-19",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 16,
-            "title": "Machine Learning Engineer",
-            "companyId": 16,
-            "companyName": "FutureAI Labs",
-            "location": "Bangalore",
-            "salary": "18 LPA",
-            "type": "Full Time",
-            "experience": "4 Years",
-            "skills": [
-                "Python",
-                "TensorFlow",
-                "ML"
+            "title": "Amritsar to Delhi Flight",
+            "providerId": 16,
+            "providerName": "Air India",
+            "location": "ATQ → DEL",
+            "price": "₹4200",
+            "type": "Flight",
+            "duration": "1.5 Hours",
+            "amenities": [
+                "Meal",
+                "Baggage"
             ],
-            "description": "ML engineer for AI models.",
+            "description": "Direct flight from Amritsar to Delhi.",
             "postedBy": 4,
             "createdAt": "2026-02-18",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 17,
-            "title": "iOS Developer",
-            "companyId": 17,
-            "companyName": "AppleSoft India",
-            "location": "Mumbai",
-            "salary": "13 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Swift",
-                "iOS",
-                "Xcode"
+            "title": "Coorg Bike Rental",
+            "providerId": 17,
+            "providerName": "Coorg Riders",
+            "location": "Coorg",
+            "price": "₹1000/day",
+            "type": "Bike",
+            "duration": "Per Day",
+            "amenities": [
+                "Helmet",
+                "Raincoat",
+                "Mobile Holder"
             ],
-            "description": "iOS app developer required.",
+            "description": "Bike rental for Coorg coffee estate tours.",
             "postedBy": 3,
             "createdAt": "2026-02-17",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 18,
-            "title": "Android Developer",
-            "companyId": 18,
-            "companyName": "MobileFirst Tech",
-            "location": "Delhi",
-            "salary": "11 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "Kotlin",
-                "Android",
-                "Firebase"
+            "title": "Patna to Ranchi Cab",
+            "providerId": 18,
+            "providerName": "Bihar Cabs",
+            "location": "Patna → Ranchi",
+            "price": "₹3500",
+            "type": "Cab",
+            "duration": "6 Hours",
+            "amenities": [
+                "AC",
+                "Driver",
+                "Music"
             ],
-            "description": "Android app developer needed.",
+            "description": "Inter-city cab service in Bihar-Jharkhand.",
             "postedBy": 2,
             "createdAt": "2026-02-16",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 19,
-            "title": "Cloud Engineer",
-            "companyId": 19,
-            "companyName": "Nimbus Cloud",
-            "location": "Hyderabad",
-            "salary": "17 LPA",
-            "type": "Full Time",
-            "experience": "4 Years",
-            "skills": [
-                "AWS",
-                "Cloud",
-                "Terraform"
+            "title": "Pune to Shirdi Bus",
+            "providerId": 19,
+            "providerName": "MSRTC",
+            "location": "Pune → Shirdi",
+            "price": "₹350",
+            "type": "Bus",
+            "duration": "4 Hours",
+            "amenities": [
+                "AC",
+                "Devotional Music"
             ],
-            "description": "Cloud infrastructure engineer.",
+            "description": "Pilgrimage bus service to Shirdi.",
             "postedBy": 4,
             "createdAt": "2026-02-15",
             "status": "active",
-             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 20,
-            "title": "Cyber Security Analyst",
-            "companyId": 20,
-            "companyName": "SecureNet Solutions",
-            "location": "Delhi",
-            "salary": "15 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Security",
-                "PenTesting",
-                "Network"
+            "title": "Kerala Backwaters Houseboat",
+            "providerId": 20,
+            "providerName": "Kerala Tourism",
+            "location": "Alleppey",
+            "price": "₹6000/night",
+            "type": "Boat",
+            "duration": "Per Night",
+            "amenities": [
+                "Bedroom",
+                "Kitchen",
+                "Crew"
             ],
-            "description": "Security analyst to protect systems.",
+            "description": "Luxury houseboat stay in Alleppey backwaters.",
             "postedBy": 1,
             "createdAt": "2026-02-14",
             "status": "active",
@@ -453,19 +449,18 @@
         },
         {
             "id": 21,
-            "title": "Product Manager",
-            "companyId": 21,
-            "companyName": "VisionTech",
-            "location": "Bangalore",
-            "salary": "20 LPA",
-            "type": "Full Time",
-            "experience": "5 Years",
-            "skills": [
-                "Management",
-                "Agile",
-                "Product"
+            "title": "Varanasi to Gaya Cab",
+            "providerId": 21,
+            "providerName": "Yatra Cabs",
+            "location": "Varanasi → Gaya",
+            "price": "₹3000",
+            "type": "Cab",
+            "duration": "4 Hours",
+            "amenities": [
+                "AC",
+                "Temple Visits"
             ],
-            "description": "Product manager for SaaS platform.",
+            "description": "Pilgrimage cab for Bodh Gaya visit.",
             "postedBy": 3,
             "createdAt": "2026-02-13",
             "status": "active",
@@ -473,19 +468,18 @@
         },
         {
             "id": 22,
-            "title": "UI/UX Designer",
-            "companyId": 22,
-            "companyName": "DesignHive",
-            "location": "Noida",
-            "salary": "9 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "Figma",
-                "Adobe XD",
-                "UX"
+            "title": "Shimla to Manali Bus",
+            "providerId": 22,
+            "providerName": "HRTC",
+            "location": "Shimla → Manali",
+            "price": "₹500",
+            "type": "Bus",
+            "duration": "6 Hours",
+            "amenities": [
+                "AC",
+                "Mountain Views"
             ],
-            "description": "UI/UX designer for product design.",
+            "description": "Scenic bus route through mountains.",
             "postedBy": 2,
             "createdAt": "2026-02-12",
             "status": "active",
@@ -493,19 +487,18 @@
         },
         {
             "id": 23,
-            "title": "Software Engineer",
-            "companyId": 23,
-            "companyName": "CodeBase Systems",
-            "location": "Pune",
-            "salary": "11 LPA",
-            "type": "Full Time",
-            "experience": "2 Years",
-            "skills": [
-                "Java",
-                "Spring",
-                "SQL"
+            "title": "Chennai to Pondicherry Cab",
+            "providerId": 23,
+            "providerName": "Pondy Cabs",
+            "location": "Chennai → Pondicherry",
+            "price": "₹2800",
+            "type": "Cab",
+            "duration": "3 Hours",
+            "amenities": [
+                "AC",
+                "French Quarter Tour"
             ],
-            "description": "Software engineer for backend systems.",
+            "description": "Cab service to Pondicherry with local guide option.",
             "postedBy": 4,
             "createdAt": "2026-02-11",
             "status": "active",
@@ -513,18 +506,19 @@
         },
         {
             "id": 24,
-            "title": "Technical Support Engineer",
-            "companyId": 24,
-            "companyName": "HelpDesk IT",
-            "location": "Delhi",
-            "salary": "6 LPA",
-            "type": "Full Time",
-            "experience": "1 Year",
-            "skills": [
-                "Support",
-                "Networking"
+            "title": "Mumbai to Pune Bike Rental",
+            "providerId": 24,
+            "providerName": "Wheelstreet",
+            "location": "Mumbai → Pune",
+            "price": "₹900/day",
+            "type": "Bike",
+            "duration": "Per Day",
+            "amenities": [
+                "Helmet",
+                "Pannier",
+                "Breakdown Support"
             ],
-            "description": "Technical support for IT systems.",
+            "description": "One-way bike rental for Mumbai-Pune highway trip.",
             "postedBy": 3,
             "createdAt": "2026-02-10",
             "status": "active",
@@ -532,173 +526,58 @@
         },
         {
             "id": 25,
-            "title": "System Administrator",
-            "companyId": 25,
-            "companyName": "NetCore Technologies",
-            "location": "Gurgaon",
-            "salary": "10 LPA",
-            "type": "Full Time",
-            "experience": "3 Years",
-            "skills": [
-                "Linux",
-                "Server",
-                "Networking"
+            "title": "Kochi to Munnar Cab",
+            "providerId": 25,
+            "providerName": "Kerala Cabs",
+            "location": "Kochi → Munnar",
+            "price": "₹4000",
+            "type": "Cab",
+            "duration": "4.5 Hours",
+            "amenities": [
+                "AC",
+                "Tea Estate Visit",
+                "Photo Stops"
             ],
-            "description": "System admin to manage servers.",
+            "description": "Hill station cab with sightseeing stops.",
             "postedBy": 2,
             "createdAt": "2026-02-09",
             "status": "active",
             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         }
     ],
-    "applications": [
+    "bookings": [
         {
             "id": 1,
-            "jobId": 1,
-            "userId": 1,
-            "resumeId": 1,
-            "coverLetter": "I am interested in this job",
-            "status": "pending",
-            "appliedAt": "2026-03-07"
+            "serviceId": 1,
+            "customerId": 1,
+            "travelDocumentId": 1,
+            "specialRequest": "Pickup from Delhi airport",
+            "status": "confirmed",
+            "bookedAt": "2026-03-07"
         }
     ],
-    "savedJobs": [
+    "savedServices": [
         {
             "id": 1,
-            "userId": 1,
-            "jobId": 1,
+            "customerId": 1,
+            "serviceId": 1,
             "savedAt": "2026-03-07"
         }
     ],
-    "resumes": [
+    "travelDocuments": [
         {
             "id": 1,
-            "userId": 1,
-            "title": "Frontend Resume",
-            "fileUrl": "/resumes/resume1.pdf",
-            "skills": [
-                "React",
-                "Node",
-                "CSS"
-            ],
-            "experience": "2 Years"
+            "customerId": 1,
+            "title": "Rohit Passport",
+            "fileUrl": "/documents/passport_rohit.pdf",
+            "documentType": "Passport",
+            "expiryDate": "2030-12-31"
         }
     ],
-     "jobDetails": [
-    {
-      "id": 1,
-      "title": "React Developer",
-      "slug": "react-developer-delhi-technova",
-      "company": {
-        "id": 1,
-        "name": "TechNova Solutions",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
-        "website": "https://technova.com",
-        "industry": "Information Technology",
-        "companySize": "50-200 employees",
-        "founded": 2018,
-        "headOffice": "Delhi, India",
-        "about": "TechNova Solutions builds scalable SaaS products and enterprise web applications."
-      },
-      "location": {
-        "city": "Delhi",
-        "state": "Delhi",
-        "country": "India",
-        "remote": false
-      },
-      "jobType": "Full Time",
-      "workMode": "Hybrid",
-      "salary": {
-        "min": 800000,
-        "max": 1200000,
-        "currency": "INR",
-        "period": "year"
-      },
-      "experience": {
-        "min": 2,
-        "max": 4,
-        "unit": "years"
-      },
-      "skills": [
-        "React",
-        "JavaScript",
-        "Redux",
-        "HTML",
-        "CSS",
-        "REST API"
-      ],
-      "education": [
-        "B.Tech",
-        "BCA",
-        "MCA",
-        "Computer Science"
-      ],
-      "jobHighlights": [
-        "Work on modern React applications",
-        "Flexible working hours",
-        "Startup culture"
-      ],
-      "description": "We are looking for a passionate React Developer to build high quality web applications.",
-      "responsibilities": [
-        "Develop new user-facing features using React",
-        "Build reusable components",
-        "Optimize applications for performance",
-        "Collaborate with backend developers and designers",
-        "Write clean and maintainable code"
-      ],
-      "requirements": [
-        "2+ years experience with React",
-        "Strong knowledge of JavaScript ES6+",
-        "Experience with REST APIs",
-        "Familiarity with Git",
-        "Good understanding of responsive design"
-      ],
-      "benefits": [
-        "Health Insurance",
-        "Paid Leaves",
-        "Remote Work Option",
-        "Learning Budget",
-        "Team Outings"
-      ],
-      "perks": [
-        "Free Snacks",
-        "Work From Home",
-        "Flexible Timing"
-      ],
-      "recruiter": {
-        "id": 21,
-        "name": "Rahul Sharma",
-        "designation": "HR Manager",
-        "email": "rahul@technova.com",
-        "phone": "+91-9876543210"
-      },
-      "application": {
-        "method": "Apply on portal",
-        "externalUrl": null,
-        "deadline": "2026-04-10"
-      },
-      "stats": {
-        "views": 1200,
-        "applications": 85,
-        "shortlisted": 12
-      },
-      "tags": [
-        "React Jobs",
-        "Frontend Developer",
-        "Startup"
-      ],
-      "postedBy": 2,
-      "createdAt": "2026-03-05",
-      "updatedAt": "2026-03-10",
-      "status": "active"
-    }
-  ],
     "analytics": {
-        "totalUsers": 10,
-        "totalEmployers": 3,
-        "totalJobs": 20,
-        "totalApplications": 50
+        "totalCustomers": 10,
+        "totalAgencies": 3,
+        "totalServices": 20,
+        "totalBookings": 50
     }
-
-
 }

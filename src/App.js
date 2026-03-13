@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import JobDetails from "./Pages/Jobs/JobDetails";
-import ApplyJob from "./Pages/Jobs/ApplyJob";
+import ServiceDetails from "./Pages/Services/ServiceDetails";
+import BookService from "./Pages/Services/BookService";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Auth/Register";
 import Navbar from "./components/Navbar";
 // import NotFound from "./Pages/NotFound";
 import Homepage from "./Pages/Homepage";
-import JobList from "./Pages/Jobs/JobList";
+import ServiceList from "./Pages/Services/ServiceList";
+
 export default function App() {
 
   return (
@@ -14,9 +15,9 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={ <Homepage/>} />
-        <Route path="/jobs" element={<JobList/>} />        
-        <Route path="/jobs/:id" element={<JobDetails />} />
-        <Route path="/apply/:id" element={<ApplyJob />} />
+        <Route path="/services" element={<ServiceList/>} />        
+        <Route path="/services/:id" element={<ServiceDetails />} />
+        <Route path="/book/:id" element={<BookService />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         {/* <Route path="*" element={<NotFound />} /> */}

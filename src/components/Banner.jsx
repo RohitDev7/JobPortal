@@ -4,20 +4,18 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faRocket, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from "react-bootstrap";
-
-// Add all solid icons to library
 library.add(fas);
 
 export default function Banner() {
     const categories = [
-        { title: "Software Dev", jobs: "12 Jobs Available", icon: "code" },
-        { title: "Data & AI", jobs: "8 Jobs Available", icon: "brain" },
-        { title: "Design", jobs: "15 Jobs Available", icon: "pencil-ruler" },
-        { title: "Cloud & DevOps", jobs: "6 Jobs Available", icon: "cloud" },
-        { title: "Security", jobs: "4 Jobs Available", icon: "shield-halved" },
-        { title: "Management", jobs: "9 Jobs Available", icon: "chart-line" },
-        { title: "Support & IT", jobs: "11 Jobs Available", icon: "headset" },
-        { title: "Mobile Dev", jobs: "7 Jobs Available", icon: "mobile-screen-button", active: true }
+        { title: "Cab Rentals", jobs: "12 Services Available", icon: "car" },
+        { title: "Bus Tickets", jobs: "8 Services Available", icon: "bus" },
+        { title: "Flights", jobs: "15 Services Available", icon: "plane" },
+        { title: "Bike Rentals", jobs: "6 Services Available", icon: "motorcycle" },
+        { title: "Train Booking", jobs: "4 Services Available", icon: "train" },
+        { title: "Holiday Packages", jobs: "9 Services Available", icon: "umbrella-beach" },
+        { title: "Hotel Booking", jobs: "11 Services Available", icon: "hotel" },
+        { title: "Adventure Tours", jobs: "7 Services Available", icon: "hiking", active: true }
     ];
 
     return (
@@ -28,21 +26,22 @@ export default function Banner() {
                         <Col lg={12}>
                             <div className="hero">
                                 <h1>
-                                    Discover more than <span>8000+ jobs</span>
+                                    Discover more than <span>5000+ travel services</span>
                                 </h1>
                                 <p>
-                                    Explore thousands of jobs across different professions. Find your
-                                    dream job and build your career today.
+                                    Explore thousands of travel services across India. Book your perfect
+                                    trip with cabs, buses, flights, and bike rentals at best prices.
                                 </p>
 
                                 <div className="searchBar">
-                                    <input type="text" placeholder="Search Job Title" defaultValue="React Developer" />
-                                    <input type="text" placeholder="Location" defaultValue="Gurugram" />
-                                    <select defaultValue="Experience">
-                                        <option disabled>Experience</option>
-                                        <option>0-1 Years</option>
-                                        <option>2-5 Years</option>
-                                        <option>5+ Years</option>
+                                    <input type="text" placeholder="From" defaultValue="Delhi" />
+                                    <input type="text" placeholder="To" defaultValue="Jaipur" />
+                                    <input type="date" placeholder="Travel Date" defaultValue="2026-03-20" />
+                                    <select defaultValue="Travel Type">
+                                        <option disabled>Travel Type</option>
+                                        <option>One Way</option>
+                                        <option>Round Trip</option>
+                                        <option>Multi City</option>
                                     </select>
                                     <button>Search</button>
                                 </div>
@@ -53,8 +52,8 @@ export default function Banner() {
                                             <FontAwesomeIcon icon={faBriefcase} className="stat-icon" />
                                         </div>
                                         <div className="card-flex">
-                                            <h3>8k+</h3>
-                                            <p>Current Jobs</p>
+                                            <h3>50k+</h3>
+                                            <p>Daily Bookings</p>
                                         </div>
                                     </div>
                                     <div className="statCard">
@@ -62,8 +61,8 @@ export default function Banner() {
                                             <FontAwesomeIcon icon={faRocket} className="stat-icon" />
                                         </div>
                                         <div className="card-flex">
-                                            <h3>400+</h3>
-                                            <p>Startups</p>
+                                            <h3>1000+</h3>
+                                            <p>Destinations</p>
                                         </div>
                                     </div>
                                     <div className="statCard">
@@ -71,8 +70,8 @@ export default function Banner() {
                                             <FontAwesomeIcon icon={faUsers} className="stat-icon" />
                                         </div>
                                         <div className="card-flex">
-                                            <h3>20k+</h3>
-                                            <p>Talent</p>
+                                            <h3>2M+</h3>
+                                            <p>Happy Customers</p>
                                         </div>
                                     </div>
                                 </div>
@@ -92,8 +91,8 @@ export default function Banner() {
                         <Col lg={12}>
                             <div className="categoryHeader">
                                 <div>
-                                    <h2>Explore jobs by category</h2>
-                                    <p>Find the right job in your preferred domain</p>
+                                    <h2>Explore travel services by category</h2>
+                                    <p>Find the best travel options for your journey</p>
                                 </div>
                             </div>
 
