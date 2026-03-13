@@ -448,7 +448,8 @@
             "description": "Security analyst to protect systems.",
             "postedBy": 1,
             "createdAt": "2026-02-14",
-            "status": "active"
+            "status": "active",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 21,
@@ -467,7 +468,8 @@
             "description": "Product manager for SaaS platform.",
             "postedBy": 3,
             "createdAt": "2026-02-13",
-            "status": "active"
+            "status": "active",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 22,
@@ -486,7 +488,8 @@
             "description": "UI/UX designer for product design.",
             "postedBy": 2,
             "createdAt": "2026-02-12",
-            "status": "active"
+            "status": "active",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 23,
@@ -505,7 +508,8 @@
             "description": "Software engineer for backend systems.",
             "postedBy": 4,
             "createdAt": "2026-02-11",
-            "status": "active"
+            "status": "active",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 24,
@@ -523,7 +527,8 @@
             "description": "Technical support for IT systems.",
             "postedBy": 3,
             "createdAt": "2026-02-10",
-            "status": "active"
+            "status": "active",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         },
         {
             "id": 25,
@@ -542,7 +547,8 @@
             "description": "System admin to manage servers.",
             "postedBy": 2,
             "createdAt": "2026-02-09",
-            "status": "active"
+            "status": "active",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png"
         }
     ],
     "applications": [
@@ -586,7 +592,7 @@
       "company": {
         "id": 1,
         "name": "TechNova Solutions",
-        "logo": "https://logo.clearbit.com/google.com",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
         "website": "https://technova.com",
         "industry": "Information Technology",
         "companySize": "50-200 employees",
