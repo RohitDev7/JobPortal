@@ -37,12 +37,12 @@ export default function Banner() {
                                     <input type="text" placeholder="From" defaultValue="Delhi" />
                                     <input type="text" placeholder="To" defaultValue="Jaipur" />
                                     <input type="date" placeholder="Travel Date" defaultValue="2026-03-20" />
-                                    <select defaultValue="Travel Type">
+                                    {/* <select defaultValue="Travel Type">
                                         <option disabled>Travel Type</option>
                                         <option>One Way</option>
                                         <option>Round Trip</option>
                                         <option>Multi City</option>
-                                    </select>
+                                    </select> */}
                                     <button>Search</button>
                                 </div>
 

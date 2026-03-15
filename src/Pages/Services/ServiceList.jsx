@@ -24,7 +24,7 @@ export default function ServiceList() {
                     <p><strong>Route:</strong> {service.location}</p>
                     <p><strong>Type:</strong> {service.type}</p>
                     <p><strong>Duration:</strong> {service.duration}</p>
-                    <Link to={`/services/${service.id}`}>View Details</Link>
+                    <Link to={`/service-details/${service.id}`}>View Details</Link>
                 </div>
             ))}
         </div>

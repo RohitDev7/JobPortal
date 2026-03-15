@@ -7,7 +7,7 @@
       "provider": {
         "id": 1,
         "name": "GoCabs Luxury",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
         "website": "https://gocabs.com",
         "serviceType": "Luxury Cab Rental",
         "companySize": "100-250 employees",
@@ -689,7 +689,7 @@
       "provider": {
         "id": 5,
         "name": "ZoomCar",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
         "website": "https://zoomcar.com",
         "serviceType": "Self-Drive & Cab Rental",
         "companySize": "500-1000 employees",
@@ -944,7 +944,7 @@
       "provider": {
         "id": 9,
         "name": "Savaari",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
         "website": "https://savaari.com",
         "serviceType": "Cab Rental",
         "companySize": "500 employees",
@@ -1115,7 +1115,7 @@
       "provider": {
         "id": 13,
         "name": "CabExpress",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
         "website": "https://cabexpress.in",
         "serviceType": "Cab Rental",
         "headOffice": "Ahmedabad"
@@ -1199,7 +1199,7 @@
       "provider": {
         "id": 15,
         "name": "Rajasthan Cabs",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
         "website": "https://rajasthancabs.com",
         "serviceType": "Cab Rental",
         "headOffice": "Jaipur"
@@ -1324,7 +1324,7 @@
       "provider": {
         "id": 18,
         "name": "Bihar Cabs",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
         "website": "https://biharcabs.com",
         "serviceType": "Cab Rental",
         "headOffice": "Patna"
