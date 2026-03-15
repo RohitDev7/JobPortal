@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import { useState } from "react";
+import WhyChoose from "../components/WhyChoose";
 
 
 export default function Homepage() {
@@ -196,6 +197,7 @@ export default function Homepage() {
           </Row>
         </Container>
       </div>
+      <WhyChoose/>
     </div>
   );
 }

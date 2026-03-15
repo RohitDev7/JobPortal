@@ -1,0 +1,38 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import React from "react";
+import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+
+function ServiceDetails() {
+
+  const { id } = useParams();
+
+  const fetchServiceDetails = async () => {
+    const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`);
+    return res.data;
+  };
+
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["serviceDetails", id],
+    queryFn: fetchServiceDetails,
+    enabled: !!id
+  });
+
+  if (isLoading) return <h2 className="text-center mt-5">Loading...</h2>;
+  if (isError) return <h2 className="text-center mt-5">Error loading data</h2>;
+
+  return (
+    <div className="py-5">
+      <Container>
+
+        <h2>{data.title}</h2>
+
+       
+
+      </Container>
+    </div>
+  );
+}
+
+export default ServiceDetails;

@@ -25,13 +25,10 @@ function ServiceDetails() {
     <div className="job-details-page py-5">
       <Container>
         <Row className="mb-5">
-          {/* LEFT SIDE */}
           <Col lg={8}>
             <div className="job-details-page-card">
-              {/* Title */}
               <h3>{data.title}</h3>
 
-              {/* Service Type and Status */}
               <div className="compnay-header">
                 <p>
                   <strong>Service Type:</strong> {data.serviceType}
@@ -49,7 +46,7 @@ function ServiceDetails() {
                 </p>
               </div>
 
-              {/* Route Information */}
+          
               <div className="compnay-calss">
                 <h5 className="mt-2">Route Details</h5>
                 <p>
@@ -60,7 +57,7 @@ function ServiceDetails() {
                 </p>
               </div>
 
-              {/* Vehicle Information */}
+        
               <div className="compnay-calss">
                 <h5 className="mt-2">Vehicle Details</h5>
                 <p>
@@ -69,13 +66,13 @@ function ServiceDetails() {
                 </p>
               </div>
 
-              {/* Description */}
+          
               <div className="compnay-calss">
                 <h5>Description</h5>
                 <p>{data.description}</p>
               </div>
 
-              {/* Amenities */}
+          
               <div className="compnay-calss">
                 <h5 className="mt-2">Amenities</h5>
                 <div className="company-badge">
@@ -87,7 +84,7 @@ function ServiceDetails() {
                 </div>
               </div>
 
-              {/* Reviews */}
+        
               <div className="compnay-calss">
                 <h5 className="mt-2">Customer Reviews</h5>
                 {data.reviews && data.reviews.length > 0 ? (
@@ -95,7 +92,7 @@ function ServiceDetails() {
                     <div key={i} className="mb-3 p-3 bg-light rounded">
                       <div className="d-flex justify-content-between">
                         <strong>{review.user}</strong>
-                        <span>⭐ {review.rating} / 5</span>
+                        <span> {review.rating} / 5</span>
                       </div>
                       <p className="mb-0 mt-2">{review.comment}</p>
                     </div>
@@ -105,7 +102,7 @@ function ServiceDetails() {
                 )}
               </div>
 
-              {/* Driver Details - Moved to left side as it's important info */}
+        
               <div className="compnay-calss">
                 <h5>Driver Information</h5>
                 <div className="d-flex align-items-center mb-3">
@@ -118,17 +115,17 @@ function ServiceDetails() {
                   <div>
                     <h6 className="mb-1">{data.driverDetails.name}</h6>
                     <small>Experience: {data.driverDetails.experience}</small><br />
-                    <small>Rating: ⭐ {data.driverDetails.rating} / 5.0</small>
+                    <small>Rating:  {data.driverDetails.rating} / 5.0</small>
                   </div>
                 </div>
               </div>
             </div>
           </Col>
 
-          {/* RIGHT SIDE */}
+     
           <Col lg={4}>
-            {/* Provider Information */}
-            <div className="p-4 mb-4 shadow-sm text-center">
+  <div className="job-details-page-card">
+             <div className="compnay-calss">
               <img 
                 src={data.provider.logo} 
                 width="80" 
@@ -152,8 +149,7 @@ function ServiceDetails() {
               </ul>
             </div>
 
-            {/* Driver Details Card - Alternative view on right */}
-            <div className="p-4 mb-4 shadow-sm">
+             <div className="compnay-calss">
               <h5>Driver Details</h5>
               <div className="text-center mb-3">
                 <img 
@@ -166,12 +162,12 @@ function ServiceDetails() {
               </div>
               <ul className="list-unstyled">
                 <li><strong>Experience:</strong> {data.driverDetails.experience}</li>
-                <li><strong>Rating:</strong> ⭐ {data.driverDetails.rating} / 5.0</li>
+                <li><strong>Rating:</strong> {data.driverDetails.rating} / 5.0</li>
               </ul>
             </div>
 
-            {/* Price Card */}
-            <div className="p-4 mb-4 shadow-sm">
+      
+            <div className="compnay-calss">
               <h5>Price Details</h5>
               <h3 className="text-primary">
                 {data.price.currency}{data.price.min} - {data.price.currency}{data.price.max}
@@ -183,27 +179,23 @@ function ServiceDetails() {
               </button>
             </div>
 
-            {/* STATS - Created from available data */}
-            <div className="p-4 shadow-sm">
+            <div className="compnay-calss">
               <h5>Service Stats</h5>
               <p><strong>Reviews:</strong> {data.reviews?.length || 0}</p>
               <p><strong>Amenities:</strong> {data.amenities?.length || 0}</p>
               <p><strong>Service ID:</strong> #{data.id}</p>
-
-              <small>
-                Created: {new Date(data.createdAt).toLocaleDateString()}
-              </small>
+            </div>
             </div>
           </Col>
         </Row>
 
         {/* Raw Data Display (Optional - for debugging) */}
-        <details className="mt-4">
+        {/* <details className="mt-4">
           <summary className="text-muted">View Raw Data</summary>
           <pre className="bg-light p-3 mt-2" style={{ fontSize: "12px", overflowX: "auto" }}>
             {JSON.stringify(data, null, 2)}
           </pre>
-        </details>
+        </details> */}
       </Container>
     </div>
   );

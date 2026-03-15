@@ -532,9 +532,57 @@
       "createdAt": "2026-01-01",
       "status": "active"
     },
-     {
+    {
       "id": "2",
-      "title": "Delhi to Jaipur Luxury Cab",
+      "title": "Mumbai to Pune Bus",
+      "slug": "delhi-jaipur-luxury-cab",
+      "serviceType": "Cab",
+      "vehicleType": "Mercedes Benz E-Class",
+      "description": "Comfortable sedan cab from Delhi to Jaipur with premium amenities and professional driver.",
+      "price": {
+        "min": 5500,
+        "max": 7500,
+        "currency": "₹"
+      },
+      "route": {
+        "from": "Delhi",
+        "to": "Jaipur",
+        "distance": "280 km",
+        "duration": "5 hours 30 minutes"
+      },
+      "provider": {
+        "id": 1,
+        "name": "GoCabs Luxury",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
+        "website": "https://gocabs.com",
+        "headOffice": "Delhi, India"
+      },
+      "driverDetails": {
+        "name": "Rajveer Singh Rathore",
+        "experience": "15 years",
+        "rating": 4.9,
+        "photo": "https://randomuser.me/api/portraits/men/42.jpg"
+      },
+      "amenities": [
+        "Air Conditioning",
+        "WiFi",
+        "Mineral Water",
+        "Charging Ports",
+        "Entertainment System"
+      ],
+      "reviews": [
+        {
+          "user": "Amit Sharma",
+          "rating": 5,
+          "comment": "Best cab service ever!"
+        }
+      ],
+      "createdAt": "2026-01-01",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "title": "Delhi to Goa Flight",
       "slug": "delhi-jaipur-luxury-cab",
       "serviceType": "Cab",
       "vehicleType": "Mercedes Benz E-Class",
