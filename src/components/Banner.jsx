@@ -2,20 +2,62 @@ import React from "react";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faRocket, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faRocket, faUsers, faCar, faBus, faPlane, faMotorcycle, faTrain, faUmbrellaBeach, faHotel, faHiking } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from "react-bootstrap";
 library.add(fas);
 
 export default function Banner() {
+    // Modified categories based on your service details JSON
     const categories = [
-        { title: "Cab Rentals", jobs: "12 Services Available", icon: "car" },
-        { title: "Bus Tickets", jobs: "8 Services Available", icon: "bus" },
-        { title: "Flights", jobs: "15 Services Available", icon: "plane" },
-        { title: "Bike Rentals", jobs: "6 Services Available", icon: "motorcycle" },
-        { title: "Train Booking", jobs: "4 Services Available", icon: "train" },
-        { title: "Holiday Packages", jobs: "9 Services Available", icon: "umbrella-beach" },
-        { title: "Hotel Booking", jobs: "11 Services Available", icon: "hotel" },
-        { title: "Adventure Tours", jobs: "7 Services Available", icon: "hiking", active: true }
+        { 
+            title: "Luxury Cabs", 
+            services: "25+ Services", 
+            icon: "car",
+            description: "Premium sedans & SUVs"
+        },
+        { 
+            title: "Executive Buses", 
+            services: "18+ Services", 
+            icon: "bus",
+            description: "Volvo & AC coaches"
+        },
+        { 
+            title: "Flights", 
+            services: "32+ Services", 
+            icon: "plane",
+            description: "Domestic & International"
+        },
+        { 
+            title: "Luxury Hotels", 
+            services: "45+ Services", 
+            icon: "hotel",
+            description: "5-star & boutique stays"
+        },
+        { 
+            title: "Pilgrimage Tours", 
+            services: "15+ Services", 
+            icon: "hiking",
+            description: "Spiritual journeys"
+        },
+        { 
+            title: "Train Booking", 
+            services: "12+ Services", 
+            icon: "train",
+            description: "IRCTC confirmed tickets"
+        },
+        { 
+            title: "Bike Rentals", 
+            services: "8+ Services", 
+            icon: "motorcycle",
+            description: "Self-drive bikes"
+        },
+         { 
+            title: "Holiday Packages", 
+            services: "28+ Services", 
+            icon: "umbrella-beach",
+            description: "Curated tour packages",
+            active: true 
+        }
     ];
 
     return (
@@ -37,12 +79,6 @@ export default function Banner() {
                                     <input type="text" placeholder="From" defaultValue="Delhi" />
                                     <input type="text" placeholder="To" defaultValue="Jaipur" />
                                     <input type="date" placeholder="Travel Date" defaultValue="2026-03-20" />
-                                    {/* <select defaultValue="Travel Type">
-                                        <option disabled>Travel Type</option>
-                                        <option>One Way</option>
-                                        <option>Round Trip</option>
-                                        <option>Multi City</option>
-                                    </select> */}
                                     <button>Search</button>
                                 </div>
 
@@ -77,13 +113,9 @@ export default function Banner() {
                                 </div>
                             </div>
                         </Col>
-
-
                     </Row>
                 </Container>
-
             </div>
-
 
             <div className="categories">
                 <Container>
@@ -107,7 +139,8 @@ export default function Banner() {
                                         </div>
                                         <div>
                                             <h4>{cat.title}</h4>
-                                            <p>{cat.jobs}</p>
+                                            <p className="services-count">{cat.services}</p>
+                                            <p className="service-desc">{cat.description}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -117,6 +150,5 @@ export default function Banner() {
                 </Container>
             </div>
         </>
-
     );
 }

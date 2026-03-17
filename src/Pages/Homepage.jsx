@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import Banner from "../components/Banner";
 import { useState } from "react";
 import WhyChoose from "../components/WhyChoose";
@@ -184,9 +184,9 @@ export default function Homepage() {
                         <div className="card-footer d-flex justify-content-between align-items-center mt-3">
                           <span className="posted-date">Available from {service.createdAt}</span>
                           {/* <Link to={`/services/${service.id}`}> */}
-                          <Link to={`/service-details/${service.id}`}>
-                            <button className="apply-btn">Book Now</button>
-                          </Link>
+                         <Link to={`/service-details/${service.id}`}>
+  <button className="apply-btn">Book Now</button>
+</Link>
                         </div>
                       </div>
                     </div>

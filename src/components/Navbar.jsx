@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 export default function NavigationBar() {
@@ -11,23 +11,23 @@ export default function NavigationBar() {
                     <Nav className="ms-auto">
                         <div className="nav-parent">
                             <Nav.Link as={Link} to="/">
-                                Home
-                            </Nav.Link>
+                Home
+              </Nav.Link>
                         </div>
                         <div className="nav-parent">
-                            <Nav.Link as={Link} to="/services">
-                                Services
-                            </Nav.Link>
+                            <Nav.Link as={Link} to="/service">
+                Services
+              </Nav.Link>
                         </div>
                         <div className="nav-parent">
-                            <Nav.Link as={Link} to="/book/:id">
-                                My Bookings
-                            </Nav.Link>
+                           <Nav.Link as={Link} to="/book/$id">
+                My Bookings
+              </Nav.Link>
                         </div>
                         <div className="nav-parent">
                             <Nav.Link as={Link} to="/login">
-                                Login
-                            </Nav.Link>
+                Login
+              </Nav.Link>
                         </div>
                     </Nav>
                 </Navbar.Collapse>

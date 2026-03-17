@@ -1,22 +1,20 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import App from "./App"
-import "./index.css"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter } from "react-router-dom"
-import AuthProvider from "./context/AuthContext"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const queryClient = new QueryClient()
+import { RouterProvider } from "@tanstack/react-router";
+import { router } from "./router";
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(
-  <BrowserRouter>
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </QueryClientProvider>
-  </BrowserRouter>
+import AuthProvider from "./context/AuthContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-)
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <QueryClientProvider client={queryClient}>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </QueryClientProvider>
+);

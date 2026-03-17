@@ -1,223 +1,460 @@
 import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faShieldAlt, 
+  faStar, 
+  faTag, 
   faClock, 
-  faIndianRupeeSign,
-  faHeadset,
-  faStar,
-  faMapMarkedAlt,
-  faWallet,
-  faThumbsUp
+  faShieldAlt, 
+  faHeadset, 
+  faHeart,
+  faArrowRight,
+  faCar,
+  faBus,
+  faPlane,
+  faHotel,
+  faWifi,
+  faWater,
+  faMusic,
+  faUtensils,
+  faSpa,
+  faSwimmer,
+  faChargingStation,
+  faSnowflake,
+  faBellConcierge,
+  faLock,
+  faHeadphones,
+  faMobile,
+  faStore,
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+  faUsers,
+  faAward,
+  faMapPin,
+  faRoute,
+  faClock as faClockRegular
 } from '@fortawesome/free-solid-svg-icons';
-import { Col, Container, Row } from 'react-bootstrap';
 
-const WhyChoose = () => {
-  const features = [
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+// API function to fetch service details
+const fetchServiceDetails = async () => {
+  const { data } = await axios.get('http://localhost:5002/serviceDetails');
+  return data;
+};
+
+const TravelPage = () => {
+  // Fetch service details using TanStack Query
+  const { data: serviceDetails, isLoading, error } = useQuery({
+    queryKey: ['serviceDetails'],
+    queryFn: fetchServiceDetails,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+
+  // Popular Destinations Data (static)
+  const popularDestinations = [
     {
-      icon: faShieldAlt,
-      title: "Safe & Secure",
-      description: "Your safety is our priority with verified travel partners and secure bookings",
-      color: "#4CAF50"
+      id: 1,
+      name: "Goa",
+      price: "4,999",
+      rating: 4.8,
+      image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
-      icon: faClock,
-      title: "24/7 Support",
-      description: "Round-the-clock customer support for all your travel needs and queries",
-      color: "#2196F3"
+      id: 2,
+      name: "Jaipur",
+      price: "3,499",
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
-      icon: faIndianRupeeSign,
-      title: "Best Prices",
-      description: "Guaranteed best prices with no hidden charges and exclusive deals",
-      color: "#FF9800"
+      id: 3,
+      name: "Manali",
+      price: "6,999",
+      rating: 4.7,
+      image: "https://images.unsplash.com/photo-1712388430474-ace0c16051e2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      icon: faStar,
-      title: "5000+ Services",
-      description: "Access to thousands of travel services across India at your fingertips",
-      color: "#9C27B0"
+      id: 4,
+      name: "Kerala",
+      price: "8,999",
+      rating: 4.8,
+      image: "https://plus.unsplash.com/premium_photo-1697729438401-fcb4ff66d9a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      icon: faMapMarkedAlt,
-      title: "Pan India Coverage",
-      description: "Services available in Delhi, Jaipur and 1000+ destinations across India",
-      color: "#E91E63"
+      id: 5,
+      name: "Dubai",
+      price: "24,999",
+      rating: 4.8,
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     },
     {
-      icon: faWallet,
-      title: "Easy Payments",
-      description: "Multiple payment options with secure transaction processing",
-      color: "#00BCD4"
-    },
-    {
-      icon: faThumbsUp,
-      title: "1000+ Destinations",
-      description: "Explore thousands of destinations with our extensive travel network",
-      color: "#FF5722"
-    },
-    {
-      icon: faHeadset,
-      title: "Expert Assistance",
-      description: "Travel experts to help you plan the perfect itinerary",
-      color: "#795548"
+      id: 6,
+      name: "Bali",
+      price: "18,999",
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
   ];
 
-  const stats = [
-    { number: "50k+", label: "Daily Bookings", city: "Delhi" },
-    { number: "1000+", label: "Destinations", city: "Jaipur" },
-    { number: "5000+", label: "Services", city: "India" },
-    { number: "24/7", label: "Support", city: "Available" }
+  // Travel Deals Data (static)
+  const travelDeals = [
+    {
+      id: 1,
+      title: "Goa Weekend Escape",
+      discount: "20% OFF",
+      duration: "3 Days / 2 Nights",
+      originalPrice: "₹6,249",
+      discountedPrice: "₹4,999",
+      image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 2,
+      title: "Manali Snow Trek",
+      discount: "15% OFF",
+      duration: "4 Days / 3 Nights",
+      originalPrice: "₹8,999",
+      discountedPrice: "₹7,649",
+      image: "https://images.unsplash.com/photo-1712388430474-ace0c16051e2?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      id: 3,
+      title: "Royal Jaipur Tour",
+      discount: "25% OFF",
+      duration: "2 Days / 1 Night",
+      originalPrice: "₹10,587",
+      discountedPrice: "₹3,499",
+      image: "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    }
   ];
+
+  const features = [
+    {
+      id: 1,
+      title: "Secure Booking",
+      description: "Your payments are protected with top-tier encryption standards.",
+      icon: faShieldAlt
+    },
+    {
+      id: 2,
+      title: "24/7 Support",
+      description: "Our customer team is always ready to help you, anytime, anywhere.",
+      icon: faHeadset
+    },
+    {
+      id: 3,
+      title: "Trusted by 2M+",
+      description: "Join millions of happy travelers who book their journeys with us.",
+      icon: faHeart
+    }
+  ];
+
+  const getTypeIcon = (type) => {
+    switch(type) {
+      case 'Cab': return faCar;
+      case 'Bus': return faBus;
+      case 'Flight': return faPlane;
+      case 'Hotel': return faHotel;
+      default: return faStar;
+    }
+  };
+
+  const getAmenityIcon = (amenity) => {
+    const amenityLower = amenity.toLowerCase();
+    if (amenityLower.includes('ac') || amenityLower.includes('snow')) return faSnowflake;
+    if (amenityLower.includes('water')) return faWater;
+    if (amenityLower.includes('music')) return faMusic;
+    if (amenityLower.includes('wifi')) return faWifi;
+    if (amenityLower.includes('meal') || amenityLower.includes('dining')) return faUtensils;
+    if (amenityLower.includes('spa')) return faSpa;
+    if (amenityLower.includes('pool')) return faSwimmer;
+    if (amenityLower.includes('charging')) return faChargingStation;
+    if (amenityLower.includes('butler') || amenityLower.includes('service')) return faBellConcierge;
+    return faStar;
+  };
+
+  // Take only first 6 services or show loading/error states
+  const topServices = serviceDetails?.slice(0, 6) || [];
+
+  if (isLoading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading amazing travel experiences...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <h2>Oops! Something went wrong</h2>
+        <p>Failed to load travel services. Please try again later.</p>
+        <Button onClick={() => window.location.reload()}>Retry</Button>
+      </div>
+    );
+  }
 
   return (
 
-    <>
-    <div className="hero-section">
+<>
+
+
+      <section className="destinations-section">
         <Container>
-            <Row>
-                <Col lg={12}>
-        <h1>Why Choose Us</h1>
-        <p className="hero-subtitle">Experience the best travel services with unmatched benefits</p>
-        </Col>
-        <Col lg={12}>
-        <div className="hero-stats">
-          {stats.map((stat, index) => (
-            <div className="stat-card" key={index}>
-              <h2>{stat.number}</h2>
-              <p>{stat.label}</p>
-              <span>{stat.city}</span>
+          <div className="section-header">
+            <div>
+              <h2>Popular Destinations</h2>
+              <p>Explore India's most loved travel spots</p>
             </div>
-          ))}
-      
-        </div>
-            </Col>
-        </Row>
+            <a href="#" className="view-all">
+              View All <FontAwesomeIcon icon={faArrowRight} />
+            </a>
+          </div>
+          <Row>
+            {popularDestinations.map(dest => (
+              <Col key={dest.id} lg={4} md={6} className="mb-4">
+                <div className="destination-card">
+                  <div className="card-image">
+                    <img src={dest.image} alt={dest.name} />
+                  </div>
+                  <div className="card-content">
+                    <h3>{dest.name}</h3>
+                    <div className="price-rating">
+                      <span className="price">Starting from ₹{dest.price}</span>
+                      <span className="rating">
+                        <FontAwesomeIcon icon={faStar} className="star-icon" /> {dest.rating}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
         </Container>
-      </div>
+      </section>
+
+         <section className="deals-section">
+        <Container>
+          <h2>Special Travel Deals</h2>
+          <Row>
+            {travelDeals.map(deal => (
+              <Col key={deal.id} lg={4} md={6} className="mb-4">
+                <div className="deal-card">
+                  <div className="deal-image">
+                    <img src={deal.image} alt={deal.title} />
+                    <span className="discount-badge">
+                      <FontAwesomeIcon icon={faTag} /> {deal.discount}
+                    </span>
+                  </div>
+                  <div className="deal-content">
+                    <h3>{deal.title}</h3>
+                    <p className="duration">
+                      <FontAwesomeIcon icon={faClock} /> {deal.duration}
+                    </p>
+                    <div className="price-section">
+                                   <span className="discounted-price">{deal.discountedPrice}</span>
+                      <span className="original-price">{deal.originalPrice}</span>
+         
+                    </div>
+                    <Button className="book-now">Book Now</Button>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
 
-
-<div className="features-section">
-    <Container>
-        <Row>
-            <Col lg={12}>
-        <h2>What Makes Us Different</h2>
-        <p className="section-subtitle">Discover why millions of travelers trust us for their journey</p>
-        </Col>
-
-        <Col lg={12}>
-        <div className="features-grid">
-          {features.map((feature, index) => (
-            <div className="feature-card" key={index}>
-              <div className="icon-wrapper" style={{ backgroundColor: feature.color + '20' }}>
-                <FontAwesomeIcon icon={feature.icon} style={{ color: feature.color }} />
-              </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+           <section className="services-section">
+        <Container>
+          <Col lg={12}>
+          <div className="section-header">
+            <div>
+              <h2>Travel Services</h2>
+              <p>Premium travel services tailored just for you</p>
             </div>
-          ))}
-        </div>
-        </Col>
-        </Row>
+            <a href="#" className="view-all">
+              View All Services <FontAwesomeIcon icon={faArrowRight} />
+            </a>
+          </div>
+          </Col>
+          
+          <Row>
+            {topServices.map(service => (
+              <Col key={service.id} lg={4} md={6} className="mb-4">
+                <div className="service-card">
+                  <div className="service-badge">
+                    <span className="service-type">
+                      <FontAwesomeIcon icon={getTypeIcon(service.serviceType)} /> {service.serviceType}
+                    </span>
+                    {service.serviceHighlights && service.serviceHighlights.length > 0 && (
+                      <span className="featured-badge">
+                        <FontAwesomeIcon icon={faAward} /> Featured
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div className="service-header">
+                    <img 
+                      src={service.provider?.logo || 'https://via.placeholder.com/50'} 
+                      alt={service.provider?.name} 
+                      className="service-logo" 
+                    />
+                    <h3>{service.title}</h3>
+                  </div>
+                  
+                  
+                  <div className="route-info">
+                    <FontAwesomeIcon icon={faRoute} className="me-2" />
+                    <span>{service.route?.from} → {service.route?.to}</span>
+                  </div>
+                  
+                  <div className="service-details">
+                    <span className="duration">
+                      <FontAwesomeIcon icon={faClockRegular} /> {service.duration?.hours}h {service.duration?.minutes}m
+                    </span>
+                    <span className="distance">
+                      <FontAwesomeIcon icon={faMapPin} /> {service.route?.distance}
+                    </span>
+                  </div>
+                  
+                  <div className="price-section">
+                    <span className="price-label">Starting from</span>
+                    <span className="price">
+                      {service.price?.currency} {service.price?.min?.toLocaleString()}
+                    </span>
+                    <span className="price-period">/{service.price?.period}</span>
+                  </div>
+                  
+                  <div className="amenities">
+                    {service.amenities?.slice(0, 4).map((item, index) => (
+                      <span key={index} className="amenity-tag">
+                        <FontAwesomeIcon icon={getAmenityIcon(item)} /> 
+                        {item.length > 15 ? item.substring(0, 12) + '...' : item}
+                      </span>
+                    ))}
+                  </div>
+                  <Button className="view-details">View Details</Button>
+                </div>
+              </Col>
+            ))}
+          </Row>
         </Container>
-      </div>
+      </section>
 
 
+ <section className="features-section">
+        <Container>
+          <div className="guarantee-box">
+            <h3>Best Price Guarantee</h3>
+            <p>Find a lower price? We'll match it. We ensure you get the best deals.</p>
+          </div>
+          
+          <h2>Why Choose Us</h2>
+          <p className="subtitle">We make your travel experience seamless and memorable</p>
+          
+          <Row>
+            {features.map(feature => (
+              <Col key={feature.id} lg={4} md={6} className="mb-4">
+                <div className="feature-card">
+                  <div className="feature-icon">
+                    <FontAwesomeIcon icon={feature.icon} />
+                  </div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
- <div className="benefits-section">
-        <div className="benefits-container">
-          <div className="benefits-content">
-            <h2>Your Trusted Travel Partner</h2>
-            <p>With thousands of daily bookings and millions of happy customers, we're India's fastest growing travel platform.</p>
+         
+
+      <section className="app-section">
+        <Container>
+          <div className="app-content">
+            <h2>Download Our Travel App</h2>
+            <p>Book flights, hotels and cabs on the go. Get exclusive app-only deals and manage your trips easily.</p>
             
-            <div className="benefits-list">
-              <div className="benefit-item">
-                <FontAwesomeIcon icon={faShieldAlt} className="benefit-icon" />
-                <div>
-                  <h4>Verified Partners</h4>
-                  <p>All our service providers are thoroughly verified for quality</p>
-                </div>
+            <div className="app-buttons">
+              <Button className="app-store">
+                <FontAwesomeIcon icon={faMobile} className="store-icon" />
+                <span className="store-text">App Store</span>
+              </Button>
+              <Button className="google-play">
+                <FontAwesomeIcon icon={faStore} className="store-icon" />
+                <span className="store-text">Google Play</span>
+              </Button>
+            </div>
+            
+            <div className="quote">
+              <h3>The World is Just One Flight Away</h3>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      
+      <footer className="footer">
+        <Container>
+          <Row className="footer-content">
+            <Col lg={4} md={6} className="footer-section">
+              <h3>TravelEase</h3>
+              <p>Your one-stop destination for all travel needs. Book flights, hotels, and cabs with best prices guaranteed.</p>
+            </Col>
+            
+            <Col lg={2} md={6} className="footer-section">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Press</a></li>
+              </ul>
+            </Col>
+            
+            <Col lg={2} md={6} className="footer-section">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Cancellation</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </Col>
+            
+            <Col lg={4} md={6} className="footer-section">
+              <h4>Follow Us</h4>
+              <div className="social-links">
+                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
+                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
+                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
+                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
               </div>
-              
-              <div className="benefit-item">
-                <FontAwesomeIcon icon={faClock} className="benefit-icon" />
-                <div>
-                  <h4>Instant Confirmation</h4>
-                  <p>Get immediate confirmation on all your bookings</p>
-                </div>
+              <div className="contact-info mt-3">
+                <p><FontAwesomeIcon icon={faPhone} /> +91 1234567890</p>
+                <p><FontAwesomeIcon icon={faEnvelope} /> info@travelease.com</p>
               </div>
-              
-              <div className="benefit-item">
-                <FontAwesomeIcon icon={faIndianRupeeSign} className="benefit-icon" />
-                <div>
-                  <h4>Price Match Guarantee</h4>
-                  <p>We'll match any genuine price you find elsewhere</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
           
-          <div className="benefits-image">
-            <div className="image-grid">
-              <div className="grid-item">Delhi → Goa</div>
-              <div className="grid-item">Mumbai → Jaipur</div>
-              <div className="grid-item">Chennai → Bangalore</div>
-              <div className="grid-item">Kolkata → Delhi</div>
+          <div className="footer-bottom">
+            <p>2026 TravelEase Agency. All rights reserved</p>
+            <div className="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
             </div>
           </div>
-        </div>
-      </div>
+        </Container>
+      </footer>
+</>
 
-
-
-    <div className="why-choose-us">
-
-     
-
-      {/* Testimonial Section */}
-      <div className="testimonial-section">
-        <h2>What Our Customers Say</h2>
-        <div className="testimonial-cards">
-          <div className="testimonial-card">
-            <div className="rating">★★★★★</div>
-            <p>"Excellent service! Booked a Delhi to Goa flight and got the best price. The baggage storage option was very convenient."</p>
-            <div className="customer">
-              <strong>Rahul Sharma</strong>
-              <span>Delhi</span>
-            </div>
-          </div>
-          
-          <div className="testimonial-card">
-            <div className="rating">★★★★★</div>
-            <p>"Amazing experience with bike rental in Jaipur. Great prices and smooth booking process. Highly recommended!"</p>
-            <div className="customer">
-              <strong>Priya Patel</strong>
-              <span>Jaipur</span>
-            </div>
-          </div>
-          
-          <div className="testimonial-card">
-            <div className="rating">★★★★★</div>
-            <p>"The 24/7 customer support helped me modify my booking at midnight. Truly exceptional service!"</p>
-            <div className="customer">
-              <strong>Amit Kumar</strong>
-              <span>Mumbai</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="cta-section">
-        <h2>Ready to Start Your Journey?</h2>
-        <p>Join millions of happy travelers who trust us for their travel needs</p>
-        <button className="cta-button">Explore Services</button>
-      </div>
-    </div>
-    </>
+ 
   );
 };
 
-export default WhyChoose;
+export default TravelPage;

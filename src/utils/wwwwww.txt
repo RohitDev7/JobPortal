@@ -1,38 +1,638 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import React from "react";
-import { Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-
-function ServiceDetails() {
-
-  const { id } = useParams();
-
-  const fetchServiceDetails = async () => {
-    const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`);
-    return res.data;
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["serviceDetails", id],
-    queryFn: fetchServiceDetails,
-    enabled: !!id
-  });
-
-  if (isLoading) return <h2 className="text-center mt-5">Loading...</h2>;
-  if (isError) return <h2 className="text-center mt-5">Error loading data</h2>;
-
-  return (
-    <div className="py-5">
-      <Container>
-
-        <h2>{data.title}</h2>
-
-       
-
-      </Container>
-    </div>
-  );
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Rohit Sharma",
+      "email": "rohit@gmail.com",
+      "password": "123456",
+      "role": "customer",
+      "phone": "9876543210",
+      "location": "Delhi",
+      "profileImage": "",
+      "travelDocumentId": 1,
+      "savedServices": [1, 2],
+      "createdAt": "2026-03-01"
+    }
+  ],
+  "travelAgencies": [
+    {
+      "id": 2,
+      "name": "Amit Mehra",
+      "email": "amit@makemytrip.com",
+      "password": "123456",
+      "role": "agency",
+      "providerId": 1,
+      "createdAt": "2026-03-02"
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ],
+  "transportProviders": [
+    {
+      "id": 1,
+      "name": "Makemytrip",
+      "logo": "",
+      "website": "https://makemytrip.com",
+      "location": "Delhi",
+      "description": "Online travel aggregator",
+      "serviceType": "Flights, Hotels, Cabs",
+      "size": "10000+",
+      "createdBy": 2
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Delhi to Jaipur Cab",
+      "providerId": 1,
+      "providerName": "GoCabs",
+      "location": "Delhi → Jaipur",
+      "price": "₹3500",
+      "type": "Cab",
+      "duration": "5 Hours",
+      "amenities": ["AC", "Water Bottle", "Music System"],
+      "description": "Comfortable sedan cab from Delhi to Jaipur.",
+      "postedBy": 2,
+      "createdAt": "2026-03-05",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Mumbai to Pune Bus",
+      "providerId": 2,
+      "providerName": "RedBus",
+      "location": "Mumbai → Pune",
+      "price": "₹500",
+      "type": "Bus",
+      "duration": "3.5 Hours",
+      "amenities": ["AC", "Charging Point", "WiFi"],
+      "description": "Volvo AC bus with comfortable seating.",
+      "postedBy": 3,
+      "createdAt": "2026-03-04",
+      "status": "active",
+      "logo": "https://png.pngtree.com/png-vector/20241016/ourmid/pngtree-travel-bus-logo-icon-vector-design-illustration-template-png-image_14082311.png"
+    },
+    {
+      "id": 3,
+      "title": "Delhi to Goa Flight",
+      "providerId": 3,
+      "providerName": "IndiGo",
+      "location": "DEL → GOI",
+      "price": "₹4500",
+      "type": "Flight",
+      "duration": "2.5 Hours",
+      "amenities": ["Meal", "Baggage", "Entertainment"],
+      "description": "Direct flight from Delhi to Goa.",
+      "postedBy": 1,
+      "createdAt": "2026-03-03",
+      "status": "active",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLd5gvtnS3t6F6br5MfBHfOMRPou1zOelZug&s"
+    },
+    {
+      "id": 4,
+      "title": "Taj Mahal Palace Hotel",
+      "providerId": 4,
+      "providerName": "Taj Hotels",
+      "location": "Mumbai",
+      "price": "₹15000/night",
+      "type": "Hotel",
+      "duration": "Per Night",
+      "amenities": ["Pool", "Spa", "Fine Dining", "Sea View"],
+      "description": "Luxury 5-star hotel overlooking the Gateway of India.",
+      "postedBy": 2,
+      "createdAt": "2026-03-02",
+      "status": "active",
+      "logo": "https://www.logodesign.net/logo/buildings-with-rising-sun-2238ld.png?nwm=1&nws=1&industry=hotel&sf=&txt_keyword=All"
+    },
+    {
+      "id": 5,
+      "title": "Bangalore to Mysore Cab",
+      "providerId": 5,
+      "providerName": "ZoomCar",
+      "location": "Bangalore → Mysore",
+      "price": "₹2500",
+      "type": "Cab",
+      "duration": "3 Hours",
+      "amenities": ["AC", "Driver", "Toll Included"],
+      "description": "One-way cab from Bangalore to Mysore.",
+      "postedBy": 4,
+      "createdAt": "2026-03-01",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Hyderabad to Vijayawada Bus",
+      "providerId": 6,
+      "providerName": "Orange Travels",
+      "location": "Hyderabad → Vijayawada",
+      "price": "₹700",
+      "type": "Bus",
+      "duration": "5 Hours",
+      "amenities": ["AC", "Sleeper", "Water Bottle"],
+      "description": "Overnight sleeper bus service.",
+      "postedBy": 3,
+      "createdAt": "2026-02-28",
+      "status": "active",
+      "logo": "https://png.pngtree.com/png-vector/20241016/ourmid/pngtree-travel-bus-logo-icon-vector-design-illustration-template-png-image_14082311.png"
+    },
+    {
+      "id": 7,
+      "title": "Mumbai to Delhi Flight",
+      "providerId": 7,
+      "providerName": "SpiceJet",
+      "location": "BOM → DEL",
+      "price": "₹5500",
+      "type": "Flight",
+      "duration": "2 Hours",
+      "amenities": ["Meal", "WiFi", "Extra Baggage"],
+      "description": "Daily direct flights between Mumbai and Delhi.",
+      "postedBy": 2,
+      "createdAt": "2026-02-27",
+      "status": "active",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLd5gvtnS3t6F6br5MfBHfOMRPou1zOelZug&s"
+    },
+    {
+      "id": 8,
+      "title": "The Oberoi Udaivilas",
+      "providerId": 8,
+      "providerName": "Oberoi Hotels",
+      "location": "Udaipur",
+      "price": "₹25000/night",
+      "type": "Hotel",
+      "duration": "Per Night",
+      "amenities": [
+        "Lake View",
+        "Private Pool",
+        "Butler Service",
+        "Ayurvedic Spa"
+      ],
+      "description": "Luxury hotel on the banks of Lake Pichola.",
+      "postedBy": 1,
+      "createdAt": "2026-02-26",
+      "status": "active",
+      "logo": "https://www.logodesign.net/logo/buildings-with-rising-sun-2238ld.png?nwm=1&nws=1&industry=hotel&sf=&txt_keyword=All"
+    },
+    {
+      "id": 9,
+      "title": "Chennai to Bangalore Cab",
+      "providerId": 9,
+      "providerName": "Savaari",
+      "location": "Chennai → Bangalore",
+      "price": "₹4000",
+      "type": "Cab",
+      "duration": "6 Hours",
+      "amenities": ["AC", "Music", "Charging"],
+      "description": "Inter-city cab with professional driver.",
+      "postedBy": 2,
+      "createdAt": "2026-02-25",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Kolkata to Digha Bus",
+      "providerId": 10,
+      "providerName": "SBSTC",
+      "location": "Kolkata → Digha",
+      "price": "₹400",
+      "type": "Bus",
+      "duration": "4 Hours",
+      "amenities": ["Non-AC", "Local Sightseeing"],
+      "description": "Government bus service to beach town.",
+      "postedBy": 3,
+      "createdAt": "2026-02-24",
+      "status": "active",
+      "logo": "https://png.pngtree.com/png-vector/20241016/ourmid/pngtree-travel-bus-logo-icon-vector-design-illustration-template-png-image_14082311.png"
+    },
+    {
+      "id": 11,
+      "title": "Goa to Mumbai Flight",
+      "providerId": 11,
+      "providerName": "Akasa Air",
+      "location": "GOI → BOM",
+      "price": "₹3800",
+      "type": "Flight",
+      "duration": "1.5 Hours",
+      "amenities": ["Snacks", "Hand Baggage"],
+      "description": "Budget flight from Goa to Mumbai.",
+      "postedBy": 2,
+      "createdAt": "2026-02-23",
+      "status": "active",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLd5gvtnS3t6F6br5MfBHfOMRPou1zOelZug&s"
+    },
+    {
+      "id": 12,
+      "title": "The Leela Palace",
+      "providerId": 12,
+      "providerName": "The Leela",
+      "location": "New Delhi",
+      "price": "₹18000/night",
+      "type": "Hotel",
+      "duration": "Per Night",
+      "amenities": ["Pool", "Casino", "Fine Dining", "Butler Service"],
+      "description": "Iconic luxury hotel in Delhi's diplomatic enclave.",
+      "postedBy": 4,
+      "createdAt": "2026-02-22",
+      "status": "active",
+      "logo": "https://www.logodesign.net/logo/buildings-with-rising-sun-2238ld.png?nwm=1&nws=1&industry=hotel&sf=&txt_keyword=All"
+    },
+    {
+      "id": 13,
+      "title": "Ahmedabad to Rajkot Cab",
+      "providerId": 13,
+      "providerName": "CabExpress",
+      "location": "Ahmedabad → Rajkot",
+      "price": "₹2800",
+      "type": "Cab",
+      "duration": "4 Hours",
+      "amenities": ["AC", "Bottle Water", "Toll"],
+      "description": "Sedan cab for Gujarat travel.",
+      "postedBy": 3,
+      "createdAt": "2026-02-21",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Lucknow to Delhi Bus",
+      "providerId": 14,
+      "providerName": "UPSRTC",
+      "location": "Lucknow → Delhi",
+      "price": "₹600",
+      "type": "Bus",
+      "duration": "7 Hours",
+      "amenities": ["AC", "Charging", "Rest Stops"],
+      "description": "Overnight Volvo bus service.",
+      "postedBy": 2,
+      "createdAt": "2026-02-20",
+      "status": "active",
+      "logo": "https://png.pngtree.com/png-vector/20241016/ourmid/pngtree-travel-bus-logo-icon-vector-design-illustration-template-png-image_14082311.png"
+    },
+    {
+      "id": 15,
+      "title": "Jaipur to Udaipur Cab",
+      "providerId": 15,
+      "providerName": "Rajasthan Cabs",
+      "location": "Jaipur → Udaipur",
+      "price": "₹3200",
+      "type": "Cab",
+      "duration": "5.5 Hours",
+      "amenities": ["AC", "Driver", "Sightseeing"],
+      "description": "Full day cab with sightseeing options.",
+      "postedBy": 1,
+      "createdAt": "2026-02-19",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Amritsar to Delhi Flight",
+      "providerId": 16,
+      "providerName": "Air India",
+      "location": "ATQ → DEL",
+      "price": "₹4200",
+      "type": "Flight",
+      "duration": "1.5 Hours",
+      "amenities": ["Meal", "Baggage"],
+      "description": "Direct flight from Amritsar to Delhi.",
+      "postedBy": 4,
+      "createdAt": "2026-02-18",
+      "status": "active",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLd5gvtnS3t6F6br5MfBHfOMRPou1zOelZug&s"
+    },
+    {
+      "id": 17,
+      "title": "ITC Grand Chola",
+      "providerId": 17,
+      "providerName": "ITC Hotels",
+      "location": "Chennai",
+      "price": "₹12000/night",
+      "type": "Hotel",
+      "duration": "Per Night",
+      "amenities": ["Pool", "Spa", "Multiple Restaurants", "Business Center"],
+      "description": "Luxury hotel inspired by Chola architecture.",
+      "postedBy": 3,
+      "createdAt": "2026-02-17",
+      "status": "active",
+      "logo": "https://www.logodesign.net/logo/buildings-with-rising-sun-2238ld.png?nwm=1&nws=1&industry=hotel&sf=&txt_keyword=All"
+    },
+    {
+      "id": 18,
+      "title": "Patna to Ranchi Cab",
+      "providerId": 18,
+      "providerName": "Bihar Cabs",
+      "location": "Patna → Ranchi",
+      "price": "₹3500",
+      "type": "Cab",
+      "duration": "6 Hours",
+      "amenities": ["AC", "Driver", "Music"],
+      "description": "Inter-city cab service in Bihar-Jharkhand.",
+      "postedBy": 2,
+      "createdAt": "2026-02-16",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Pune to Shirdi Bus",
+      "providerId": 19,
+      "providerName": "MSRTC",
+      "location": "Pune → Shirdi",
+      "price": "₹350",
+      "type": "Bus",
+      "duration": "4 Hours",
+      "amenities": ["AC", "Devotional Music"],
+      "description": "Pilgrimage bus service to Shirdi.",
+      "postedBy": 4,
+      "createdAt": "2026-02-15",
+      "status": "active",
+      "logo": "https://png.pngtree.com/png-vector/20241016/ourmid/pngtree-travel-bus-logo-icon-vector-design-illustration-template-png-image_14082311.png"
+    },
+    {
+      "id": 20,
+      "title": "Bengaluru to Delhi Flight",
+      "providerId": 20,
+      "providerName": "Vistara",
+      "location": "BLR → DEL",
+      "price": "₹6200",
+      "type": "Flight",
+      "duration": "3 Hours",
+      "amenities": ["Meal", "WiFi", "Entertainment", "Extra Legroom"],
+      "description": "Premium economy flight with great service.",
+      "postedBy": 1,
+      "createdAt": "2026-02-14",
+      "status": "active",
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLd5gvtnS3t6F6br5MfBHfOMRPou1zOelZug&s"
+    },
+    {
+      "id": 21,
+      "title": "Varanasi to Gaya Cab",
+      "providerId": 21,
+      "providerName": "Yatra Cabs",
+      "location": "Varanasi → Gaya",
+      "price": "₹3000",
+      "type": "Cab",
+      "duration": "4 Hours",
+      "amenities": ["AC", "Temple Visits"],
+      "description": "Pilgrimage cab for Bodh Gaya visit.",
+      "postedBy": 3,
+      "createdAt": "2026-02-13",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Shimla to Manali Bus",
+      "providerId": 22,
+      "providerName": "HRTC",
+      "location": "Shimla → Manali",
+      "price": "₹500",
+      "type": "Bus",
+      "duration": "6 Hours",
+      "amenities": ["AC", "Mountain Views"],
+      "description": "Scenic bus route through mountains.",
+      "postedBy": 2,
+      "createdAt": "2026-02-12",
+      "status": "active",
+      "logo": "https://png.pngtree.com/png-vector/20241016/ourmid/pngtree-travel-bus-logo-icon-vector-design-illustration-template-png-image_14082311.png"
+    },
+    {
+      "id": 23,
+      "title": "Chennai to Pondicherry Cab",
+      "providerId": 23,
+      "providerName": "Pondy Cabs",
+      "location": "Chennai → Pondicherry",
+      "price": "₹2800",
+      "type": "Cab",
+      "duration": "3 Hours",
+      "amenities": ["AC", "French Quarter Tour"],
+      "description": "Cab service to Pondicherry with local guide option.",
+      "postedBy": 4,
+      "createdAt": "2026-02-11",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    },
+    {
+      "id": 24,
+      "title": "The Park Kolkata",
+      "providerId": 24,
+      "providerName": "The Park Hotels",
+      "location": "Kolkata",
+      "price": "₹8000/night",
+      "type": "Hotel",
+      "duration": "Per Night",
+      "amenities": ["Pool", "Nightclub", "Spa", "City View"],
+      "description": "Boutique hotel in the heart of Kolkata.",
+      "postedBy": 3,
+      "createdAt": "2026-02-10",
+      "status": "active",
+      "logo": "https://www.logodesign.net/logo/buildings-with-rising-sun-2238ld.png?nwm=1&nws=1&industry=hotel&sf=&txt_keyword=All"
+    },
+    {
+      "id": 25,
+      "title": "Kochi to Munnar Cab",
+      "providerId": 25,
+      "providerName": "Kerala Cabs",
+      "location": "Kochi → Munnar",
+      "price": "₹4000",
+      "type": "Cab",
+      "duration": "4.5 Hours",
+      "amenities": ["AC", "Tea Estate Visit", "Photo Stops"],
+      "description": "Hill station cab with sightseeing stops.",
+      "postedBy": 2,
+      "createdAt": "2026-02-09",
+      "status": "active",
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "serviceId": 1,
+      "customerId": 1,
+      "travelDocumentId": 1,
+      "specialRequest": "Pickup from Delhi airport",
+      "status": "confirmed",
+      "bookedAt": "2026-03-07"
+    }
+  ],
+  "savedServices": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "serviceId": 1,
+      "savedAt": "2026-03-07"
+    }
+  ],
+  "travelDocuments": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "title": "Rohit Passport",
+      "fileUrl": "/documents/passport_rohit.pdf",
+      "documentType": "Passport",
+      "expiryDate": "2030-12-31"
+    }
+  ],
+  "serviceDetails": [
+    {
+      "id": "1",
+      "title": "Delhi to Jaipur Luxury Cab",
+      "slug": "delhi-jaipur-luxury-cab",
+      "serviceType": "Cab",
+      "vehicleType": "Mercedes Benz E-Class",
+      "description": "Comfortable sedan cab from Delhi to Jaipur with premium amenities and professional driver.",
+      "price": {
+        "min": 5500,
+        "max": 7500,
+        "currency": "₹"
+      },
+      "route": {
+        "from": "Delhi",
+        "to": "Jaipur",
+        "distance": "280 km",
+        "duration": "5 hours 30 minutes"
+      },
+      "provider": {
+        "id": 1,
+        "name": "GoCabs Luxury",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
+        "website": "https://gocabs.com",
+        "headOffice": "Delhi, India"
+      },
+      "driverDetails": {
+        "name": "Rajveer Singh Rathore",
+        "experience": "15 years",
+        "rating": 4.9,
+        "photo": "https://randomuser.me/api/portraits/men/42.jpg"
+      },
+      "amenities": [
+        "Air Conditioning",
+        "WiFi",
+        "Mineral Water",
+        "Charging Ports",
+        "Entertainment System"
+      ],
+      "reviews": [
+        {
+          "user": "Amit Sharma",
+          "rating": 5,
+          "comment": "Best cab service ever!"
+        }
+      ],
+      "createdAt": "2026-01-01",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "title": "Mumbai to Pune Bus",
+      "slug": "delhi-jaipur-luxury-cab",
+      "serviceType": "Cab",
+      "vehicleType": "Mercedes Benz E-Class",
+      "description": "Comfortable sedan cab from Delhi to Jaipur with premium amenities and professional driver.",
+      "price": {
+        "min": 5500,
+        "max": 7500,
+        "currency": "₹"
+      },
+      "route": {
+        "from": "Delhi",
+        "to": "Jaipur",
+        "distance": "280 km",
+        "duration": "5 hours 30 minutes"
+      },
+      "provider": {
+        "id": 1,
+        "name": "GoCabs Luxury",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
+        "website": "https://gocabs.com",
+        "headOffice": "Delhi, India"
+      },
+      "driverDetails": {
+        "name": "Rajveer Singh Rathore",
+        "experience": "15 years",
+        "rating": 4.9,
+        "photo": "https://randomuser.me/api/portraits/men/42.jpg"
+      },
+      "amenities": [
+        "Air Conditioning",
+        "WiFi",
+        "Mineral Water",
+        "Charging Ports",
+        "Entertainment System"
+      ],
+      "reviews": [
+        {
+          "user": "Amit Sharma",
+          "rating": 5,
+          "comment": "Best cab service ever!"
+        }
+      ],
+      "createdAt": "2026-01-01",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "title": "Delhi to Goa Flight",
+      "slug": "delhi-jaipur-luxury-cab",
+      "serviceType": "Cab",
+      "vehicleType": "Mercedes Benz E-Class",
+      "description": "Comfortable sedan cab from Delhi to Jaipur with premium amenities and professional driver.",
+      "price": {
+        "min": 5500,
+        "max": 7500,
+        "currency": "₹"
+      },
+      "route": {
+        "from": "Delhi",
+        "to": "Jaipur",
+        "distance": "280 km",
+        "duration": "5 hours 30 minutes"
+      },
+      "provider": {
+        "id": 1,
+        "name": "GoCabs Luxury",
+        "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
+        "website": "https://gocabs.com",
+        "headOffice": "Delhi, India"
+      },
+      "driverDetails": {
+        "name": "Rajveer Singh Rathore",
+        "experience": "15 years",
+        "rating": 4.9,
+        "photo": "https://randomuser.me/api/portraits/men/42.jpg"
+      },
+      "amenities": [
+        "Air Conditioning",
+        "WiFi",
+        "Mineral Water",
+        "Charging Ports",
+        "Entertainment System"
+      ],
+      "reviews": [
+        {
+          "user": "Amit Sharma",
+          "rating": 5,
+          "comment": "Best cab service ever!"
+        }
+      ],
+      "createdAt": "2026-01-01",
+      "status": "active"
+    }
+  ],
+  "analytics": {
+    "totalCustomers": 10,
+    "totalAgencies": 3,
+    "totalServices": 20,
+    "totalBookings": 50
+  }
 }
-
-export default ServiceDetails;
