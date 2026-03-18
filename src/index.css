@@ -1909,12 +1909,12 @@ button.btn {
 }
 
 button.btn-primary {
-  background: #0d6efd;
-  border: none;
+    background: #5048e2;
+    border: none;
 }
 
 button.btn-primary:hover {
-  background: #0b5ed7;
+  background: #5048e2;
 }
 
 button.btn-secondary {
@@ -1936,6 +1936,85 @@ button.btn-secondary:hover {
   border-radius: 8px;
   font-size: 14px;
   color: #155724;
+}
+
+
+.register-pages {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.signup-card {
+    background: #ffffff;
+    padding: 35px 45px;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.signup-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.signup-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #2c3e50;
+}
+
+.form-label {
+    font-weight: 700;
+    color: #555;
+}
+.form-control,
+.form-select {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+      height: 45px;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+.signup-btn {
+    width: auto;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    border: none;
+    padding: 12px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+}
+
+.signup-btn:hover {
+    background: linear-gradient(135deg, #4338ca, #4f46e5);
+}
+
+.signup-signin {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #4f46e5;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.signup-signin:hover {
+    text-decoration: underline;
 }
 
 

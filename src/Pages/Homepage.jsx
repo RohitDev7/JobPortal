@@ -9,6 +9,14 @@ import WhyChoose from "../components/WhyChoose";
 
 export default function Homepage() {
   const [activeTab, setActiveTab] = useState('all');
+
+
+  const [selectedType, setSelectedType] = useState("")
+  const [selectedDurations, setSelectedDurations] = useState([]);
+  const [selectedDestinations, setSelectedDestinations] = useState([]);
+
+
+
   const { data = [], isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: async () => {
@@ -19,26 +27,33 @@ export default function Homepage() {
 
   if (isLoading) return <h2>Loading...</h2>;
 
-  const filters = {
-    serviceTypes: [
-      { label: "Cab Rentals", count: 1 },
-      { label: "Bus Tickets", count: 1 },
-      { label: "Flights", count: 1 },
-      { label: "Bike Rentals", count: 1 }
-    ],
-    duration: ["0-2 hours", "2-5 hours", "5-10 hours", "Overnight"],
-    destinations: ["Delhi", "Mumbai", "Bangalore", "Jaipur", "Goa"]
-  };
 
 
-    const filteredData = activeTab === 'all' 
-    ? data 
-    : data.filter(service => service.type === activeTab);
+  const filteredData = activeTab === 'all' ? data : data.filter(service => service.type === activeTab);
 
   const cabCount = data.filter(s => s.type === 'Cab').length;
   const busCount = data.filter(s => s.type === 'Bus').length;
   const flightCount = data.filter(s => s.type === 'Flight').length;
   const hotelCount = data.filter(s => s.type === 'Hotel').length;
+
+
+
+  const handlechekbox = (value, ww, wwe) => {
+    if (ww.includes(value)) {
+      wwe(ww.filter(item => item !== value));
+    } else {
+      wwe([...ww, value])
+    }
+  }
+
+const sidebarFilteredData = filteredData.filter(service => {
+  return (
+    (selectedType.length === 0 || selectedType.includes(service.type)) &&
+    (selectedDurations.length === 0 || selectedDurations.includes(service.duration)) &&
+    (selectedDestinations.length === 0 || selectedDestinations.includes(service.location))
+  );
+});
+
 
   return (
     <div>
@@ -59,42 +74,123 @@ export default function Homepage() {
                 <div className="filter-section">
                   <h5>Service Type</h5>
                   <ul className="filter-list">
-                    {filters.serviceTypes.map((item, idx) => (
-                      <li key={idx}>
-                        <label>
-                          <input type="checkbox" /> {item.label} <span>({item.count})</span>
-                        </label>
-                      </li>
-                    ))}
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Cab", selectedType, setSelectedType)}
+                        /> Cab
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Bus", selectedType, setSelectedType)}
+                        /> Bus Tickets
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Flight", selectedType, setSelectedType)}
+                        /> Flights
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Hotel", selectedType, setSelectedType)}
+                        /> Hotel
+                      </label>
+                    </li>
                   </ul>
                 </div>
 
                 <div className="filter-section">
                   <h5>Duration</h5>
                   <ul className="filter-list">
-                    {filters.duration.map((dur, idx) => (
-                      <li key={idx}>
-                        <label>
-                          <input type="checkbox" /> {dur}
-                        </label>
-                      </li>
-                    ))}
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("0-2 hours", selectedDurations, setSelectedDurations)}
+                        /> 0-2 hours
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("2-5 hours", selectedDurations, setSelectedDurations)}
+                        />
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("5-10 hours", selectedDurations, setSelectedDurations)}
+                        />
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Overnight", selectedDurations, setSelectedDurations)}
+                        /> Overnight
+                      </label>
+                    </li>
                   </ul>
                 </div>
 
                 <div className="filter-section">
-                  <h5>Destination</h5>
-                  <div className="location-search">
-                    <input type="text" placeholder="Search destination" />
-                  </div>
+                  <h5>Destinations</h5>
                   <ul className="filter-list">
-                    {filters.destinations.map((loc, idx) => (
-                      <li key={idx}>
-                        <label>
-                          <input type="checkbox" /> {loc}
-                        </label>
-                      </li>
-                    ))}
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Delhi", selectedDestinations, setSelectedDestinations)}
+                        />
+                        Delhi
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Mumbai", selectedDestinations, setSelectedDestinations)}
+                        /> Mumbai
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Bangalore", selectedDestinations, setSelectedDestinations)}
+                        /> Bangalore
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Jaipur", selectedDestinations, setSelectedDestinations)}
+                        /> Jaipur
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          onChange={() => handlechekbox("Goa", selectedDestinations, setSelectedDestinations)}
+                        /> Goa
+                      </label>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -103,7 +199,7 @@ export default function Homepage() {
             <Col lg={9}>
 
 
-<div className="tab-filter mb-4">
+              <div className="tab-filter mb-4">
                 <div className="d-flex gap-2 border-bottom pb-2">
                   <button
                     onClick={() => setActiveTab('all')}
@@ -143,9 +239,8 @@ export default function Homepage() {
                 <span>Showing {data.length} services available</span>
               </div>
 
-              {/* Service cards row */}
               <Row>
-                {filteredData.map((service) => (
+                {sidebarFilteredData.map((service) => (
                   <Col lg={6} className="mb-4" key={service.id}>
                     <div className="job-card">
 
@@ -184,9 +279,9 @@ export default function Homepage() {
                         <div className="card-footer d-flex justify-content-between align-items-center mt-3">
                           <span className="posted-date">Available from {service.createdAt}</span>
                           {/* <Link to={`/services/${service.id}`}> */}
-                         <Link to={`/service-details/${service.id}`}>
-  <button className="apply-btn">Book Now</button>
-</Link>
+                          <Link to={`/service-details/${service.id}`}>
+                            <button className="apply-btn">Book Now</button>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -197,7 +292,7 @@ export default function Homepage() {
           </Row>
         </Container>
       </div>
-      <WhyChoose/>
+      <WhyChoose />
     </div>
   );
 }

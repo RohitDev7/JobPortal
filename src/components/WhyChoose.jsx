@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faStar, 
-  faTag, 
-  faClock, 
-  faShieldAlt, 
-  faHeadset, 
+import {
+  faStar,
+  faTag,
+  faClock,
+  faShieldAlt,
+  faHeadset,
   faHeart,
   faArrowRight,
   faCar,
@@ -35,24 +35,27 @@ import {
   faRoute,
   faClock as faClockRegular
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "@tanstack/react-router";
 
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-// API function to fetch service details
-const fetchServiceDetails = async () => {
-  const { data } = await axios.get('http://localhost:5002/serviceDetails');
-  return data;
-};
 
-const TravelPage = () => {
-  // Fetch service details using TanStack Query
+
+
+
+const WhyChoose = () => {
+  const fetchServiceDetails = async () => {
+    const { data } = await axios.get('http://localhost:5002/serviceDetails');
+    return data;
+  };
+
   const { data: serviceDetails, isLoading, error } = useQuery({
     queryKey: ['serviceDetails'],
     queryFn: fetchServiceDetails,
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
 
-  // Popular Destinations Data (static)
+
   const popularDestinations = [
     {
       id: 1,
@@ -98,7 +101,7 @@ const TravelPage = () => {
     }
   ];
 
-  // Travel Deals Data (static)
+
   const travelDeals = [
     {
       id: 1,
@@ -151,7 +154,7 @@ const TravelPage = () => {
   ];
 
   const getTypeIcon = (type) => {
-    switch(type) {
+    switch (type) {
       case 'Cab': return faCar;
       case 'Bus': return faBus;
       case 'Flight': return faPlane;
@@ -174,7 +177,6 @@ const TravelPage = () => {
     return faStar;
   };
 
-  // Take only first 6 services or show loading/error states
   const topServices = serviceDetails?.slice(0, 6) || [];
 
   if (isLoading) {
@@ -191,15 +193,13 @@ const TravelPage = () => {
       <div className="error-container">
         <h2>Oops! Something went wrong</h2>
         <p>Failed to load travel services. Please try again later.</p>
-        <Button onClick={() => window.location.reload()}>Retry</Button>
       </div>
     );
   }
 
   return (
 
-<>
-
+    <>
 
       <section className="destinations-section">
         <Container>
@@ -235,7 +235,7 @@ const TravelPage = () => {
         </Container>
       </section>
 
-         <section className="deals-section">
+      <section className="deals-section">
         <Container>
           <h2>Special Travel Deals</h2>
           <Row>
@@ -254,9 +254,9 @@ const TravelPage = () => {
                       <FontAwesomeIcon icon={faClock} /> {deal.duration}
                     </p>
                     <div className="price-section">
-                                   <span className="discounted-price">{deal.discountedPrice}</span>
+                      <span className="discounted-price">{deal.discountedPrice}</span>
                       <span className="original-price">{deal.originalPrice}</span>
-         
+
                     </div>
                     <Button className="book-now">Book Now</Button>
                   </div>
@@ -268,20 +268,20 @@ const TravelPage = () => {
       </section>
 
 
-           <section className="services-section">
+      <section className="services-section">
         <Container>
           <Col lg={12}>
-          <div className="section-header">
-            <div>
-              <h2>Travel Services</h2>
-              <p>Premium travel services tailored just for you</p>
+            <div className="section-header">
+              <div>
+                <h2>Travel Services</h2>
+                <p>Premium travel services tailored just for you</p>
+              </div>
+              <a href="#" className="view-all">
+                View All Services <FontAwesomeIcon icon={faArrowRight} />
+              </a>
             </div>
-            <a href="#" className="view-all">
-              View All Services <FontAwesomeIcon icon={faArrowRight} />
-            </a>
-          </div>
           </Col>
-          
+
           <Row>
             {topServices.map(service => (
               <Col key={service.id} lg={4} md={6} className="mb-4">
@@ -296,22 +296,22 @@ const TravelPage = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <div className="service-header">
-                    <img 
-                      src={service.provider?.logo || 'https://via.placeholder.com/50'} 
-                      alt={service.provider?.name} 
-                      className="service-logo" 
+                    <img
+                      src={service.provider?.logo || 'https://via.placeholder.com/50'}
+                      alt={service.provider?.name}
+                      className="service-logo"
                     />
                     <h3>{service.title}</h3>
                   </div>
-                  
-                  
+
+
                   <div className="route-info">
                     <FontAwesomeIcon icon={faRoute} className="me-2" />
                     <span>{service.route?.from} → {service.route?.to}</span>
                   </div>
-                  
+
                   <div className="service-details">
                     <span className="duration">
                       <FontAwesomeIcon icon={faClockRegular} /> {service.duration?.hours}h {service.duration?.minutes}m
@@ -320,7 +320,7 @@ const TravelPage = () => {
                       <FontAwesomeIcon icon={faMapPin} /> {service.route?.distance}
                     </span>
                   </div>
-                  
+
                   <div className="price-section">
                     <span className="price-label">Starting from</span>
                     <span className="price">
@@ -328,16 +328,20 @@ const TravelPage = () => {
                     </span>
                     <span className="price-period">/{service.price?.period}</span>
                   </div>
-                  
+
                   <div className="amenities">
                     {service.amenities?.slice(0, 4).map((item, index) => (
                       <span key={index} className="amenity-tag">
-                        <FontAwesomeIcon icon={getAmenityIcon(item)} /> 
+                        <FontAwesomeIcon icon={getAmenityIcon(item)} />
                         {item.length > 15 ? item.substring(0, 12) + '...' : item}
                       </span>
                     ))}
                   </div>
-                  <Button className="view-details">View Details</Button>
+                  {/* <Button className="view-details">View Details</Button> */}
+
+                  <Link to={`/service-details/${service.id}`}>
+                    <button className="apply-btn view-details">Book Now</button>
+                  </Link>
                 </div>
               </Col>
             ))}
@@ -346,16 +350,16 @@ const TravelPage = () => {
       </section>
 
 
- <section className="features-section">
+      <section className="features-section">
         <Container>
           <div className="guarantee-box">
             <h3>Best Price Guarantee</h3>
             <p>Find a lower price? We'll match it. We ensure you get the best deals.</p>
           </div>
-          
+
           <h2>Why Choose Us</h2>
           <p className="subtitle">We make your travel experience seamless and memorable</p>
-          
+
           <Row>
             {features.map(feature => (
               <Col key={feature.id} lg={4} md={6} className="mb-4">
@@ -372,14 +376,14 @@ const TravelPage = () => {
         </Container>
       </section>
 
-         
+
 
       <section className="app-section">
         <Container>
           <div className="app-content">
             <h2>Download Our Travel App</h2>
             <p>Book flights, hotels and cabs on the go. Get exclusive app-only deals and manage your trips easily.</p>
-            
+
             <div className="app-buttons">
               <Button className="app-store">
                 <FontAwesomeIcon icon={faMobile} className="store-icon" />
@@ -390,7 +394,7 @@ const TravelPage = () => {
                 <span className="store-text">Google Play</span>
               </Button>
             </div>
-            
+
             <div className="quote">
               <h3>The World is Just One Flight Away</h3>
             </div>
@@ -398,7 +402,7 @@ const TravelPage = () => {
         </Container>
       </section>
 
-      
+
       <footer className="footer">
         <Container>
           <Row className="footer-content">
@@ -406,7 +410,7 @@ const TravelPage = () => {
               <h3>TravelEase</h3>
               <p>Your one-stop destination for all travel needs. Book flights, hotels, and cabs with best prices guaranteed.</p>
             </Col>
-            
+
             <Col lg={2} md={6} className="footer-section">
               <h4>Company</h4>
               <ul>
@@ -416,7 +420,7 @@ const TravelPage = () => {
                 <li><a href="#">Press</a></li>
               </ul>
             </Col>
-            
+
             <Col lg={2} md={6} className="footer-section">
               <h4>Support</h4>
               <ul>
@@ -426,7 +430,7 @@ const TravelPage = () => {
                 <li><a href="#">FAQs</a></li>
               </ul>
             </Col>
-            
+
             <Col lg={4} md={6} className="footer-section">
               <h4>Follow Us</h4>
               <div className="social-links">
@@ -441,7 +445,7 @@ const TravelPage = () => {
               </div>
             </Col>
           </Row>
-          
+
           <div className="footer-bottom">
             <p>2026 TravelEase Agency. All rights reserved</p>
             <div className="footer-links">
@@ -451,10 +455,10 @@ const TravelPage = () => {
           </div>
         </Container>
       </footer>
-</>
+    </>
 
- 
+
   );
 };
 
-export default TravelPage;
+export default WhyChoose;

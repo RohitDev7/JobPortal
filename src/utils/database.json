@@ -15,6 +15,22 @@
         2
       ],
       "createdAt": "2026-03-01"
+    },
+    {
+      "id": "a43a",
+      "firstname": "Rohit",
+      "lastname": "Kumar",
+      "email": "rkumarplanetecomsolution7@gmail.com",
+      "phone": "7878984789",
+      "password": "123456789",
+      "confirmpassword": "123456789",
+      "nationality": "Indian",
+      "currentcity": "Delhi",
+      "preferredtravelstyle": "Luxury",
+      "travelfrequecy": "Rarely",
+      "budgetrange": "₹10k - ₹25k",
+      "preferreddestination": "Manali",
+      "intrests": "mountain"
     }
   ],
   "travelAgencies": [
