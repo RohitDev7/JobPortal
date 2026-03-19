@@ -2017,6 +2017,10 @@ button.btn-secondary:hover {
     text-decoration: underline;
 }
 
+section.Toastify {
+    padding: 0;
+}
+
 
 @media (max-width: 768px) {
   .book-page .container {

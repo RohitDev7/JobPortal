@@ -12,6 +12,7 @@ import BookService from "./Pages/Services/BookService"
 import Login from "./Pages/Auth/Login"
 import Register from "./Pages/Auth/Register"
 import Navbar from "./components/Navbar"
+import DashboardPage from "./Pages/Dashboard/DashboardPage"
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -60,13 +61,22 @@ const registerRoute = createRoute({
   component: Register,
 })
 
+const dashboardRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/dashboard",
+  component: DashboardPage,
+})
+
+
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   serviceRoute,
   serviceDetailsRoute,
   bookRoute,
   loginRoute,
-  registerRoute
+  registerRoute,
+  dashboardRoute
 ])
 
 export const router = createRouter({
