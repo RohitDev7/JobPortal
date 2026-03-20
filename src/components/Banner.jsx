@@ -4,10 +4,10 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faRocket, faUsers, faCar, faBus, faPlane, faMotorcycle, faTrain, faUmbrellaBeach, faHotel, faHiking } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 library.add(fas);
 
 export default function Banner() {
-    // Modified categories based on your service details JSON
     const categories = [
         { 
             title: "Luxury Cabs", 
@@ -74,14 +74,14 @@ export default function Banner() {
                                     Explore thousands of travel services across India. Book your perfect
                                     trip with cabs, buses, flights, and bike rentals at best prices.
                                 </p>
-
                                 <div className="searchBar">
-                                    <input type="text" placeholder="From" defaultValue="Delhi" />
-                                    <input type="text" placeholder="To" defaultValue="Jaipur" />
+                                    <input type="text" placeholder="From"  />
+                                    <input type="text" placeholder="To"  />
                                     <input type="date" placeholder="Travel Date" defaultValue="2026-03-20" />
-                                    <button>Search</button>
+                                    <Link to="/service">
+                                        <button>Search</button>
+                                    </Link>
                                 </div>
-
                                 <div className="stats">
                                     <div className="statCard">
                                         <div>
@@ -116,7 +116,6 @@ export default function Banner() {
                     </Row>
                 </Container>
             </div>
-
             <div className="categories">
                 <Container>
                     <Row>
@@ -127,7 +126,6 @@ export default function Banner() {
                                     <p>Find the best travel options for your journey</p>
                                 </div>
                             </div>
-
                             <div className="categoryGrid">
                                 {categories.map((cat, index) => (
                                     <div

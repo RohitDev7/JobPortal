@@ -1,6 +1,5 @@
-// App.js
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route ,Navigate} from "react-router-dom";
 
 import Homepage from "./Pages/Homepage";
 import ServiceList from "./Pages/Services/ServiceList";
@@ -11,19 +10,84 @@ import Register from "./Pages/Auth/Register";
 import DashboardPage from "./Pages/Dashboard/DashboardPage";
 import Navbar from "./components/Navbar";
 
+import ProtectedRoute from "./routes/ProtectedRoute"
+import PublicRoute from "./routes/PublicRoute"
 function App() {
+    const [sidebarOpen, setSidebarOpen] = useState(true)
   return (
     <>
-      <Navbar />
+      <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
       <div>
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/service" element={<ServiceList />} />
-          <Route path="/service-details/:id" element={<ServiceDetails />} />
-          <Route path="/book/:id" element={<BookService />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
+
+
+                 <Route path="/" element={<Navigate to="/index" />} />
+
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/index"
+            element={
+              <PublicRoute>
+                <Homepage />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/service"
+            element={
+              <PublicRoute>
+                <ServiceList />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/service-details/:id"
+            element={
+              <PublicRoute>
+                <ServiceDetails />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/book/:id"
+            element={
+              <PublicRoute>
+                <BookService />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <Register />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <DashboardPage
+                sidebarOpen={sidebarOpen} 
+        setSidebarOpen={setSidebarOpen} 
+                />
+              </ProtectedRoute>
+            }
+          />
+
         </Routes>
       </div>
     </>

@@ -87,7 +87,7 @@ export default function Register() {
             }
             setRole("");
             setError("");
-            navigate({ to: "/login" });
+            navigate("/login");
         }
         catch {
             setError(error, "error")
@@ -105,13 +105,9 @@ export default function Register() {
                     <Col lg={9}>
                         <div className="signup-card">
                             <h2 className="signup-title">Create Account</h2>
-
                             <Form onSubmit={handleSubmit}>
                                 <Row>
-
-
                                     <Col md={12} className="mb-4">
-                                        <Form.Label className="fw-bold">I want to register as:</Form.Label>
                                         <div className="d-flex gap-4">
                                             <Form.Check
                                                 type="radio"
@@ -141,7 +137,7 @@ export default function Register() {
                                         <Form.Label>First Name *</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            placeholder="Enter first name"
+                                            placeholder=""
                                             name="firstname"
                                             value={form.firstname}
                                             onChange={handlechange}
@@ -152,7 +148,7 @@ export default function Register() {
                                         <Form.Label>Last Name *</Form.Label>
                                         <Form.Control
                                             type="text"
-                                            placeholder="Enter last name"
+                                            placeholder=""
                                             name="lastname"
                                             value={form.lastname}
                                             onChange={handlechange}
@@ -164,7 +160,7 @@ export default function Register() {
                                         <Form.Control
                                             type="email"
                                             name="email"
-                                            placeholder="Enter email"
+                                            placeholder=""
                                             value={form.email}
                                             onChange={handlechange}
                                         />
@@ -174,7 +170,7 @@ export default function Register() {
                                         <Form.Label>Phone Number</Form.Label>
                                         <Form.Control
                                             type="tel"
-                                            placeholder="+91 9876543210"
+                                            placeholder=""
                                             name="phone"
                                             value={form.phone}
                                             onChange={handlechange}
@@ -186,7 +182,7 @@ export default function Register() {
                                         <Form.Control
                                             type="password"
                                             name="password"
-                                            placeholder="Enter password"
+                                            placeholder=""
                                             value={form.password}
                                             onChange={handlechange}
                                         />
@@ -197,7 +193,7 @@ export default function Register() {
                                         <Form.Control
                                             type="password"
                                             name="confirmpassword"
-                                            placeholder="Confirm password"
+                                            placeholder=""
                                             value={form.confirmpassword}
                                             onChange={handlechange}
                                         />
@@ -397,6 +393,11 @@ export default function Register() {
                                 <button type="submit" className="signup-btn">
                                     Create Account
                                 </button>
+                                 <Link to="/login" className="signup-signin">
+              Sign In
+            </Link>
+
+      
 
                                 {error && <p className="text-danger mt-2">{error}</p>}
                             </Form>

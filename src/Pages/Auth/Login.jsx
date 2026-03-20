@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState,useContext } from 'react'
 import { Form, Row, Col, Container } from 'react-bootstrap'
@@ -80,7 +80,7 @@ const handleSubmit = async (e) => {
             if (user) {
                 login(user);
                 alert("Customer Login Successful");
-                navigate({ to: "/dashboard" });
+                navigate("/dashboard");
             } else {
                 setError("Invalid email or password");
             }
@@ -100,7 +100,7 @@ const handleSubmit = async (e) => {
             if (user) {
                 login(user);
                 alert("Agency Login Successful");
-                navigate({ to: "/dashboard" });
+                navigate("/dashboard");
             } else {
                 setError("Invalid email or password");
             }
@@ -167,6 +167,8 @@ const handleSubmit = async (e) => {
                                     <button type="submit" className="signup-btn">
                                         Login
                                     </button>
+                                    <Link to="/register" className='signup-signin'>Sign up</Link>
+                                  
 
                                     {error && <p className="text-danger mt-2">{error}</p>}
                                 </Form>

@@ -83,9 +83,9 @@ function BookService() {
                         <div className="service-summary">
                             <Row>
                                 <Col md={6}>
-                                    <p><strong>From:</strong> {service.route?.from || "N/A"}</p>
-                                    <p><strong>To:</strong> {service.route?.to || "N/A"}</p>
-                                    <p><strong>Duration:</strong> {service.route?.duration || "N/A"}</p>
+                                    <p><strong>From:</strong> {service.route?.from}</p>
+                                    <p><strong>To:</strong> {service.route?.to}</p>
+                                    <p><strong>Duration:</strong> {service.route?.duration}</p>
                                 </Col>
                                 <Col md={6}>
                                     <p><strong>Price:</strong> ₹{service.price?.min} - ₹{service.price?.max || "N/A"}</p>

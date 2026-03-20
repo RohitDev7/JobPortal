@@ -372,7 +372,137 @@ a.navbar-brand {
 }
 
 
+.header-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.profile-area:hover {
+    background: #f4f6fb;
+}
+
+.profile-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #4b6cb7;
+}
+
+.profile-name {
+    font-weight: 500;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* padding:10px 0; */
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-dropdown button {
+    border: none;
+    background: none;
+    padding: 12px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.profile-dropdown button:hover {
+    background: #f2f4ff;
+    border-radius: 10px;
+}
+
+.logout-btn {
+    color: red;
+    font-weight: 600;
+}
+.sidebar-card {
+    margin-left: auto;
+    display: flex;
+    justify-content: right;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    /* left: -170px; */
+    width: 100px;
+    height: 100vh;
+    background: #5048e2;
+    color: white;
+    /* padding-top: 60px; */
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0;
+    width: 250px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 25px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.sidebar ul li:hover {
+    background: #334155;
+}
+
+.toggleBtn {
+    position: relative;
+    top: 0px;
+    right: 0;
+    background: #1e293b;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* .main-navbar.sidebar-open {
+    width: calc(100% - 250px);
+    margin-left: auto;
+    float: right;
+    position: relative !important;
+} */
+
+.main-navbar.sidebar-closed {
+    width: calc(100% - 100px);
+    margin-left: auto;
+    float: right;
+    position: relative !important;
+}
 .parent-container {
   padding: 40px 0;
   background: #f5f7fb;
@@ -1803,7 +1933,7 @@ button.book-now {
 
 
 .job-details-page {
-  margin-top: 68px;
+  margin-top: 55px;
 }
 
 span.featured-badge svg {
@@ -1859,10 +1989,11 @@ span.featured-badge svg {
 }
 
 form h5 {
-  font-weight: 600;
-  color: #333;
-  border-left: 4px solid #0d6efd;
-  padding-left: 10px;
+    font-weight: 600;
+    color: #333;
+    border-left: 4px solid #0d6efd;
+    padding-left: 10px;
+    margin-bottom: 25px;
 }
 
 .form-control,
@@ -1872,6 +2003,11 @@ form h5 {
   font-size: 14px;
   border: 1px solid #ced4da;
   transition: all 0.2s ease-in-out;
+}
+
+.form-check-input[type=radio] {
+    border-radius: 50%;
+    border: 1px solid #666666;
 }
 
 .form-control:focus,
@@ -1990,7 +2126,7 @@ button.btn-secondary:hover {
     width: auto;
     background: linear-gradient(135deg, #4f46e5, #6366f1);
     border: none;
-    padding: 12px;
+    padding: 12px 40px;
     color: #fff;
     font-weight: 600;
     border-radius: 8px;
@@ -2014,7 +2150,7 @@ button.btn-secondary:hover {
 }
 
 .signup-signin:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 section.Toastify {
