@@ -1,34 +1,28 @@
-import { useQuery } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link, useParams } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
 
 function ServiceDetails() {
-  const { id } = useParams({ from: "/service-details/$id" });
+  const { id } = useParams();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`);
+        setData(res.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error:", error);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [id]);
 
-  const fetchServiceDetails = async () => {
-    try {
-      console.log("Fetching data for ID:", id);
-      const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`);
-      console.log("api", res.data);
-      return res.data;
-    } catch (error) {
-      console.error("api:", error);
-      throw error;
-    }
-  };
-
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["serviceDetails", id],
-    queryFn: fetchServiceDetails,
-    enabled: !!id
-  });
-
-  if (isLoading) return <h2 className="text-center mt-5">Loading...</h2>;
-  if (isError) return <h2 className="text-center mt-5">Error loading data</h2>;
-
+  if (loading) return <h2 className="text-center mt-5">Loading...</h2>;
   if (!data) return <h2 className="text-center mt-5">No data available</h2>;
 
   return (
@@ -40,29 +34,18 @@ function ServiceDetails() {
               <h3>{data?.title}</h3>
 
               <div className="compnay-header">
-                <p>
-                  <strong>Service Type:</strong> {data?.serviceType}
-                </p>
-
+                <p><strong>Service Type:</strong> {data?.serviceType}</p>
                 <p>
                   <strong>Status:</strong>{" "}
                   <span className={data?.status === "active" ? "text-success" : "text-secondary"}>
                     {data?.status}
                   </span>
                 </p>
-
-                <p>
-                  <strong>Created:</strong> {data?.createdAt ? new Date(data.createdAt).toLocaleDateString() : 'N/A'}
-                </p>
-                <p>
-                  <strong>Last Updated:</strong> {data?.updatedAt ? new Date(data.updatedAt).toLocaleDateString() : 'N/A'}
-                </p>
-                <p>
-                  <strong>Slug:</strong> {data?.slug || 'N/A'}
-                </p>
+                <p><strong>Created:</strong> {data?.createdAt ? new Date(data.createdAt).toLocaleDateString() : 'N/A'}</p>
+                <p><strong>Last Updated:</strong> {data?.updatedAt ? new Date(data.updatedAt).toLocaleDateString() : 'N/A'}</p>
+                <p><strong>Slug:</strong> {data?.slug || 'N/A'}</p>
               </div>
 
-              {/* Route Details */}
               {data?.route && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Route Details</h5>
@@ -78,9 +61,7 @@ function ServiceDetails() {
                       <strong>Stops:</strong>
                       <ul className="p-0 pt-1">
                         {data.route.stops && data.route.stops.length > 0 ? (
-                          data.route.stops.map((stop, i) => (
-                            <li key={i}>{stop}</li>
-                          ))
+                          data.route.stops.map((stop, i) => <li key={i}>{stop}</li>)
                         ) : (
                           <li>No stops available</li>
                         )}
@@ -90,7 +71,6 @@ function ServiceDetails() {
                 </div>
               )}
 
-              {/* Vehicle Details */}
               {data?.vehicleDetails && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Vehicle Details</h5>
@@ -104,9 +84,7 @@ function ServiceDetails() {
                       <strong>Vehicle Features:</strong>
                       <ul className="p-0 pt-1">
                         {data.vehicleDetails.features && data.vehicleDetails.features.length > 0 ? (
-                          data.vehicleDetails.features.map((feature, i) => (
-                            <li key={i}>{feature}</li>
-                          ))
+                          data.vehicleDetails.features.map((feature, i) => <li key={i}>{feature}</li>)
                         ) : (
                           <li>No features available</li>
                         )}
@@ -116,7 +94,7 @@ function ServiceDetails() {
                 </div>
               )}
 
-              {/* Price Details */}
+         
               {data?.price && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Price Details</h5>
@@ -148,7 +126,7 @@ function ServiceDetails() {
                 </div>
               )}
 
-              {/* Duration Details */}
+         
               {data?.duration && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Duration Details</h5>
@@ -160,60 +138,51 @@ function ServiceDetails() {
                 </div>
               )}
 
-              {/* Description */}
+            
               <div className="compnay-calss">
                 <h5>Description</h5>
                 <p>{data?.description || 'No description available'}</p>
               </div>
 
-              {/* Service Highlights */}
+   
               {data?.serviceHighlights && data.serviceHighlights.length > 0 && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Service Highlights</h5>
                   <div className="company-badge">
                     {data.serviceHighlights.map((highlight, i) => (
-                      <span className="badges" key={i}>
-                        {highlight}
-                      </span>
+                      <span className="badges" key={i}>{highlight}</span>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Amenities */}
+           
               {data?.amenities && data.amenities.length > 0 && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Amenities</h5>
                   <div className="company-badge">
                     {data.amenities.map((amenity, i) => (
-                      <span className="badges" key={i}>
-                        {amenity}
-                      </span>
+                      <span className="badges" key={i}>{amenity}</span>
                     ))}
                   </div>
                 </div>
               )}
-
 
               <div className="compnay-calss">
                 <h5 className="mt-2">Cancellation Policy</h5>
                 <p>{data?.cancellationPolicy || 'No cancellation policy available'}</p>
               </div>
 
-
               <div className="compnay-calss">
                 <h5 className="mt-2">Payment Options</h5>
                 {data?.paymentOptions && data.paymentOptions.length > 0 ? (
                   <ul>
-                    {data.paymentOptions.map((option, i) => (
-                      <li key={i}>{option}</li>
-                    ))}
+                    {data.paymentOptions.map((option, i) => <li key={i}>{option}</li>)}
                   </ul>
                 ) : (
                   <p>No payment options available</p>
                 )}
               </div>
-
 
               <div className="compnay-calss">
                 <h5 className="mt-2">Booking Information</h5>
@@ -230,22 +199,18 @@ function ServiceDetails() {
                 )}
               </div>
 
-
               <div className="compnay-calss">
                 <h5 className="mt-2">Tags</h5>
                 {data?.tags && data.tags.length > 0 ? (
                   <div className="company-badge">
                     {data.tags.map((tag, i) => (
-                      <span className="badges" key={i}>
-                        #{tag}
-                      </span>
+                      <span className="badges" key={i}>#{tag}</span>
                     ))}
                   </div>
                 ) : (
                   <p>No tags available</p>
                 )}
               </div>
-
 
               {data?.seasonalOffers && (
                 <div className="compnay-calss">
@@ -254,18 +219,14 @@ function ServiceDetails() {
                 </div>
               )}
 
-
               {data?.nearbyAttractions && data.nearbyAttractions.length > 0 && (
                 <div className="compnay-calss">
                   <h5 className="mt-2">Nearby Attractions</h5>
                   <ul>
-                    {data.nearbyAttractions.map((attraction, i) => (
-                      <li key={i}>{attraction}</li>
-                    ))}
+                    {data.nearbyAttractions.map((attraction, i) => <li key={i}>{attraction}</li>)}
                   </ul>
                 </div>
               )}
-
 
               <div className="compnay-calss Customer">
                 <h5 className="mt-2 mb-0">Customer Reviews</h5>
@@ -273,20 +234,14 @@ function ServiceDetails() {
                   <div>
                     {data.reviews.map((review, index) => (
                       <div key={index} className="bg-light rounded customer-reviews">
-
                         <div className="d-flex justify-content-between">
                           <strong>{review.user ?? "Anonymous"}</strong>
                           <span>{review.rating ?? "Not available"} / 5</span>
                         </div>
-
-                        <p className="mb-0 mt-2">
-                          {review.comment ?? "No comment"}
-                        </p>
-
+                        <p className="mb-0 mt-2">{review.comment ?? "No comment"}</p>
                         <small className="text-muted">
                           {review.date ? new Date(review.date).toLocaleDateString() : "Date not available"}
                         </small>
-
                       </div>
                     ))}
                   </div>
@@ -301,7 +256,6 @@ function ServiceDetails() {
 
           <Col lg={4}>
             <div className="job-details-page-card rightBar">
-
               {data?.provider && (
                 <div className="compnay-calss pt-0">
                   <img
@@ -329,7 +283,6 @@ function ServiceDetails() {
                   <p><small>{data.provider.about || 'No information available'}</small></p>
                 </div>
               )}
-
 
               {data?.driverDetails && (
                 <div className="compnay-calss">
@@ -373,15 +326,12 @@ function ServiceDetails() {
                       {data.price.currency || ''}{data.price.min || 'N/A'} - {data.price.currency || ''}{data.price.max || 'N/A'}
                       <span>/{data.price.period || 'N/A'}</span>
                     </h3>
-                       <Link to={`/book/${data.id}`}>
-                    <button className="btn btn-primary w-100">
-                      Book Now
-                    </button>
+                    <Link to={`/book/${data.id}`}>
+                      <button className="btn btn-primary w-100">Book Now</button>
                     </Link>
                   </div>
                 </div>
               )}
-
 
               <div className="compnay-calss">
                 <h5>Service Stats</h5>
@@ -413,7 +363,6 @@ function ServiceDetails() {
                   </ul>
                 </div>
               )}
-
 
               <div className="compnay-calss">
                 <h5>Additional Info</h5>

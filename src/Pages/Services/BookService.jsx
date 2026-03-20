@@ -1,11 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import axios from "axios";
-import { useParams, useNavigate } from "@tanstack/react-router";
+import { useParams, useNavigate } from "react-router-dom";
 
 function BookService() {
-    const { id } = useParams({ from: "/book/$id" });
+    const { id } = useParams();
     const navigate = useNavigate();
 
     const [fullName, setFullName] = useState("");
@@ -18,21 +17,25 @@ function BookService() {
     const [passengers, setPassengers] = useState(1);
     const [specialRequests, setSpecialRequests] = useState("");
     const [paymentMethod, setPaymentMethod] = useState("cash");
+    const [service, setService] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
 
-    const bookServices = async () => {
-        const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`)
-        console.log("booking API:", res)
-        return res.data
-    }
-
-
-    const { data: service, isLoading, isError } = useQuery({
-        queryKey: ["service", id],
-        queryFn: bookServices,
-
-    })
-
-
+    useEffect(() => {
+        const fetchService = async () => {
+            try {
+                const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`);
+                console.log("booking API:", res);
+                setService(res.data);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Error:", error);
+                setIsError(true);
+                setIsLoading(false);
+            }
+        };
+        fetchService();
+    }, [id]);
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -51,36 +54,31 @@ function BookService() {
             passengers: passengers,
             specialRequests: specialRequests,
             paymentMethod: paymentMethod
-        }
+        };
         try {
             const res = await axios.post("http://localhost:5002/bookings", bookingdata);
             console.log("response:", res);
-
             alert("Booking Successful!");
-            navigate({ to: `/service-details/${id}` });
-
+            navigate(`/service-details/${id}`);
         } catch (err) {
             console.error("error:", err);
             alert("Booking failed!");
         }
-    }
+    };
 
     if (isLoading) return <h2 className="text-center mt-5">Loading...</h2>;
-    if (isError) return <h2 className="text-center mt-5">Error aaya {console.log(isError, "error aaya")} </h2>;
+    if (isError) return <h2 className="text-center mt-5">Error aaya</h2>;
     if (!service) return <h2 className="text-center mt-5">Service nahi mila</h2>;
-
 
     return (
         <div className="job-details-page book-page py-5">
             <Container>
                 <Row>
                     <Col lg={12} className="m-auto">
-
                         <div className="header-heading">
                             <h3 className="mb-0">Book Your Flight</h3>
                             <p className="mb-0 small">{service.title}</p>
                         </div>
-
 
                         <div className="service-summary">
                             <Row>
@@ -173,12 +171,12 @@ function BookService() {
                                 </Col>
                             </Row>
 
-
                             <Row>
                                 <Col md={6}>
                                     <Form.Group className="mb-3">
                                         <Form.Label>Return Date</Form.Label>
-                                        <Form.Control type="date"
+                                        <Form.Control 
+                                            type="date"
                                             value={returnDate}
                                             onChange={(e) => setReturnDate(e.target.value)}
                                         />
@@ -207,7 +205,6 @@ function BookService() {
                                 />
                             </Form.Group>
 
-
                             <h5 className="mb-3 mt-4">Payment Method</h5>
                             <Row>
                                 <Col md={6}>
@@ -225,7 +222,6 @@ function BookService() {
                                 </Col>
                             </Row>
 
-
                             <div className="price-summary">
                                 <Row>
                                     <Col sm={6}>
@@ -241,7 +237,7 @@ function BookService() {
                             </div>
 
                             <div className="d-flex gap-3 mt-4">
-                                <Button variant="secondary" className="w-50" onClick={() => navigate({ to: `/service-details/${id}` })}>
+                                <Button variant="secondary" className="w-50" onClick={() => navigate(`/service-details/${id}`)}>
                                     Cancel
                                 </Button>
                                 <Button variant="primary" type="submit" className="w-50">
@@ -254,12 +250,9 @@ function BookService() {
                             <p className="mb-1">✓ Free cancellation up to 24 hours before</p>
                             <p className="mb-0">✓ Secure payment • No hidden charges</p>
                         </div>
-
-
                     </Col>
                 </Row>
             </Container>
-
         </div>
     );
 }

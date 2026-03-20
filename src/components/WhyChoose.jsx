@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -35,26 +35,27 @@ import {
   faRoute,
   faClock as faClockRegular
 } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "@tanstack/react-router";
-
-import { useQuery } from '@tanstack/react-query';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
-
-
-
 const WhyChoose = () => {
-  const fetchServiceDetails = async () => {
-    const { data } = await axios.get('http://localhost:5002/serviceDetails');
-    return data;
-  };
+  const [serviceDetails, setServiceDetails] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const { data: serviceDetails, isLoading, error } = useQuery({
-    queryKey: ['serviceDetails'],
-    queryFn: fetchServiceDetails,
-    staleTime: 5 * 60 * 1000, // 5 minutes
-  });
-
+  useEffect(() => {
+    const fetchServiceDetails = async () => {
+      try {
+        const { data } = await axios.get('http://localhost:5002/serviceDetails');
+        setServiceDetails(data);
+        setIsLoading(false);
+      } catch (err) {
+        setError(err);
+        setIsLoading(false);
+      }
+    };
+    fetchServiceDetails();
+  }, []);
 
   const popularDestinations = [
     {
@@ -100,7 +101,6 @@ const WhyChoose = () => {
       image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
     }
   ];
-
 
   const travelDeals = [
     {
@@ -198,9 +198,7 @@ const WhyChoose = () => {
   }
 
   return (
-
     <>
-
       <section className="destinations-section">
         <Container>
           <div className="section-header">
@@ -256,7 +254,6 @@ const WhyChoose = () => {
                     <div className="price-section">
                       <span className="discounted-price">{deal.discountedPrice}</span>
                       <span className="original-price">{deal.originalPrice}</span>
-
                     </div>
                     <Button className="book-now">Book Now</Button>
                   </div>
@@ -266,7 +263,6 @@ const WhyChoose = () => {
           </Row>
         </Container>
       </section>
-
 
       <section className="services-section">
         <Container>
@@ -306,7 +302,6 @@ const WhyChoose = () => {
                     <h3>{service.title}</h3>
                   </div>
 
-
                   <div className="route-info">
                     <FontAwesomeIcon icon={faRoute} className="me-2" />
                     <span>{service.route?.from} → {service.route?.to}</span>
@@ -337,7 +332,6 @@ const WhyChoose = () => {
                       </span>
                     ))}
                   </div>
-                  {/* <Button className="view-details">View Details</Button> */}
 
                   <Link to={`/service-details/${service.id}`}>
                     <button className="apply-btn view-details">Book Now</button>
@@ -348,7 +342,6 @@ const WhyChoose = () => {
           </Row>
         </Container>
       </section>
-
 
       <section className="features-section">
         <Container>
@@ -376,8 +369,6 @@ const WhyChoose = () => {
         </Container>
       </section>
 
-
-
       <section className="app-section">
         <Container>
           <div className="app-content">
@@ -401,7 +392,6 @@ const WhyChoose = () => {
           </div>
         </Container>
       </section>
-
 
       <footer className="footer">
         <Container>
@@ -456,8 +446,6 @@ const WhyChoose = () => {
         </Container>
       </footer>
     </>
-
-
   );
 };
 

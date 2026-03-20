@@ -1,4 +1,4 @@
-import { Link, useNavigate } from '@tanstack/react-router'
+import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Form, Row, Col, Container } from 'react-bootstrap'
