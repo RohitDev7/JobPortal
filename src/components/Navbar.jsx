@@ -16,7 +16,12 @@ export default function NavigationBar({ sidebarOpen, setSidebarOpen }) {
     };
     return (
 
-        <Navbar expand="lg"  className={sidebarOpen ? "main-navbar sidebar-open" : "main-navbar sidebar-closed"}>
+        <Navbar
+  expand="lg"
+  className={`main-navbar 
+    ${sidebarOpen ? "sidebar-open" : "sidebar-closed"} 
+    ${user ? "logged-in" : ""}`}
+>
             <Container>
                 <Navbar.Brand as={Link} to="/">TravelAgency</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
