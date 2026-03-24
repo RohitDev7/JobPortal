@@ -24,6 +24,7 @@ export default function ServiceList() {
   if (isLoading) return <h2>Loading...</h2>;
 
   return (
+    <>
     <div className="service-page-card">
       <Container>
         <Row>
@@ -80,5 +81,8 @@ export default function ServiceList() {
         </Row>
       </Container>
     </div>
+    <br/>
+    <br/>
+    </>
   );
 }

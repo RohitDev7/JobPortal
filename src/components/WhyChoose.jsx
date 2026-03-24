@@ -392,59 +392,6 @@ const WhyChoose = () => {
           </div>
         </Container>
       </section>
-
-      <footer className="footer">
-        <Container>
-          <Row className="footer-content">
-            <Col lg={4} md={6} className="footer-section">
-              <h3>TravelEase</h3>
-              <p>Your one-stop destination for all travel needs. Book flights, hotels, and cabs with best prices guaranteed.</p>
-            </Col>
-
-            <Col lg={2} md={6} className="footer-section">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Press</a></li>
-              </ul>
-            </Col>
-
-            <Col lg={2} md={6} className="footer-section">
-              <h4>Support</h4>
-              <ul>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Cancellation</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQs</a></li>
-              </ul>
-            </Col>
-
-            <Col lg={4} md={6} className="footer-section">
-              <h4>Follow Us</h4>
-              <div className="social-links">
-                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
-                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
-                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
-                <a href="#"><FontAwesomeIcon icon={faStar} /></a>
-              </div>
-              <div className="contact-info mt-3">
-                <p><FontAwesomeIcon icon={faPhone} /> +91 1234567890</p>
-                <p><FontAwesomeIcon icon={faEnvelope} /> info@travelease.com</p>
-              </div>
-            </Col>
-          </Row>
-
-          <div className="footer-bottom">
-            <p>2026 TravelEase Agency. All rights reserved</p>
-            <div className="footer-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-            </div>
-          </div>
-        </Container>
-      </footer>
     </>
   );
 };

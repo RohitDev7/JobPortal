@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 
 import ProtectedRoute from "./routes/ProtectedRoute"
 import PublicRoute from "./routes/PublicRoute"
+import Footer from "./components/Footer";
 function App() {
     const [sidebarOpen, setSidebarOpen] = useState(true)
   return (
@@ -90,6 +91,7 @@ function App() {
 
         </Routes>
       </div>
+      <Footer/>
     </>
   );
 }

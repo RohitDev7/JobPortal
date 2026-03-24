@@ -350,6 +350,13 @@ body {
     margin-left: auto;
     position: relative !important;
 }
+.main-navbar.sidebar-closed.logged-in {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 100px);
+    z-index: 1000;
+}
 /* Parent div */
 .nav-parent {
   padding: 5px 10px;
@@ -510,6 +517,7 @@ a.navbar-brand {
     position: absolute !important;
     margin-top: 0;
 }
+
 .parent-container {
   padding: 40px 0;
   background: #f5f7fb;
@@ -2366,6 +2374,12 @@ section.Toastify {
   .container-sm,
   .container-xl,
   .container-xxl {
-    max-width: 1600px !important;
+    max-width: 1680px !important;
   }
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1250px !important;
+    }
 }
