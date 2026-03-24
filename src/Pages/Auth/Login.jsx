@@ -105,7 +105,30 @@ const handleSubmit = async (e) => {
                 setError("Invalid email or password");
             }
 
-        } else {
+        }  else if (role === "admin") {
+
+    const res = await axios.get(`http://localhost:5002/admins`);
+
+    const user = res.data.find(
+        (item) =>
+            item.email.toLowerCase() === email.trim().toLowerCase() &&
+            item.password === password.trim()
+    );
+
+    console.log(user, "Admin");
+
+    if (user) {
+        login(user);
+        alert("Admin Login Successful");
+        navigate("/admin-dashboard");   
+    } else {
+        setError("Invalid email or password");
+    }
+
+}
+        
+        
+        else {
             setError("Please select a role");
         }
 
@@ -157,6 +180,7 @@ const handleSubmit = async (e) => {
                                             <option value="">Select Role</option>
                                             <option value="customer">Customer</option>
                                             <option value="agency">Agency</option>
+                                            <option value="admin">Admin</option>
                                         </Form.Select>
                                     </Form.Group>
                                     </Col>

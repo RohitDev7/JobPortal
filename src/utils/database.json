@@ -1,29 +1,13 @@
 {
   "customers": [
     {
-      "id": "1",
-      "name": "Rohit Sharma",
-      "email": "rohit@gmail.com",
-      "password": "123456",
-      "role": "customer",
-      "phone": "9876543210",
-      "location": "Delhi",
-      "profileImage": "",
-      "travelDocumentId": 1,
-      "savedServices": [
-        1,
-        2
-      ],
-      "createdAt": "2026-03-01"
-    },
-    {
-      "id": "a43a",
+      "id": "f0c4",
       "firstname": "Rohit",
       "lastname": "Kumar",
       "email": "rkumarplanetecomsolution7@gmail.com",
-      "phone": "7878984789",
-      "password": "123456789",
-      "confirmpassword": "123456789",
+      "phone": "1234567797",
+      "password": "123",
+      "confirmpassword": "123",
       "nationality": "Indian",
       "currentcity": "Delhi",
       "preferredtravelstyle": "Luxury",
@@ -35,13 +19,23 @@
   ],
   "travelAgencies": [
     {
-      "id": "2",
-      "name": "Amit Mehra",
-      "email": "amit@makemytrip.com",
-      "password": "123456",
-      "role": "agency",
-      "providerId": 1,
-      "createdAt": "2026-03-02"
+      "id": "c22d",
+      "firstname": "Rohit",
+      "lastname": "Kumar",
+      "email": "rohit@gmail.com",
+      "phone": "971121930",
+      "password": "123",
+      "confirmpassword": "123",
+      "agencyname": "Rohit Holiday Services",
+      "website": "https://new.mospi.gov.in/",
+      "location": "New Delhi",
+      "servicetype": "Bus Booking",
+      "companysize": "200",
+      "description": "Rohit Sharma is an Indian traveler based in Delhi who enjoys luxury travel experiences. He prefers exploring serene mountain destinations like Manali and usually travels occasionally, with a budget ranging from ₹10,000 to ₹25,000 per trip. His main interest lies in enjoying nature and mountain landscapes.",
+      "agree": false,
+      "companyRegistrationNumber": "ase124asdf3q4",
+      "gstNumber": "q23q4xcvfw34q231",
+      "licenseNumber": "asde4r235"
     }
   ],
   "admins": [
@@ -55,21 +49,24 @@
   ],
   "transportProviders": [
     {
-      "id": "1",
-      "name": "Makemytrip",
-      "logo": "",
-      "website": "https://makemytrip.com",
-      "location": "Delhi",
-      "description": "Online travel aggregator",
-      "serviceType": "Flights, Hotels, Cabs",
-      "size": "10000+",
-      "createdBy": 2
+      "id": "b5f7",
+      "name": "Rohit Holiday Services",
+      "logo": "icons8-education-100.png",
+      "website": "https://new.mospi.gov.in/",
+      "location": "New Delhi",
+      "description": "Rohit Sharma is an Indian traveler based in Delhi who enjoys luxury travel experiences. He prefers exploring serene mountain destinations like Manali and usually travels occasionally, with a budget ranging from ₹10,000 to ₹25,000 per trip. His main interest lies in enjoying nature and mountain landscapes.",
+      "serviceType": "Bus Booking",
+      "size": "200",
+      "createdBy": "c22d",
+      "title": "Rohit Holiday Services Company Document",
+      "fileUrl": "ui tecnolgy.pdf",
+      "documentType": "Agency License",
+      "expiryDate": ""
     }
   ],
   "services": [
     {
-      "id": "1",
-      "title": "Delhi to Jaipur Cab",
+      "title": "Delhi to Jaipur Car Cab",
       "providerId": 1,
       "providerName": "GoCabs",
       "location": "Delhi → Jaipur",
@@ -82,10 +79,11 @@
         "Music System"
       ],
       "description": "Comfortable sedan cab from Delhi to Jaipur.",
-      "postedBy": 2,
-      "createdAt": "2026-03-05",
       "status": "active",
-      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
+      "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg",
+      "postedBy": 1,
+      "createdAt": "2026-03-24",
+      "id": "1"
     },
     {
       "id": "2",
@@ -567,73 +565,7 @@
       "logo": "https://www.shutterstock.com/image-vector/minimal-auto-taxi-car-logo-600w-2673771995.jpg"
     }
   ],
-  "bookings": [
-    {
-      "id": "c5bc",
-      "serviceId": "3",
-      "serviceName": "Delhi to Goa Premium Flight",
-      "serviceType": "Flight",
-      "price": {
-        "min": 4500,
-        "max": 8500,
-        "currency": "₹",
-        "period": "one-way per person",
-        "discounts": {
-          "roundTrip": "10% off on return bookings",
-          "earlyBird": "15% off for bookings 60+ days in advance",
-          "studentDiscount": "7% off for student ID holders"
-        },
-        "additionalCharges": {
-          "baggage": "₹500 for 15kg checked baggage",
-          "meal": "₹350-₹600 for pre-booked meals",
-          "seatSelection": "₹200-₹1000 for preferred seats",
-          "cancellation": "As per fare type"
-        }
-      },
-      "fullName": "Rohit Kumar",
-      "email": "rkumarplanetecomsolution7@gmail.com",
-      "phone": "1234567897",
-      "pickupDate": "2026-03-17",
-      "pickupTime": "19:59",
-      "returnDate": "2026-03-31",
-      "returnTime": "23:00",
-      "passengers": "2",
-      "specialRequests": "Food and water",
-      "paymentMethod": "UPI"
-    },
-    {
-      "id": "adb7",
-      "serviceId": "1",
-      "serviceName": "Delhi to Jaipur Luxury Cab",
-      "serviceType": "Cab",
-      "price": {
-        "min": 5500,
-        "max": 7500,
-        "currency": "₹",
-        "period": "one-way",
-        "discounts": {
-          "roundTrip": "10% off on round trips",
-          "weekly": "15% off for weekly rentals",
-          "corporate": "Special corporate rates available"
-        },
-        "additionalCharges": {
-          "nightTrip": "₹500 (11 PM - 6 AM)",
-          "extraHour": "₹300 per hour",
-          "extraKm": "₹18 per km beyond 300 km"
-        }
-      },
-      "fullName": "",
-      "email": "",
-      "phone": "",
-      "pickupDate": "",
-      "pickupTime": "",
-      "returnDate": "",
-      "returnTime": "",
-      "passengers": 1,
-      "specialRequests": "",
-      "paymentMethod": "cash"
-    }
-  ],
+  "bookings": [],
   "savedServices": [
     {
       "id": "1",
@@ -644,12 +576,12 @@
   ],
   "travelDocuments": [
     {
-      "id": "1",
-      "customerId": 1,
+      "id": "71a4",
+      "customerId": "f0c4",
       "title": "Rohit Passport",
-      "fileUrl": "/documents/passport_rohit.pdf",
+      "fileUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd2-j72Jxr_A-mqdurEKlaIC_4zuXaKnD72A&s",
       "documentType": "Passport",
-      "expiryDate": "2030-12-31"
+      "expiryDate": "2030-03-24"
     }
   ],
   "serviceDetails": [
@@ -703,8 +635,7 @@
         ]
       },
       "price": {
-        "min": 5500,
-        "max": 7500,
+        "amount": 5500,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -908,8 +839,7 @@
         ]
       },
       "price": {
-        "min": 15000,
-        "max": 25000,
+        "amount": 15000,
         "currency": "₹",
         "period": "one-way (full bus)",
         "discounts": {
@@ -1005,8 +935,7 @@
         ]
       },
       "price": {
-        "min": 4500,
-        "max": 8500,
+        "amount": 4500,
         "currency": "₹",
         "period": "one-way per person",
         "discounts": {
@@ -1107,8 +1036,7 @@
         ]
       },
       "price": {
-        "min": 15000,
-        "max": 250000,
+        "amount": 15000,
         "currency": "₹",
         "period": "per night",
         "discounts": {
@@ -1212,8 +1140,7 @@
         ]
       },
       "price": {
-        "min": 3500,
-        "max": 4800,
+        "amount": 3500,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -1311,8 +1238,7 @@
         ]
       },
       "price": {
-        "min": 700,
-        "max": 1200,
+        "amount": 700,
         "currency": "₹",
         "period": "per seat (one-way)",
         "discounts": {
@@ -1407,8 +1333,7 @@
         ]
       },
       "price": {
-        "min": 3500,
-        "max": 9500,
+        "amount": 3500,
         "currency": "₹",
         "period": "one-way per person",
         "discounts": {
@@ -1509,8 +1434,7 @@
         ]
       },
       "price": {
-        "min": 35000,
-        "max": 250000,
+        "amount": 35000,
         "currency": "₹",
         "period": "per night",
         "discounts": {
@@ -1614,8 +1538,7 @@
         ]
       },
       "price": {
-        "min": 4800,
-        "max": 6200,
+        "amount": 4800,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -1714,8 +1637,7 @@
         ]
       },
       "price": {
-        "min": 350,
-        "max": 450,
+        "amount": 350,
         "currency": "₹",
         "period": "per seat (one-way)",
         "discounts": {
@@ -1806,8 +1728,7 @@
         ]
       },
       "price": {
-        "min": 2500,
-        "max": 5800,
+        "amount": 2500,
         "currency": "₹",
         "period": "one-way per person",
         "discounts": {
@@ -1908,8 +1829,7 @@
         ]
       },
       "price": {
-        "min": 18000,
-        "max": 200000,
+        "amount": 18000,
         "currency": "₹",
         "period": "per night",
         "discounts": {
@@ -2012,8 +1932,7 @@
         ]
       },
       "price": {
-        "min": 4200,
-        "max": 5600,
+        "amount": 4200,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -2112,8 +2031,7 @@
         ]
       },
       "price": {
-        "min": 600,
-        "max": 900,
+        "amount": 600,
         "currency": "₹",
         "period": "per seat (one-way)",
         "discounts": {
@@ -2212,8 +2130,7 @@
         ]
       },
       "price": {
-        "min": 7500,
-        "max": 9500,
+        "amount": 7500,
         "currency": "₹",
         "period": "one-way with sightseeing",
         "discounts": {
@@ -2308,8 +2225,7 @@
         ]
       },
       "price": {
-        "min": 3200,
-        "max": 7200,
+        "amount": 3200,
         "currency": "₹",
         "period": "one-way per person",
         "discounts": {
@@ -2407,8 +2323,7 @@
         ]
       },
       "price": {
-        "min": 12000,
-        "max": 180000,
+        "amount": 12000,
         "currency": "₹",
         "period": "per night",
         "discounts": {
@@ -2511,8 +2426,7 @@
         ]
       },
       "price": {
-        "min": 5500,
-        "max": 7200,
+        "amount": 5500,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -2612,8 +2526,7 @@
         ]
       },
       "price": {
-        "min": 350,
-        "max": 500,
+        "amount": 350,
         "currency": "₹",
         "period": "per seat (one-way)",
         "discounts": {
@@ -2705,8 +2618,7 @@
         ]
       },
       "price": {
-        "min": 5200,
-        "max": 15000,
+        "amount": 5200,
         "currency": "₹",
         "period": "one-way per person",
         "discounts": {
@@ -2806,8 +2718,7 @@
         ]
       },
       "price": {
-        "min": 4000,
-        "max": 5500,
+        "amount": 4000,
         "currency": "₹",
         "period": "one-way with sightseeing",
         "discounts": {
@@ -2907,8 +2818,7 @@
         ]
       },
       "price": {
-        "min": 400,
-        "max": 700,
+        "amount": 400,
         "currency": "₹",
         "period": "per seat (one-way)",
         "discounts": {
@@ -3006,8 +2916,7 @@
         ]
       },
       "price": {
-        "min": 3000,
-        "max": 4200,
+        "amount": 3000,
         "currency": "₹",
         "period": "one-way with sightseeing",
         "discounts": {
@@ -3106,8 +3015,7 @@
         ]
       },
       "price": {
-        "min": 8000,
-        "max": 35000,
+        "amount": 8000,
         "currency": "₹",
         "period": "per night",
         "discounts": {
@@ -3213,8 +3121,7 @@
         ]
       },
       "price": {
-        "min": 4200,
-        "max": 5800,
+        "amount": 4200,
         "currency": "₹",
         "period": "one-way with sightseeing",
         "discounts": {
@@ -3264,5 +3171,6 @@
       ],
       "description": "Breathtaking hill station journey from Kochi to Munnar with Kerala Cabs, traveling through some of India's most beautiful mountain scenery. This isn't just a transfer - it's an introduction to Kerala's famous tea country, with winding roads, misty hills, cascading waterfalls, and endless tea plantations. Travel in comfort with our Toyota Innova Crysta, spacious enough for families or groups of friends. Your driver, a Kerala native with extensive tourism experience, ensures you don't miss any scenic spots along the way. The 4-hour journey includes stops at the spectacular Cheeyappara and Valara Waterfalls, perfect for photos. You'll pass through endless tea estates with opportunities to stop at viewpoints overlooking the valleys. Your driver can recommend which tea factories offer the best tours and where to find the freshest tea. As you climb into the hills, the air gets cooler and the views more spectacular. We provide complimentary Kerala snacks like banana chips to enjoy along the way. The vehicle is sanitized before your trip and driver follows all safety protocols. Whether you're a honeymoon couple seeking romance in the hills, a family escaping the coastal heat, or a nature lover exploring the Western Ghats, this journey offers memories that will last a lifetime. Book now for the most scenic drive in God's Own Country!"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -12,6 +12,7 @@ function ServiceDetails() {
     const fetchData = async () => {
       try {
         const res = await axios.get(`http://localhost:5002/serviceDetails/${id}`);
+        console.log(res)
         setData(res.data);
         setLoading(false);
       } catch (error) {
@@ -99,7 +100,7 @@ function ServiceDetails() {
                 <div className="compnay-calss">
                   <h5 className="mt-2">Price Details</h5>
                   <p>
-                    <strong>Price Range:</strong> {data.price.currency || ''}{data.price.min || 'N/A'} - {data.price.currency || ''}{data.price.max || 'N/A'} ({data.price.period || 'N/A'})
+                    <strong>Price Range:</strong> {data.price.currency || ''}{data.price.amount || 'N/A'} - {data.price.currency || ''} ({data.price.period || 'N/A'})
                   </p>
 
                   {data.price.discounts && Object.keys(data.price.discounts).length > 0 && (
@@ -323,7 +324,7 @@ function ServiceDetails() {
                   <h5>Quick Price</h5>
                   <div className="price-detailss">
                     <h3>
-                      {data.price.currency || ''}{data.price.min || 'N/A'} - {data.price.currency || ''}{data.price.max || 'N/A'}
+                      {data.price.currency || ''}{data.price.amount || 'N/A'}
                       <span>/{data.price.period || 'N/A'}</span>
                     </h3>
                     <Link to={`/book/${data.id}`}>
