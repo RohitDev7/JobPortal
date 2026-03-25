@@ -13,11 +13,27 @@ export default function Homepage() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await axios.get("http://localhost:5002/services");
+  //       setData(res.data);
+  //       setIsLoading(false);
+  //     } catch (err) {
+  //       console.error(err);
+  //       setIsLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
+
+
+useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5002/services");
-        setData(res.data);
+        const visibleServices = res.data.filter(service => service.status !== "rejected");
+        setData(visibleServices);
         setIsLoading(false);
       } catch (err) {
         console.error(err);
@@ -52,6 +68,14 @@ export default function Homepage() {
       (selectedDestinations.length === 0 || selectedDestinations.includes(service.location))
     );
   });
+
+  const getStatusBadge = (status) => {
+    if (status === "pending") {
+      return <span className="pending-badge">Pending Approval</span>;
+    }
+    return null;
+  };
+
 
   return (
     <div>
