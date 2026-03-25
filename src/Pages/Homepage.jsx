@@ -291,13 +291,16 @@ export default function Homepage() {
                         <p className="job-description">{service.description}</p>
 
                         <div className="skills-tags">
-                          {service.amenities &&
-                            service.amenities.slice(0, 3).map((amenity, i) => (
-                              <span key={i} className="skill-badge">
-                                {amenity}
-                              </span>
-                            ))}
-                        </div>
+  {(service.amenities || "")
+    .toString()
+    .split(",")
+    .slice(0, 3)
+    .map((amenity, i) => (
+      <span key={i} className="skill-badge">
+        {amenity}
+      </span>
+    ))}
+</div>
 
                         <div className="job-meta d-flex flex-wrap gap-1 mt-2">
                           <span className="meta-item">

@@ -43,6 +43,12 @@ export default function Sidebar({ open, setOpen }) {
               <FontAwesomeIcon icon={faTachometerAlt} /> <span>Manage Services</span>
             </Link>
           </li>
+
+           <li>
+            <Link to="/manage-agencies">
+              <FontAwesomeIcon icon={faTachometerAlt} /> <span>Manage Agencies</span>
+            </Link>
+          </li>
         </ul>
       </div>
     </>

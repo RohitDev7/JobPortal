@@ -38,6 +38,21 @@ export default function Register() {
         companyRegistrationNumber: "",
         gstNumber: "",
         licenseNumber: "",
+
+
+
+        title: "",
+        providerName: "",
+        from: "",
+        to: "",
+        location: "",
+        price: "",
+        type: "",
+        duration: "",
+        status: "active",
+        amenities: "",
+        description: "",
+        logo: ""
     });
 
     const [error, setError] = useState("");
@@ -114,15 +129,25 @@ export default function Register() {
                     name: form.agencyname,
                     logo: form.agencyLogo ? form.agencyLogo.name : "",
                     website: form.website,
-                    location: form.location,
-                    description: form.description,
-                    serviceType: form.servicetype,
-                    size: form.companysize,
-                    createdBy: res.data.id,
                     title: form.agencyname + " Company Document",
                     fileUrl: form.agencyDocument.name,
                     documentType: "Agency License",
-                    expiryDate: ""
+                });
+
+
+                await axios.post("http://localhost:5002/services", {
+                    title: form.title,
+                    providerId: 1,
+                    providerName: form.providerName,
+                    price: form.price,
+                    type: form.type,
+                    duration: form.duration,
+                    amenities: form.amenities,
+                    description: form.description,
+                    status: form.status,
+                    logo: form.logo ? form.logo : "",
+                    postedBy: res.data.id,
+                    createdAt: new Date().toISOString().split("T")[0]
                 });
 
 
@@ -268,61 +293,162 @@ export default function Register() {
 
                                     {role === "agency" && (
                                         <>
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Agency Name</Form.Label>
-                                                <Form.Control name="agencyname" value={form.agencyname} onChange={handlechange} />
-                                            </Col>
+                                            <Row>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Agency Name</Form.Label>
+                                                    <Form.Control name="agencyname" value={form.agencyname} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Website</Form.Label>
-                                                <Form.Control name="website" value={form.website} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Website</Form.Label>
+                                                    <Form.Control name="website" value={form.website} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Location</Form.Label>
-                                                <Form.Control name="location" value={form.location} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Location</Form.Label>
+                                                    <Form.Control name="location" value={form.location} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Service Type</Form.Label>
-                                                <Form.Control name="servicetype" value={form.servicetype} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Service Type</Form.Label>
+                                                    <Form.Control name="servicetype" value={form.servicetype} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Company Size</Form.Label>
-                                                <Form.Control name="companysize" value={form.companysize} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Company Size</Form.Label>
+                                                    <Form.Control name="companysize" value={form.companysize} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={12} className="mb-3">
-                                                <Form.Label>Description</Form.Label>
-                                                <Form.Control as="textarea" rows={3} name="description" value={form.description} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Company Reg Number</Form.Label>
+                                                    <Form.Control name="companyRegistrationNumber" value={form.companyRegistrationNumber} onChange={handlechange} />
+                                                </Col>
 
-                                            {/* Extra agency fields */}
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Company Reg Number</Form.Label>
-                                                <Form.Control name="companyRegistrationNumber" value={form.companyRegistrationNumber} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>GST Number</Form.Label>
+                                                    <Form.Control name="gstNumber" value={form.gstNumber} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>GST Number</Form.Label>
-                                                <Form.Control name="gstNumber" value={form.gstNumber} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>License Number</Form.Label>
+                                                    <Form.Control name="licenseNumber" value={form.licenseNumber} onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>License Number</Form.Label>
-                                                <Form.Control name="licenseNumber" value={form.licenseNumber} onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Agency Logo</Form.Label>
+                                                    <Form.Control type="file" name="agencyLogo" onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Agency Logo</Form.Label>
-                                                <Form.Control type="file" name="agencyLogo" onChange={handlechange} />
-                                            </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Agency Document</Form.Label>
+                                                    <Form.Control type="file" name="agencyDocument" onChange={handlechange} />
+                                                </Col>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Agency Document</Form.Label>
-                                                <Form.Control type="file" name="agencyDocument" onChange={handlechange} />
-                                            </Col>
+                                            </Row>
+
+
+                                            <Row>
+
+                                                <h2 className='py-3'>Card Content</h2>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Title</Form.Label>
+                                                    <Form.Control
+                                                        name="title"
+                                                        value={form.title}
+                                                        onChange={handlechange}
+                                                        placeholder="Enter cab title"
+                                                    />
+                                                </Col>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Provider Name</Form.Label>
+                                                    <Form.Control
+                                                        name="providerName"
+                                                        value={form.providerName}
+                                                        onChange={handlechange}
+                                                        placeholder="Enter provider name"
+                                                    />
+                                                </Col>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Price (₹)</Form.Label>
+                                                    <Form.Control
+                                                        type="number"
+                                                        name="price"
+                                                        value={form.price}
+                                                        onChange={handlechange}
+                                                        placeholder="Enter price"
+                                                    />
+                                                </Col>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Type</Form.Label>
+                                                    <Form.Select name="type" value={form.type} onChange={handlechange}>
+                                                        <option value="">Select Type</option>
+                                                        <option value="Bus">Bus</option>
+                                                        <option value="Cab">Cab</option>
+                                                        <option value="SUV">SUV</option>
+                                                        <option value="Sedan">Sedan</option>
+                                                    </Form.Select>
+                                                </Col>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Duration</Form.Label>
+                                                    <Form.Control
+                                                        name="duration"
+                                                        value={form.duration}
+                                                        onChange={handlechange}
+                                                        placeholder="e.g. 5 Hours"
+                                                    />
+                                                </Col>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Status</Form.Label>
+                                                    <Form.Select name="status" value={form.status} onChange={handlechange}>
+                                                        <option value="active">Active</option>
+                                                        <option value="inactive">Inactive</option>
+                                                    </Form.Select>
+                                                </Col>
+
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Amenities</Form.Label>
+                                                    <Form.Control
+                                                        name="amenities"
+                                                        value={form.amenities}
+                                                        onChange={handlechange}
+                                                        placeholder="AC, Water Bottle, Music System"
+                                                    />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Logo URL</Form.Label>
+                                                    <Form.Control
+                                                        name="logo"
+                                                        value={form.logo}
+                                                        onChange={handlechange}
+                                                        placeholder="Paste image URL"
+                                                    />
+                                                </Col>
+
+                                                <Col md={12} className="mb-3">
+                                                    <Form.Label>Description</Form.Label>
+                                                    <Form.Control
+                                                        as="textarea"
+                                                        rows={3}
+                                                        name="description"
+                                                        value={form.description}
+                                                        onChange={handlechange}
+                                                    />
+                                                </Col>
+         <Col md={12} className="mb-3">
+                                                <Form.Check
+    type="checkbox"
+    label="I agree to terms & conditions"
+    name="agree"
+    checked={form.agree}
+    onChange={handlechange}
+/>
+             </Col>                               </Row>
                                         </>
                                     )}
 

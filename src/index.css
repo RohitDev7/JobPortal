@@ -2322,7 +2322,36 @@ section.Toastify {
     border-radius: 5px;
     color: #fff;
 }
+.chart-card input[type="search"] {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 5px;
+    border: 0;
+    border: 1px solid #ababab;
+}
 
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.stats-grid .stat-card h4 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 5px;
+}
+.stats-grid .stat-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.descr {
+    width: 100%;
+    max-width: 600px;
+    white-space: break-spaces !important;
+    min-width: 600px;
+}
 
 @media (max-width: 768px) {
   .book-page .container {

@@ -7,7 +7,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { Link } from "react-router-dom";
 export default function ManageCustomers({ sidebarOpen, setSidebarOpen }) {
     const [customer, setCustomer] = useState([])
-      const [documents, setDocuments] = useState([])
+    const [documents, setDocuments] = useState([])
     useEffect(() => {
         axios.get("http://localhost:5002/customers")
             .then(res => {
@@ -19,7 +19,7 @@ export default function ManageCustomers({ sidebarOpen, setSidebarOpen }) {
             })
     }, [])
 
-      useEffect(() => {
+    useEffect(() => {
         axios.get("http://localhost:5002/travelDocuments")
             .then(res => {
                 setDocuments(res.data)
@@ -63,7 +63,7 @@ export default function ManageCustomers({ sidebarOpen, setSidebarOpen }) {
                                                 <th>Budget Range</th>
                                                 <th>Preferred Destination</th>
                                                 <th>Intrests</th>
-                                                  <th>Document Title</th>
+                                                <th>Document Title</th>
                                                 <th>Document Type</th>
                                                 <th>Expiry Date</th>
                                                 <th>File</th>
@@ -72,22 +72,26 @@ export default function ManageCustomers({ sidebarOpen, setSidebarOpen }) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {customer.map((item) => (
-                                                documents.map((doc) => (
-                                                <tr key={item.id + doc.id}>
-                                                    <td>{item.id}</td>
-                                                    <td>{item.firstname + item.lastname || item.name}</td>
-                                                    <td>{item.email}</td>
-                                                    <td>{item.phone}</td>
-                                                    <td>{item.password}</td>
-                                                    <td>{item.nationality}</td>
-                                                    <td>{item.currentcity}</td>
-                                                    <td>{item.preferredtravelstyle}</td>
-                                                    <td>{item.travelfrequecy}</td>
-                                                    <td>{item.budgetrange}</td>
-                                                    <td>{item.preferreddestination}</td>
-                                                    <td>{item.intrests}</td>
-                                                
+                                            {customer.map((item) => {
+                                                const customerDocs = documents.filter(
+                                                    (doc) => doc.customerId === item.id
+                                                );
+
+                                                return customerDocs.map((doc) => (
+                                                    <tr key={item.id + doc.id}>
+                                                        <td>{item.id}</td>
+                                                        <td>{item.firstname + item.lastname || item.name}</td>
+                                                        <td>{item.email}</td>
+                                                        <td>{item.phone}</td>
+                                                        <td>{item.password}</td>
+                                                        <td>{item.nationality}</td>
+                                                        <td>{item.currentcity}</td>
+                                                        <td>{item.preferredtravelstyle}</td>
+                                                        <td>{item.travelfrequecy}</td>
+                                                        <td>{item.budgetrange}</td>
+                                                        <td>{item.preferreddestination}</td>
+                                                        <td>{item.intrests}</td>
+
                                                         <td>{doc.title}</td>
                                                         <td>{doc.documentType}</td>
                                                         <td>{doc.expiryDate}</td>
@@ -97,24 +101,24 @@ export default function ManageCustomers({ sidebarOpen, setSidebarOpen }) {
                                                             </a>
                                                         </td>
 
-                                                         <td style={{
+                                                        <td style={{
                                                             color: item.status === "Active" ? "green" : "red"
                                                         }}>
                                                             {item.status}
                                                         </td>
 
-                                                    <td>
-                                                        <Link to={`/edit-customer/${item.id}`}>
-                                                            <button>Edit</button>
-                                                        </Link>
+                                                        <td>
+                                                            <Link to={`/edit-customer/${item.id}`}>
+                                                                <button>Edit</button>
+                                                            </Link>
 
-                                                        <button onClick={() => deleteItem(item.id)}>
-                                                            Delete
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                               ))
-                                            ))}
+                                                            <button onClick={() => deleteItem(item.id)}>
+                                                                Delete
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                ));
+                                            })}
                                         </tbody>
                                     </Table>
                                 </div>

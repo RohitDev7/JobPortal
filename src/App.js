@@ -15,6 +15,9 @@ import PublicRoute from "./routes/PublicRoute"
 import ManageCustomers from "./Pages/Admin/ManageCustomers/ManageCustomers";
 import EditCustomers from "./Pages/Admin/ManageCustomers/EditCustomers";
 import ManageServices from "./Pages/Admin/ManageServices/ManageServices";
+import EditManageServices from "./Pages/Admin/ManageServices/EditManageServices";
+import ManageAgencies from "./Pages/Admin/ManageAgencies/ManageAgencies";
+import Approved from "./Pages/Admin/Approved";
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   return (
@@ -132,6 +135,43 @@ function App() {
 />
 
 
+ <Route
+  path="/edit-manage-services/:id"
+  element={
+    <ProtectedRoute role="admin">
+      <EditManageServices
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+
+
+ <Route
+  path="/manage-agencies"
+  element={
+    <ProtectedRoute role="admin">
+      <ManageAgencies
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+ <Route
+  path="/approved"
+  element={
+    <ProtectedRoute role="admin">
+      <Approved
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
 
         </Routes>
       </div>
