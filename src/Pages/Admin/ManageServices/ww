@@ -1,0 +1,613 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+
+const API_BASE_URL = 'http://localhost:5002';
+
+const ManageServices = () => {
+  const [services, setServices] = useState([]);
+  const [filteredServices, setFilteredServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [typeFilter, setTypeFilter] = useState('all');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMode, setModalMode] = useState('add'); // 'add', 'edit', 'view'
+  const [selectedService, setSelectedService] = useState(null);
+  const [notification, setNotification] = useState({ show: false, message: '', type: 'success' });
+  const [formData, setFormData] = useState({
+    title: '',
+    providerId: '',
+    providerName: '',
+    location: '',
+    price: '',
+    type: '',
+    duration: '',
+    amenities: '',
+    description: '',
+    status: 'active',
+    logo: ''
+  });
+
+  // Fetch services on component mount
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
+  // Filter services based on search, type, and status
+  useEffect(() => {
+    let filtered = [...services];
+    
+    if (searchTerm) {
+      filtered = filtered.filter(service =>
+        service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.providerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.location.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    if (typeFilter !== 'all') {
+      filtered = filtered.filter(service => service.type === typeFilter);
+    }
+    
+    if (statusFilter !== 'all') {
+      filtered = filtered.filter(service => service.status === statusFilter);
+    }
+    
+    setFilteredServices(filtered);
+    setCurrentPage(1);
+  }, [searchTerm, typeFilter, statusFilter, services]);
+
+  const fetchServices = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${API_BASE_URL}/services`);
+      setServices(response.data);
+      setFilteredServices(response.data);
+    } catch (error) {
+      console.error('Error fetching services:', error);
+      showNotification('Failed to fetch services', 'error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const showNotification = (message, type = 'success') => {
+    setNotification({ show: true, message, type });
+    setTimeout(() => {
+      setNotification({ show: false, message: '', type: 'success' });
+    }, 3000);
+  };
+
+  const handleOpenModal = (mode, service = null) => {
+    setModalMode(mode);
+    if (mode === 'add') {
+      setSelectedService(null);
+      setFormData({
+        title: '',
+        providerId: '',
+        providerName: '',
+        location: '',
+        price: '',
+        type: '',
+        duration: '',
+        amenities: '',
+        description: '',
+        status: 'active',
+        logo: ''
+      });
+    } else if (service) {
+      setSelectedService(service);
+      setFormData({
+        title: service.title || '',
+        providerId: service.providerId || '',
+        providerName: service.providerName || '',
+        location: service.location || '',
+        price: service.price || '',
+        type: service.type || '',
+        duration: service.duration || '',
+        amenities: Array.isArray(service.amenities) ? service.amenities.join(', ') : '',
+        description: service.description || '',
+        status: service.status || 'active',
+        logo: service.logo || ''
+      });
+    }
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedService(null);
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const serviceData = {
+        ...formData,
+        amenities: formData.amenities.split(',').map(item => item.trim()).filter(item => item),
+        price: formData.price,
+        postedBy: formData.postedBy || 1,
+        createdAt: new Date().toISOString().split('T')[0]
+      };
+
+      if (modalMode === 'add') {
+        await axios.post(`${API_BASE_URL}/services`, serviceData);
+        showNotification('Service added successfully');
+      } else if (modalMode === 'edit' && selectedService) {
+        await axios.put(`${API_BASE_URL}/services/${selectedService.id}`, serviceData);
+        showNotification('Service updated successfully');
+      }
+      
+      handleCloseModal();
+      fetchServices();
+    } catch (error) {
+      console.error('Error saving service:', error);
+      showNotification('Failed to save service', 'error');
+    }
+  };
+
+  const handleDelete = async (serviceId) => {
+    if (window.confirm('Are you sure you want to delete this service?')) {
+      try {
+        await axios.delete(`${API_BASE_URL}/services/${serviceId}`);
+        showNotification('Service deleted successfully');
+        fetchServices();
+      } catch (error) {
+        console.error('Error deleting service:', error);
+        showNotification('Failed to delete service', 'error');
+      }
+    }
+  };
+
+  // Pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentServices = filteredServices.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(filteredServices.length / itemsPerPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const getStatusBadge = (status) => {
+    return status === 'active' 
+      ? <span className="badge badge-success">Active</span>
+      : <span className="badge badge-secondary">Inactive</span>;
+  };
+
+  const getTypeBadge = (type) => {
+    const typeClasses = {
+      'Cab': 'badge-primary',
+      'Bus': 'badge-info',
+      'Flight': 'badge-warning',
+      'Hotel': 'badge-danger'
+    };
+    return <span className={`badge ${typeClasses[type] || 'badge-secondary'}`}>{type}</span>;
+  };
+
+  // Statistics
+  const stats = {
+    total: services.length,
+    active: services.filter(s => s.status === 'active').length,
+    cab: services.filter(s => s.type === 'Cab').length,
+    bus: services.filter(s => s.type === 'Bus').length,
+    flight: services.filter(s => s.type === 'Flight').length,
+    hotel: services.filter(s => s.type === 'Hotel').length
+  };
+
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="loader"></div>
+        <p>Loading services...</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="manage-services">
+      {/* Notification */}
+      {notification.show && (
+        <div className={`notification notification-${notification.type}`}>
+          {notification.message}
+        </div>
+      )}
+
+      <div className="container">
+        {/* Header */}
+        <div className="header">
+          <h1 className="page-title">Manage Services</h1>
+          <button className="btn btn-primary" onClick={() => handleOpenModal('add')}>
+            + Add New Service
+          </button>
+        </div>
+
+        {/* Statistics Cards */}
+        <div className="stats-grid">
+          <div className="stat-card stat-card-primary">
+            <div className="stat-number">{stats.total}</div>
+            <div className="stat-label">Total Services</div>
+          </div>
+          <div className="stat-card stat-card-success">
+            <div className="stat-number">{stats.active}</div>
+            <div className="stat-label">Active Services</div>
+          </div>
+          <div className="stat-card stat-card-info">
+            <div className="stat-number">{stats.cab}</div>
+            <div className="stat-label">Cabs</div>
+          </div>
+          <div className="stat-card stat-card-secondary">
+            <div className="stat-number">{stats.bus}</div>
+            <div className="stat-label">Buses</div>
+          </div>
+          <div className="stat-card stat-card-warning">
+            <div className="stat-number">{stats.flight + stats.hotel}</div>
+            <div className="stat-label">Flights & Hotels</div>
+          </div>
+        </div>
+
+        {/* Filters */}
+        <div className="filters-card">
+          <div className="filters-grid">
+            <div className="filter-group">
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search by title, provider or location..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <div className="filter-group">
+              <select 
+                className="filter-select"
+                value={typeFilter}
+                onChange={(e) => setTypeFilter(e.target.value)}
+              >
+                <option value="all">All Types</option>
+                <option value="Cab">Cab</option>
+                <option value="Bus">Bus</option>
+                <option value="Flight">Flight</option>
+                <option value="Hotel">Hotel</option>
+              </select>
+            </div>
+            <div className="filter-group">
+              <select 
+                className="filter-select"
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
+              >
+                <option value="all">All Status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+            <div className="filter-group">
+              <span className="results-count">{filteredServices.length} results</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Services Table */}
+        <div className="table-container">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Logo</th>
+                <th>Title</th>
+                <th>Provider</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Duration</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentServices.map((service) => (
+                <tr key={service.id}>
+                  <td>
+                    {service.logo ? (
+                      <img src={service.logo} alt={service.title} className="service-logo" />
+                    ) : (
+                      <div className="service-logo-placeholder">📷</div>
+                    )}
+                  </td>
+                  <td className="service-title">{service.title}</td>
+                  <td>{service.providerName}</td>
+                  <td>{service.location}</td>
+                  <td className="price">{service.price}</td>
+                  <td>{getTypeBadge(service.type)}</td>
+                  <td>{service.duration}</td>
+                  <td>{getStatusBadge(service.status)}</td>
+                  <td>
+                    <div className="action-buttons">
+                      <button 
+                        className="action-btn view-btn"
+                        onClick={() => handleOpenModal('view', service)}
+                        title="View Details"
+                      >
+                        👁️
+                      </button>
+                      <button 
+                        className="action-btn edit-btn"
+                        onClick={() => handleOpenModal('edit', service)}
+                        title="Edit"
+                      >
+                        ✏️
+                      </button>
+                      <button 
+                        className="action-btn delete-btn"
+                        onClick={() => handleDelete(service.id)}
+                        title="Delete"
+                      >
+                        🗑️
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {currentServices.length === 0 && (
+                <tr>
+                  <td colSpan="9" className="empty-state">
+                    <p>No services found</p>
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Pagination */}
+        {filteredServices.length > 0 && (
+          <div className="pagination">
+            <button 
+              className="pagination-btn"
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            {[...Array(totalPages)].map((_, index) => (
+              <button
+                key={index}
+                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                onClick={() => paginate(index + 1)}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button 
+              className="pagination-btn"
+              onClick={() => paginate(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={handleCloseModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>
+                {modalMode === 'add' && 'Add New Service'}
+                {modalMode === 'edit' && 'Edit Service'}
+                {modalMode === 'view' && 'Service Details'}
+              </h2>
+              <button className="modal-close" onClick={handleCloseModal}>×</button>
+            </div>
+            <div className="modal-body">
+              {modalMode === 'view' && selectedService ? (
+                // View Mode
+                <div className="service-details">
+                  <div className="detail-section text-center">
+                    {selectedService.logo ? (
+                      <img src={selectedService.logo} alt={selectedService.title} className="detail-logo" />
+                    ) : (
+                      <div className="detail-logo-placeholder">📷</div>
+                    )}
+                  </div>
+                  <div className="details-grid">
+                    <div className="detail-item">
+                      <label>Title:</label>
+                      <p>{selectedService.title}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Provider:</label>
+                      <p>{selectedService.providerName}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Location:</label>
+                      <p>{selectedService.location}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Price:</label>
+                      <p className="price">{selectedService.price}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Type:</label>
+                      <p>{getTypeBadge(selectedService.type)}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Duration:</label>
+                      <p>{selectedService.duration}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Status:</label>
+                      <p>{getStatusBadge(selectedService.status)}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Amenities:</label>
+                      <div className="amenities-list">
+                        {selectedService.amenities?.map((item, idx) => (
+                          <span key={idx} className="amenity-tag">{item}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="detail-item full-width">
+                      <label>Description:</label>
+                      <p>{selectedService.description}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Created At:</label>
+                      <p>{selectedService.createdAt}</p>
+                    </div>
+                    <div className="detail-item">
+                      <label>Posted By (Admin ID):</label>
+                      <p>{selectedService.postedBy}</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // Add/Edit Mode
+                <form className="service-form">
+                  <div className="form-grid">
+                    <div className="form-group">
+                      <label>Title *</label>
+                      <input
+                        type="text"
+                        name="title"
+                        value={formData.title}
+                        onChange={handleFormChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Provider Name *</label>
+                      <input
+                        type="text"
+                        name="providerName"
+                        value={formData.providerName}
+                        onChange={handleFormChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Provider ID</label>
+                      <input
+                        type="number"
+                        name="providerId"
+                        value={formData.providerId}
+                        onChange={handleFormChange}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Location *</label>
+                      <input
+                        type="text"
+                        name="location"
+                        value={formData.location}
+                        onChange={handleFormChange}
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Price *</label>
+                      <input
+                        type="text"
+                        name="price"
+                        value={formData.price}
+                        onChange={handleFormChange}
+                        placeholder="e.g., ₹3500 or ₹15000/night"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Service Type *</label>
+                      <select
+                        name="type"
+                        value={formData.type}
+                        onChange={handleFormChange}
+                        required
+                      >
+                        <option value="">Select Type</option>
+                        <option value="Cab">Cab</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Flight">Flight</option>
+                        <option value="Hotel">Hotel</option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label>Duration *</label>
+                      <input
+                        type="text"
+                        name="duration"
+                        value={formData.duration}
+                        onChange={handleFormChange}
+                        placeholder="e.g., 5 Hours or Per Night"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Status</label>
+                      <select
+                        name="status"
+                        value={formData.status}
+                        onChange={handleFormChange}
+                      >
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                      </select>
+                    </div>
+                    <div className="form-group full-width">
+                      <label>Amenities</label>
+                      <input
+                        type="text"
+                        name="amenities"
+                        value={formData.amenities}
+                        onChange={handleFormChange}
+                        placeholder="Enter amenities separated by commas (e.g., AC, WiFi, Pool)"
+                      />
+                      <small>Separate multiple amenities with commas</small>
+                    </div>
+                    <div className="form-group full-width">
+                      <label>Description</label>
+                      <textarea
+                        name="description"
+                        value={formData.description}
+                        onChange={handleFormChange}
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <div className="form-group full-width">
+                      <label>Logo URL</label>
+                      <input
+                        type="text"
+                        name="logo"
+                        value={formData.logo}
+                        onChange={handleFormChange}
+                        placeholder="https://example.com/logo.png"
+                      />
+                    </div>
+                  </div>
+                </form>
+              )}
+            </div>
+            <div className="modal-footer">
+              <button className="btn btn-secondary" onClick={handleCloseModal}>
+                {modalMode === 'view' ? 'Close' : 'Cancel'}
+              </button>
+              {modalMode !== 'view' && (
+                <button className="btn btn-primary" onClick={handleSubmit}>
+                  {modalMode === 'add' ? 'Add Service' : 'Save Changes'}
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ManageServices;

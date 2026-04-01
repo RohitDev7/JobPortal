@@ -1,0 +1,227 @@
+import React, { useEffect, useState } from 'react'
+import Sidebar from '../../../components/Sidebar'
+import { Col, Container, Row,Button } from 'react-bootstrap'
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios';
+export default function EditCustomers({ sidebarOpen, setSidebarOpen }) {
+
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+
+    const [customer, setcustomer] = useState({
+        firstname:"",
+        lastname:"",
+        name: "",
+        email: "",
+        phone: "",
+        password: "",
+        nationality: "",
+        currentcity: "",
+        preferredtravelstyle: "",
+        travelfrequecy:"",
+        budgetrange: "",
+        preferreddestination: "",
+        intrests: "",
+        Status: "",
+
+    })
+
+    useEffect(() => {
+        axios.get(`http://localhost:5002/customers/${id}`)
+            .then(res => {
+                setcustomer(res.data)
+                console.log("customer data", res)
+            })
+            .catch(err => {
+                console.log("error fetching customer api", err)
+            })
+
+    }, [])
+
+    const updateCustomer = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.put(`http://localhost:5002/customers/${id}`, customer);
+            navigate("/manage-customer")
+        }
+        catch (err) {
+            console.log("Error updating employee", err)
+        }
+    }
+
+
+    return (
+        <>
+
+            <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
+            <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
+                <Container>
+                    <Row>
+                        <Col lg={12}>
+                            <h2 className="dashboard-title">Edit Customers</h2>
+                        </Col>
+                        <Col lg={12}>
+                            <div className="chart-card">
+                                <form className="signup-form" onSubmit={updateCustomer}>
+                                    <Row>
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Name</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="name"
+                                                    value={customer.name || customer.firstname + " " + customer.lastname}
+                                                    onChange={e => setcustomer({ ...customer, name: e.target.value || `${customer.firstname} ${customer.lastname}` })}
+                                                />
+
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Email</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.email}
+                                                    onChange={e => setcustomer({ ...customer, email: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Phone</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.phone}
+                                                    onChange={e => setcustomer({ ...customer, phone: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>password</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.password}
+                                                    onChange={e => setcustomer({ ...customer, password: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Nationality</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.nationality}
+                                                    onChange={e => setcustomer({ ...customer, nationality: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Current City</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.currentcity}
+                                                    onChange={e => setcustomer({ ...customer, currentcity: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Preferred Travel Style</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.preferredtravelstyle}
+                                                    onChange={e => setcustomer({ ...customer, preferredtravelstyle: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Travel Frequecy</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.travelfrequecy}
+                                                    onChange={e => setcustomer({ ...customer, travelfrequecy: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Budget Range</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.budgetrange}
+                                                    onChange={e => setcustomer({ ...customer, budgetrange: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Preferred Destination</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.preferreddestination}
+                                                    onChange={e => setcustomer({ ...customer, preferreddestination: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Intrests</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.intrests}
+                                                    onChange={e => setcustomer({ ...customer, intrests: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+
+                                        <Col md={6} className="mb-3">
+                                            <div className="form-group">
+                                                <label>Status</label>
+                                                <input
+                                                    className="form-control"
+                                                    name="email"
+                                                    value={customer.Status}
+                                                    onChange={e => setcustomer({ ...customer, Status: e.target.value })}
+                                                />
+                                            </div>
+                                        </Col>
+  <Col md={12} className="mb-3">
+                                    <Button type="submit" className="signup-btn">Save Employee</Button>
+                                </Col>
+                                    </Row>
+                                </form>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        </>
+    )
+}

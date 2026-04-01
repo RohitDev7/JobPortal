@@ -88,7 +88,7 @@ function BookService() {
                                     <p><strong>Duration:</strong> {service.route?.duration}</p>
                                 </Col>
                                 <Col md={6}>
-                                    <p><strong>Price:</strong> ₹{service.price?.min} - ₹{service.price?.max || "N/A"}</p>
+                                    <p><strong>Price:</strong> ₹{service.price?.amount}</p>
                                     <p><strong>Per:</strong> Trip</p>
                                     <p><strong>Provider:</strong> {service.provider?.name || "N/A"}</p>
                                 </Col>
@@ -228,7 +228,7 @@ function BookService() {
                                         <h5>Total Amount:</h5>
                                     </Col>
                                     <Col sm={6} className="text-end">
-                                        <h4 className="text-primary">₹3000 - ₹5000</h4>
+                                        <h4 className="text-primary">₹{service.price?.amount}</h4>
                                         <small className="text-muted">
                                             *Final price may vary
                                         </small>

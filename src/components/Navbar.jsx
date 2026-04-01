@@ -38,7 +38,7 @@ export default function NavigationBar({ sidebarOpen, setSidebarOpen }) {
                                     alt="profile"
                                     className="profile-img"
                                 />
-                                <span className="profile-name">{user?.name}</span>
+                                <span className="profile-name">{user?.name || user?.firstname}</span>
                             </div>
 
                             {open && (
