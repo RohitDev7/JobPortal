@@ -1,6 +1,6 @@
-import { useContext } from "react"
-import { Navigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
+// import { useContext } from "react"
+// import { Navigate } from "react-router-dom"
+// import { AuthContext } from "../context/AuthContext"
 
 // export default function ProtectedRoute({ children, role }) {
 
@@ -17,7 +17,49 @@ import { AuthContext } from "../context/AuthContext"
 //   return children
 // }
 
+// export default function ProtectedRoute({ children, role }) {
+//   const { user } = useContext(AuthContext);
+
+//   if (!user) {
+//     return <Navigate to="/login" />;
+//   }
+
+//   if (role && user.role !== role) {
+//     return <Navigate to="/login" />; // better fallback
+//   }
+
+//   return children;
+// }
+
+// export default function ProtectedRoute({ children, role }) {
+//   const { user } = useContext(AuthContext);
+
+//   if (!user) {
+//     return <Navigate to="/login" />;
+//   }
+
+//   if (role && user.role !== role) {
+//     // redirect to correct dashboard instead of login
+//     if (user.role === "admin") {
+//       return <Navigate to="/admin-dashboard" />;
+//     }
+//     if (user.role === "agency") {
+//       return <Navigate to="/agency-dashboard" />;
+//     }
+//   }
+
+//   return children;
+// }
+
+
+
+
+import { Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
 export default function ProtectedRoute({ children, role }) {
+
   const { user } = useContext(AuthContext);
 
   if (!user) {
@@ -25,7 +67,11 @@ export default function ProtectedRoute({ children, role }) {
   }
 
   if (role && user.role !== role) {
-    return <Navigate to="/login" />; // better fallback
+    return <Navigate to={
+      user.role === "admin" ? "/admin-dashboard" :
+      user.role === "agency" ? "/agency-dashboard" :
+      "/user-dashboard"
+    } />;
   }
 
   return children;

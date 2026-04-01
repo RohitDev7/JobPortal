@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import React, { useState,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { Form, Row, Col, Container } from 'react-bootstrap'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -65,81 +65,65 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+
+        let res;
+        let user;
+
         if (role === "customer") {
-
-            const res = await axios.get(`http://localhost:5002/customers`);
-
-            const user = res.data.find(
-                (item) =>
-                    item.email.toLowerCase() === email.trim().toLowerCase() &&
-                    item.password === password.trim()
-            );
-
-            console.log(user, "Customer");
-
-            if (user) {
-                login(user);
-                alert("Customer Login Successful");
-                navigate("/dashboard");
-            } else {
-                setError("Invalid email or password");
-            }
-
-        } else if (role === "agency") {
-
-            const res = await axios.get(`http://localhost:5002/travelAgencies`);
-
-            const user = res.data.find(
-                (item) =>
-                    item.email.toLowerCase() === email.trim().toLowerCase() &&
-                    item.password === password.trim()
-            );
-
-            console.log(user, "Agency");
-
-            if (user) {
-                login(user);
-                alert("Agency Login Successful");
-                navigate("/dashboard");
-            } else {
-                setError("Invalid email or password");
-            }
-
-        }  else if (role === "admin") {
-
-    const res = await axios.get(`http://localhost:5002/admins`);
-
-    const user = res.data.find(
-        (item) =>
-            item.email.toLowerCase() === email.trim().toLowerCase() &&
-            item.password === password.trim()
-    );
-
-    console.log(user, "Admin");
-
-    if (user) {
-        login(user);
-        alert("Admin Login Successful");
-        navigate("/admin-dashboard");   
-    } else {
-        setError("Invalid email or password");
-    }
-
-}
-        
-        
+            res = await axios.get(`http://localhost:5002/customers`);
+        } 
+        else if (role === "agency") {
+            res = await axios.get(`http://localhost:5002/travelAgencies`);
+        } 
+        else if (role === "admin") {
+            res = await axios.get(`http://localhost:5002/admins`);
+        } 
         else {
             setError("Please select a role");
+            return;
+        }
+
+        user = res.data.find(
+            (item) =>
+                item.email.toLowerCase() === email.trim().toLowerCase() &&
+                item.password === password.trim()
+        );
+
+        if (user) {
+
+            const userData = {
+                id: user.id,
+                name: user.firstname || user.agencyname || "User",
+                role: role
+            };
+
+            login(userData);
+
+            if (role === "agency") {
+                localStorage.setItem("agencyId", user.id);
+            }
+
+            if (role === "customer") {
+                localStorage.setItem("customerId", user.id);
+            }
+
+            alert(`${role} Login Successful`);
+
+            if (role === "admin") navigate("/admin-dashboard");
+            if (role === "agency") navigate("/agency-dashboard");
+            if (role === "customer") navigate("/user-dashboard");
+
+        } else {
+            setError("Invalid email or password");
         }
 
     } catch (error) {
-        console.error(error);
         setError("Login failed");
     }
 };
     return (
         <>
-           
+
             <div className='job-details-page register-pages py-5'>
                 <Container>
                     <Row className="justify-content-center">
@@ -170,29 +154,29 @@ const handleSubmit = async (e) => {
                                                 onChange={(e) => setPassword(e.target.value)}
                                             />
                                         </Col>
-   <Col md={12} className="mb-3">
-                                        <Form.Group className="mb-3">
-                                        <Form.Label>Select Role</Form.Label>
-                                        <Form.Select
-                                            value={role}
-                                            onChange={(e) => setRole(e.target.value)}
-                                        >
-                                            <option value="">Select Role</option>
-                                            <option value="customer">Customer</option>
-                                            <option value="agency">Agency</option>
-                                            <option value="admin">Admin</option>
-                                        </Form.Select>
-                                    </Form.Group>
-                                    </Col>
+                                        <Col md={12} className="mb-3">
+                                            <Form.Group className="mb-3">
+                                                <Form.Label>Select Role</Form.Label>
+                                                <Form.Select
+                                                    value={role}
+                                                    onChange={(e) => setRole(e.target.value)}
+                                                >
+                                                    <option value="">Select Role</option>
+                                                    <option value="customer">Customer</option>
+                                                    <option value="agency">Agency</option>
+                                                    <option value="admin">Admin</option>
+                                                </Form.Select>
+                                            </Form.Group>
+                                        </Col>
                                     </Row>
 
-                                    
+
 
                                     <button type="submit" className="signup-btn">
                                         Login
                                     </button>
                                     <Link to="/register" className='signup-signin'>Sign up</Link>
-                                  
+
 
                                     {error && <p className="text-danger mt-2">{error}</p>}
                                 </Form>
@@ -202,7 +186,7 @@ const handleSubmit = async (e) => {
                     </Row>
                 </Container>
             </div>
-             <ToastContainer position="top-right" autoClose={3000} />
+            <ToastContainer position="top-right" autoClose={3000} />
         </>
     )
 }

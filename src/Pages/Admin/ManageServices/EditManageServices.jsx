@@ -145,6 +145,7 @@ export default function EditManageServices({ sidebarOpen, setSidebarOpen }) {
         <Form.Control
           value={form.status}
           onChange={(e) => setForm({ ...form, status: e.target.value })}
+    
         />
       </Col>
     <Col md={12} className="mb-3">

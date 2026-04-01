@@ -266,7 +266,7 @@ function ServiceDetails() {
                     alt={data.provider.name}
                     style={{ objectFit: "contain" }}
                   />
-                  <h5 className="mt-3 text-center">{data.provider.name}</h5>
+                  <h5 className="mt-3 text-center">{data.provider.providerName}</h5>
                   <ul className="list-unstyled">
                     <li><strong>Service Type:</strong> {data.provider.serviceType || 'N/A'}</li>
                     <li><strong>Head Office:</strong> {data.provider.headOffice || 'N/A'}</li>

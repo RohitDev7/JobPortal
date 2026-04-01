@@ -312,7 +312,7 @@ useEffect(() => {
                       </div>
 
                       <div className="card-body">
-                        <p className="job-description">{service.description}</p>
+                        <p className="job-description">{service.description.slice(0, 200)}...</p>
 
                         <div className="skills-tags">
   {(service.amenities || "")

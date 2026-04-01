@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-
+import AuthContext, { AuthProvider } from "./routes/AuthContext";
 import Homepage from "./Pages/Homepage";
 import ServiceList from "./Pages/Services/ServiceList";
 import ServiceDetails from "./Pages/Services/ServiceDetails";
@@ -17,11 +17,19 @@ import EditCustomers from "./Pages/Admin/ManageCustomers/EditCustomers";
 import ManageServices from "./Pages/Admin/ManageServices/ManageServices";
 import EditManageServices from "./Pages/Admin/ManageServices/EditManageServices";
 import ManageAgencies from "./Pages/Admin/ManageAgencies/ManageAgencies";
-import Approved from "./Pages/Admin/Approved";
+// import Approved from "./Pages/Admin/Approved";
+import DashboardAgency from "./Pages/Agency/DashboardAgency";
+import AgencyManageServices from "./Pages/Agency/AgencyManageServices/AgencyManageServices";
+import AgencyEditManageServices from "./Pages/Agency/AgencyManageServices/AgencyEditManageServices";
+import AgencyAddManageServices from "./Pages/Agency/AgencyManageServices/AgencyAddManageServices";
+import AgencyBookingser from "./Pages/Agency/AgencyBooking/AgencyBookingser";
+import ManageBookingsAll from "./Pages/Admin/ManageBookings/ManageBookingsAll";
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   return (
     <>
+       <AuthProvider>
+
       <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div>
         <Routes>
@@ -162,6 +170,20 @@ function App() {
 />
 
  <Route
+  path="/manage-bookings"
+  element={
+    <ProtectedRoute role="admin">
+      <ManageBookingsAll
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+
+
+ {/* <Route
   path="/approved"
   element={
     <ProtectedRoute role="admin">
@@ -171,10 +193,87 @@ function App() {
       />
     </ProtectedRoute>
   }
+/> */}
+
+
+
+
+
+ <Route
+  path="/agency-dashboard"
+  element={
+    <ProtectedRoute role="agency">
+      <DashboardAgency
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
 />
+
+
+ <Route
+  path="/agency-manage-services"
+  element={
+    <ProtectedRoute role="agency">
+      <AgencyManageServices
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+ <Route
+  path="/agency-edit-manage-services/:id"
+  element={
+    <ProtectedRoute role="agency">
+      <AgencyEditManageServices
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+
+<Route
+  path="/agency-add-manage-services"
+  element={
+    <ProtectedRoute role="agency">
+      <AgencyAddManageServices
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+
+<Route
+  path="/agency-booking"
+  element={
+    <ProtectedRoute role="agency">
+      <AgencyBookingser
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+    </ProtectedRoute>
+  }
+/>
+
+
+
+
+
+
+
+
+
 
         </Routes>
       </div>
+      </AuthProvider>
     </>
   );
 }
