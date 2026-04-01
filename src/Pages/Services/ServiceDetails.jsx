@@ -45,6 +45,9 @@ function ServiceDetails() {
                 <p><strong>Created:</strong> {data?.createdAt ? new Date(data.createdAt).toLocaleDateString() : 'N/A'}</p>
                 <p><strong>Last Updated:</strong> {data?.updatedAt ? new Date(data.updatedAt).toLocaleDateString() : 'N/A'}</p>
                 <p><strong>Slug:</strong> {data?.slug || 'N/A'}</p>
+                {/* Agency ID and Name Display */}
+                <p><strong>Agency ID:</strong> {data?.agencyId || data?.providerId || 'N/A'}</p>
+                <p><strong>Agency Name:</strong> {data?.agencyName || 'N/A'}</p>
               </div>
 
               {data?.route && (
@@ -266,7 +269,7 @@ function ServiceDetails() {
                     alt={data.provider.name}
                     style={{ objectFit: "contain" }}
                   />
-                  <h5 className="mt-3 text-center">{data.provider.name}</h5>
+                  <h5 className="mt-3 text-center">{data.provider.providerName}</h5>
                   <ul className="list-unstyled">
                     <li><strong>Service Type:</strong> {data.provider.serviceType || 'N/A'}</li>
                     <li><strong>Head Office:</strong> {data.provider.headOffice || 'N/A'}</li>
@@ -345,6 +348,9 @@ function ServiceDetails() {
                     <li><strong>5-Star Ratings:</strong> {data.stats.fiveStarRatings ?? "Not available"}</li>
                     <li><strong>Total Reviews:</strong> {data.stats.reviews ?? "Not available"}</li>
                     <li><strong>Service ID:</strong> {data.id ?? "Not available"}</li>
+                    {/* Agency ID in Stats Section */}
+                    <li><strong>Agency ID:</strong> {data?.agencyId || data?.providerId || 'N/A'}</li>
+                    <li><strong>Agency Name:</strong> {data?.providerName || 'N/A'}</li>
                   </ul>
                 ) : (
                   <p>No stats available</p>

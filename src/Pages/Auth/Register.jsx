@@ -38,6 +38,17 @@ export default function Register() {
         companyRegistrationNumber: "",
         gstNumber: "",
         licenseNumber: "",
+
+        title: "",
+        from: "",
+        to: "",
+        price: "",
+        type: "",
+        duration: "",
+        status: "active",
+        amenities: "",
+        serviceDescription: "",
+        logo: ""
     });
 
     const [error, setError] = useState("");
@@ -89,8 +100,10 @@ export default function Register() {
                         expiryDate: form.passportExpiry
                     });
                 }
+
             } else if (role === "agency") {
-                const res = await axios.post("http://localhost:5002/travelAgencies", {
+                // Create travel agency first
+                const agencyRes = await axios.post("http://localhost:5002/travelAgencies", {
                     firstname: form.firstname,
                     lastname: form.lastname,
                     email: form.email,
@@ -106,31 +119,48 @@ export default function Register() {
                     agree: form.agree,
                     companyRegistrationNumber: form.companyRegistrationNumber,
                     gstNumber: form.gstNumber,
-                    licenseNumber: form.licenseNumber
+                    licenseNumber: form.licenseNumber,
+                    status: "pending"
                 });
-                console.log(res.data);
+                console.log(agencyRes.data);
 
+                const agencyId = agencyRes.data.id;
+
+                // Create transport provider with agency name
                 await axios.post("http://localhost:5002/transportProviders", {
+                    id: agencyId,
                     name: form.agencyname,
                     logo: form.agencyLogo ? form.agencyLogo.name : "",
                     website: form.website,
-                    location: form.location,
-                    description: form.description,
-                    serviceType: form.servicetype,
-                    size: form.companysize,
-                    createdBy: res.data.id,
                     title: form.agencyname + " Company Document",
-                    fileUrl: form.agencyDocument.name,
+                    fileUrl: form.agencyDocument ? form.agencyDocument.name : "",
                     documentType: "Agency License",
-                    expiryDate: ""
+                    agencyId: agencyId
                 });
 
-
+                // Create service with agency name as providerName
+                await axios.post("http://localhost:5002/services", {
+                    title: form.title,
+                    providerId: agencyId,
+                    providerName: form.agencyname,
+                    price: form.price,
+                    type: form.type,
+                    duration: form.duration,
+                    amenities: form.amenities,
+                    description: form.serviceDescription,
+                    status: "pending",
+                    logo: form.logo ? form.logo : "",
+                    location: form.location,
+                    postedBy: agencyId,
+                    agencyId: agencyId,
+                    createdAt: new Date().toISOString().split("T")[0]
+                });
             }
 
             setRole("");
             setError("");
             navigate("/login");
+
         } catch (err) {
             console.error(err);
             setError("Registration failed");
@@ -161,9 +191,8 @@ export default function Register() {
                                         </div>
                                     </Col>
 
-                                    <Col md={12}>
-                                        <h5 className="section-title">Personal Information</h5>
-                                    </Col>
+                   
+                                    <Col md={12}><h5 className="section-title">Personal Information</h5></Col>
 
                                     <Col md={6} className="mb-3">
                                         <Form.Label>First Name *</Form.Label>
@@ -195,22 +224,18 @@ export default function Register() {
                                         <Form.Control type="password" name="confirmpassword" value={form.confirmpassword} onChange={handlechange} />
                                     </Col>
 
+                  
                                     {role === "customer" && (
                                         <>
-                                            <Col md={12}>
-                                                <h5 className="section-title mt-3">Travel Profile</h5>
-                                            </Col>
-
+                                            <Col md={12}><h5 className="section-title mt-3">Travel Profile</h5></Col>
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Nationality</Form.Label>
                                                 <Form.Control name="nationality" value={form.nationality} onChange={handlechange} />
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Current City</Form.Label>
                                                 <Form.Control name="currentcity" value={form.currentcity} onChange={handlechange} />
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Preferred Travel Style</Form.Label>
                                                 <Form.Select name="preferredtravelstyle" value={form.preferredtravelstyle} onChange={handlechange}>
@@ -221,7 +246,6 @@ export default function Register() {
                                                     <option>Adventure</option>
                                                 </Form.Select>
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Travel Frequency</Form.Label>
                                                 <Form.Select name="travelfrequecy" value={form.travelfrequecy} onChange={handlechange}>
@@ -232,7 +256,6 @@ export default function Register() {
                                                     <option>Frequent traveler</option>
                                                 </Form.Select>
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Budget Range</Form.Label>
                                                 <Form.Select name="budgetrange" value={form.budgetrange} onChange={handlechange}>
@@ -243,22 +266,18 @@ export default function Register() {
                                                     <option>₹1L+</option>
                                                 </Form.Select>
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Preferred Destination</Form.Label>
                                                 <Form.Control name="preferreddestination" value={form.preferreddestination} onChange={handlechange} />
                                             </Col>
-
                                             <Col md={12} className="mb-3">
                                                 <Form.Label>Interests</Form.Label>
                                                 <Form.Control name="intrests" value={form.intrests} onChange={handlechange} />
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Passport Upload</Form.Label>
                                                 <Form.Control type="file" name="passportFile" onChange={handlechange} />
                                             </Col>
-
                                             <Col md={6} className="mb-3">
                                                 <Form.Label>Passport Expiry</Form.Label>
                                                 <Form.Control type="date" name="passportExpiry" value={form.passportExpiry} onChange={handlechange} />
@@ -266,66 +285,110 @@ export default function Register() {
                                         </>
                                     )}
 
+                                 
                                     {role === "agency" && (
                                         <>
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Agency Name</Form.Label>
-                                                <Form.Control name="agencyname" value={form.agencyname} onChange={handlechange} />
-                                            </Col>
+                                            <Row>
+                                                <Col md={12}><h5 className="section-title mt-3">Agency Information</h5></Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Agency Name *</Form.Label>
+                                                    <Form.Control name="agencyname" value={form.agencyname} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Website</Form.Label>
+                                                    <Form.Control name="website" value={form.website} onChange={handlechange} />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Location *</Form.Label>
+                                                    <Form.Control name="location" value={form.location} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Service Type *</Form.Label>
+                                                    <Form.Control name="servicetype" value={form.servicetype} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Company Size</Form.Label>
+                                                    <Form.Control name="companysize" value={form.companysize} onChange={handlechange} />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Company Reg Number *</Form.Label>
+                                                    <Form.Control name="companyRegistrationNumber" value={form.companyRegistrationNumber} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>GST Number *</Form.Label>
+                                                    <Form.Control name="gstNumber" value={form.gstNumber} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>License Number *</Form.Label>
+                                                    <Form.Control name="licenseNumber" value={form.licenseNumber} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Agency Logo</Form.Label>
+                                                    <Form.Control type="file" name="agencyLogo" onChange={handlechange} />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Agency Document</Form.Label>
+                                                    <Form.Control type="file" name="agencyDocument" onChange={handlechange} />
+                                                </Col>
+                                                <Col md={12} className="mb-3">
+                                                    <Form.Label>Description</Form.Label>
+                                                    <Form.Control as="textarea" rows={3} name="description" value={form.description} onChange={handlechange} />
+                                                </Col>
+                                            </Row>
 
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Website</Form.Label>
-                                                <Form.Control name="website" value={form.website} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Location</Form.Label>
-                                                <Form.Control name="location" value={form.location} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Service Type</Form.Label>
-                                                <Form.Control name="servicetype" value={form.servicetype} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Company Size</Form.Label>
-                                                <Form.Control name="companysize" value={form.companysize} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={12} className="mb-3">
-                                                <Form.Label>Description</Form.Label>
-                                                <Form.Control as="textarea" rows={3} name="description" value={form.description} onChange={handlechange} />
-                                            </Col>
-
-                                            {/* Extra agency fields */}
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Company Reg Number</Form.Label>
-                                                <Form.Control name="companyRegistrationNumber" value={form.companyRegistrationNumber} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>GST Number</Form.Label>
-                                                <Form.Control name="gstNumber" value={form.gstNumber} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>License Number</Form.Label>
-                                                <Form.Control name="licenseNumber" value={form.licenseNumber} onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Agency Logo</Form.Label>
-                                                <Form.Control type="file" name="agencyLogo" onChange={handlechange} />
-                                            </Col>
-
-                                            <Col md={6} className="mb-3">
-                                                <Form.Label>Agency Document</Form.Label>
-                                                <Form.Control type="file" name="agencyDocument" onChange={handlechange} />
-                                            </Col>
+                             
+                                            <Row>
+                                                <Col md={12}><h5 className="section-title mt-3">Service Information</h5></Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Service Title *</Form.Label>
+                                                    <Form.Control name="title" value={form.title} onChange={handlechange} placeholder="e.g., Delhi to Manali Luxury Cab" required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Price (₹) *</Form.Label>
+                                                    <Form.Control type="number" name="price" value={form.price} onChange={handlechange} placeholder="Enter price" required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Service Type *</Form.Label>
+                                                    <Form.Select name="type" value={form.type} onChange={handlechange} required>
+                                                        <option value="">Select Type</option>
+                                                        <option value="Bus">Bus</option>
+                                                        <option value="Cab">Cab</option>
+                                                        <option value="SUV">SUV</option>
+                                                        <option value="Sedan">Sedan</option>
+                                                    </Form.Select>
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Duration *</Form.Label>
+                                                    <Form.Control name="duration" value={form.duration} onChange={handlechange} placeholder="e.g., 5 Hours" required />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Location *</Form.Label>
+                                                    <Form.Control 
+                                                        name="location" 
+                                                        value={form.location} 
+                                                        onChange={handlechange} 
+                                                        placeholder="e.g., Delhi to Manali" 
+                                                        required
+                                                    />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Amenities</Form.Label>
+                                                    <Form.Control name="amenities" value={form.amenities} onChange={handlechange} placeholder="AC, Water Bottle, Music System" />
+                                                </Col>
+                                                <Col md={6} className="mb-3">
+                                                    <Form.Label>Logo URL</Form.Label>
+                                                    <Form.Control name="logo" value={form.logo} onChange={handlechange} placeholder="Paste image URL" />
+                                                </Col>
+                                                <Col md={12} className="mb-3">
+                                                    <Form.Label>Service Description *</Form.Label>
+                                                    <Form.Control as="textarea" rows={3} name="serviceDescription" value={form.serviceDescription} onChange={handlechange} required />
+                                                </Col>
+                                                <Col md={12} className="mb-3">
+                                                    <Form.Check type="checkbox" label="I agree to terms & conditions" name="agree" checked={form.agree} onChange={handlechange} required />
+                                                </Col>
+                                            </Row>
                                         </>
                                     )}
-
                                 </Row>
 
                                 <button type="submit" className="signup-btn">Create Account</button>
@@ -338,5 +401,5 @@ export default function Register() {
                 </Row>
             </Container>
         </div>
-    )
+    );
 }

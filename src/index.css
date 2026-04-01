@@ -2188,16 +2188,20 @@ section.Toastify {
   width: calc(100% - 100px);
   margin-left: auto;
   margin-top: 68px;
+  position: relative;
 }
 
 
 
 .dashboard-title {
-  font-weight: 600;
-  margin-bottom: 30px;
-  color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 25px;
 }
-
+.manage-headings .dashboard-title {
+    margin-top: 10px;
+}
 /* stats row */
 
 .stats-row {
@@ -2325,7 +2329,188 @@ section.Toastify {
     border-radius: 5px;
     color: #fff;
 }
+.chart-card input[type="search"] {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 5px;
+    border: 0;
+    border: 1px solid #ababab;
+}
 
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.stats-grid .stat-card h4 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 5px;
+}
+.stats-grid .stat-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.descr {
+    width: 100%;
+    max-width: 600px;
+    white-space: break-spaces !important;
+    min-width: 600px;
+}
+
+.status-tabs {
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    padding-left: 16px;
+}
+
+.manage-heading {
+    padding-top: 20px;
+}
+
+.status-tab {
+    padding: 8px 18px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    color: #898989;
+}
+
+.status-tab.active {
+  color: #524cdc;
+  border-bottom: 2px solid #524cdc;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.status-pending { background: #fff3e0; color: #ff9800; }
+.status-approved { background: #e8f5e9; color: #4caf50; }
+.status-rejected { background: #ffebee; color: #f44336; }
+
+.action-buttons {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.btn-edit { background: #2196f3; color: #fff; }
+.btn-approve { background: #4caf50; color: #fff; }
+.btn-reject { background: #ff9800; color: #fff; }
+.btn-delete { background: #f44336; color: #fff; }
+
+.btn-edit, .btn-approve, .btn-reject, .btn-delete {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-btn.active {
+  background: #ff5722;
+  color: white;
+  border-color: #ff5722;
+}
+
+.search-input {
+  margin-bottom: 15px;
+  padding: 8px;
+  width: 100%;
+}
+
+.table-pagination {
+    padding: 25px 0 10px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+.table-pagination span {
+    color: #514adf;
+    font-weight: 500;
+    font-size: 14px;
+}
+.table-pagination button {
+    padding: 5px 25px;
+    border-radius: 5px;
+    border: 1px solid #514adf;
+    color: #514adf;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.table-pagination button:disabled {
+    padding: 5px 25px;
+    border-radius: 5px;
+    border: 1px solid #cdcaff;
+    color: #c8c5ff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.manage-heading-search {
+    width: calc(100% - 60%);
+}
+.manage-add-sevices.btn {
+    white-space: nowrap;
+}
+
+.manage-heading-search input[type="search"]{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ababab;
+    padding: 8px 15px;
+}
+
+.rejected {
+    color: #ff0000 !important;
+    font-weight: 700;
+    background-color: #ffe7e7 !important;
+}
+
+td.approved {
+    color: #00750d !important;
+    font-weight: 700;
+    background-color: #e8ffeb !important;
+}
 
 
 .btn-primary {

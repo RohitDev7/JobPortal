@@ -7,7 +7,7 @@ import WhyChoose from "../components/WhyChoose";
 
 export default function Homepage() {
   const [activeTab, setActiveTab] = useState("all");
-  const [selectedType, setSelectedType] = useState("");
+  const [selectedType, setSelectedType] = useState([]);
   const [selectedDurations, setSelectedDurations] = useState([]);
   const [selectedDestinations, setSelectedDestinations] = useState([]);
   const [data, setData] = useState([]);
@@ -17,7 +17,9 @@ export default function Homepage() {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5002/services");
-        setData(res.data);
+        // Only show services that are approved (not pending and not rejected)
+        const visibleServices = res.data.filter(service => service.status === "approved");
+        setData(visibleServices);
         setIsLoading(false);
       } catch (err) {
         console.error(err);
@@ -52,6 +54,13 @@ export default function Homepage() {
       (selectedDestinations.length === 0 || selectedDestinations.includes(service.location))
     );
   });
+
+  const getStatusBadge = (status) => {
+    if (status === "pending") {
+      return <span className="pending-badge">Pending Approval</span>;
+    }
+    return null;
+  };
 
   return (
     <div>
@@ -284,17 +293,27 @@ export default function Homepage() {
                           <p className="company-location">
                             {service.providerName} • {service.location}
                           </p>
+                       
+                          <div className="agency-info mt-1">
+                            <small className="text-muted">
+                              Agency ID: {service.agencyId || service.providerId} | 
+                              Agency Name: {service.providerName}
+                            </small>
+                          </div>
                         </div>
                       </div>
 
                       <div className="card-body">
-                        <p className="job-description">{service.description}</p>
+                        <p className="job-description">{service.description?.slice(0, 200)}...</p>
 
                         <div className="skills-tags">
-                          {service.amenities &&
-                            service.amenities.slice(0, 3).map((amenity, i) => (
+                          {(service.amenities || "")
+                            .toString()
+                            .split(",")
+                            .slice(0, 3)
+                            .map((amenity, i) => (
                               <span key={i} className="skill-badge">
-                                {amenity}
+                                {amenity.trim()}
                               </span>
                             ))}
                         </div>
@@ -307,7 +326,7 @@ export default function Homepage() {
                             <strong>{service.type}</strong>
                           </span>
                           <span className="meta-item">
-                            <strong> {service.price}</strong>
+                            <strong>₹{service.price}</strong>
                           </span>
                         </div>
 
