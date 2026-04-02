@@ -2617,7 +2617,7 @@ footer.footer.sidebar-closed.logged-in {
 }
 
 
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
   .container,
   .container-lg,
   .container-md,
@@ -2626,10 +2626,16 @@ footer.footer.sidebar-closed.logged-in {
   .container-xxl {
     max-width: 1680px !important;
   }
-}
+} */
 
 @media (min-width: 1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1250px !important;
+        max-width: 1680px !important;
     }
 }
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1680px !important;
+    }
+}
+

@@ -28,6 +28,7 @@ import AgencyManageServicesDetails from "./Pages/Agency/AgencyManageServicesDeta
 import AgencyEditManageServicesDetails from "./Pages/Agency/AgencyManageServicesDetail/AgencyEditManageServicesDetails";
 import AgencyAddManageServicesDetails from "./Pages/Agency/AgencyManageServicesDetail/AgencyAddManageServicesDetails";
 import ManageServicesDetails from "./Pages/Admin/ManageServicesDetail/ManageServicesDetails";
+import ManageEditAgencies from "./Pages/Admin/ManageAgencies/ManageEditAgencies";
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   return (
@@ -163,6 +164,20 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route
+              path="/manage-edit-agencies/:id"
+              element={
+                <ProtectedRoute role="admin">
+                  <ManageEditAgencies
+                    sidebarOpen={sidebarOpen}
+                    setSidebarOpen={setSidebarOpen}
+                  />
+                </ProtectedRoute>
+              }
+            />
+
+            
 
             <Route
               path="/manage-bookings"

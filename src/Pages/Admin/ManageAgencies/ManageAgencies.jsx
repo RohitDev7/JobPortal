@@ -674,7 +674,7 @@ export default function ManageAgencies({ sidebarOpen, setSidebarOpen }) {
                                                     <td>{item.licenseNumber}</td>
                                                     <td className={item.status}>{item.status || "pending"}</td>
                                                     <td>
-                                                        <Link to={`/edit-customer/${item.id}`}>
+                                                        <Link to={`/manage-edit-agencies/${item.id}`}>
                                                             <button>Edit</button>
                                                         </Link>
 

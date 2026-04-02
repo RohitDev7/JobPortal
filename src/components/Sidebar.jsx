@@ -20,6 +20,7 @@ export default function Sidebar({ open, setOpen }) {
               <li><Link to="/admin-dashboard">Admin Dashboard</Link></li>
               <li><Link to="/manage-customer">Manage Customers</Link></li>
               <li><Link to="/manage-agencies">Manage Agencies</Link></li>
+               <li><Link to="/manage-services">Manage Services</Link></li>
               <li><Link to="/manage-services-details">Manage Services Details</Link></li>
               <li><Link to="/manage-bookings">Manage Bookings</Link></li>
             </>

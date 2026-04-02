@@ -20,36 +20,56 @@
   ],
   "travelAgencies": [
     {
-      "id": "6951",
-      "firstname": "Rohit",
-      "lastname": "Kumar",
-      "email": "rohit@gmail.com",
+      "id": "f6a5",
+      "firstname": "John Doe",
+      "lastname": "John Doe",
+      "email": "Rohit@gmail.com",
       "phone": "9711211930",
       "password": "123",
       "confirmpassword": "123",
-      "agencyname": "Prime Bus Pvt Ltd",
-      "website": "https://www.primebustravels.com/",
-      "location": "New Delhi",
-      "servicetype": "Bus operating industry",
+      "agencyname": "Rohit Bus  Services",
+      "website": "https://www.df.com/index.html",
+      "location": "Delhi - Manali ",
+      "servicetype": "Bus Booking",
       "companysize": "200",
       "description": "\"PRIME BUS is a renowned brand in the bus operating industry. Our vision is to give a new face to the bus industry. Since our inception passenger comfort has been our top priority. We have frequently added luxury buses to our huge fleet of buses. The only thing we focus on is that the comfort quotient of our passengers should never be compromised. We have always tried our best to push our limits in order to develop our travel experience. Read further to understand what we offer that enhances our reputation in the market.\n\nLive Bus Tracking\n\nWe have integrated this great technology of live bus tracking in almost all of our buses. This helps the passengers to be informed about the live position of the bus, thus helping them in planning their commute to the bus stand. It also prevents the unwanted stress of missing or waiting for the bus in case of delays.\n\nOur Customer Support\n\nTo render the best service we strive to provide the best customer support. We have an attentive customer support team to which the passengers can report any issues regarding the journey. This team addresses all the issues of the passengers and comes out with a solution in the shortest possible time. This creates a warm feeling in the customers thus pushing them to be our regular customers.\nGreat Comfort\n\nNow, once a passenger boards the bus he will be surprised by the inner comfort of the bus. The buses have all the latest amenities like WiFi, charging point, water bottle and central TV. The seats are really very comfortable and create a feeling of a cosy bedroom. We have almost all the luxury brand buses in our fleet. Our luxurious fleet includes Mercedes Benz Multi-axle buses, Volvo Multi-axle buses, and Scania Multi-axle comfort buses. These buses help in smoothening the journey. Our motto to change the perception of bus travel makes us enhance our luxury levels regularly.\n\nSafety\n\nSafety is one of the most important criteria we look for while planning a bus route. We have the best drivers who completely understand the importance of safety and follow all the safety rules.\n\n\nRegular Offers\n\nWe at PRIME BUS strive to maintain the most reasonable rates in the market. This also makes our passengers happy and thus we further give them discount offers on a regular basis to enhance their happiness.\"",
       "agree": true,
-      "companyRegistrationNumber": "w13udbyywehsyt552",
-      "gstNumber": "45y7bsr57sh456ywus",
-      "licenseNumber": "srtwysv56754rwsf45",
+      "companyRegistrationNumber": "ase124asdf3q4",
+      "gstNumber": "q23q4xcvfw34q231",
+      "licenseNumber": "asde4r235",
       "status": "approved"
     },
     {
-      "id": "964b",
-      "firstname": "ww",
-      "lastname": "w",
+      "id": "6312",
+      "firstname": "Roman ",
+      "lastname": "Reighn",
       "email": "ww@gmail.com",
-      "phone": "971121930",
-      "password": "123",
-      "confirmpassword": "123",
-      "agencyname": "qq",
-      "website": "qq",
-      "location": "qq",
+      "phone": "9711211930",
+      "password": "12",
+      "confirmpassword": "12",
+      "agencyname": "Rohit Bus  Services",
+      "website": "https://www.df.com/index.html",
+      "location": "Delhi - Manali ",
+      "servicetype": "Bus Booking",
+      "companysize": "200",
+      "description": "qweqr",
+      "agree": true,
+      "companyRegistrationNumber": "ase124asdf3q4",
+      "gstNumber": "q23q4xcvfw34q231",
+      "licenseNumber": "asde4r235",
+      "status": "approved"
+    },
+    {
+      "id": "7932",
+      "firstname": "Rohit",
+      "lastname": "Kumar",
+      "email": "rkumarplanetecomsolution7@gmail.com",
+      "phone": "1234567797",
+      "password": "12",
+      "confirmpassword": "12",
+      "agencyname": "Rohit Holiday Services",
+      "website": "https://new.mospi.gov.in/",
+      "location": "wwww",
       "servicetype": "ww",
       "companysize": "ww",
       "description": "ww",
@@ -57,27 +77,7 @@
       "companyRegistrationNumber": "ww",
       "gstNumber": "ww",
       "licenseNumber": "ww",
-      "status": "approved"
-    },
-    {
-      "id": "af4c",
-      "firstname": "eeeeeeee",
-      "lastname": "ww",
-      "email": "wwwwww@gmai.om",
-      "phone": "1234567894",
-      "password": "123",
-      "confirmpassword": "123",
-      "agencyname": "wwwww",
-      "website": "wwwww",
-      "location": "wwwww",
-      "servicetype": "wwwww",
-      "companysize": "wwwww",
-      "description": "",
-      "agree": true,
-      "companyRegistrationNumber": "wwwww",
-      "gstNumber": "wwwww",
-      "licenseNumber": "wwwww",
-      "status": "approved"
+      "status": "pending"
     }
   ],
   "admins": [
@@ -91,97 +91,131 @@
   ],
   "transportProviders": [
     {
-      "id": "6951",
-      "name": "Prime Bus Pvt Ltd",
+      "id": "0238",
+      "name": "Rohit Bus  Services",
       "logo": "prmb_logo.png",
-      "website": "https://www.primebustravels.com/",
-      "title": "Prime Bus Pvt Ltd Company Document",
-      "fileUrl": "Mohit-delhi-to-kanpur.pdf",
-      "documentType": "Agency License",
-      "agencyId": "6951"
+      "website": "https://www.df.com/index.html",
+      "title": "Rohit Bus  Services Company Document",
+      "fileUrl": "Infographics (23-27 March 2026).docx",
+      "documentType": "Agency License"
     },
     {
-      "id": "964b",
-      "name": "qq",
-      "logo": "12.png",
-      "website": "qq",
-      "title": "qq Company Document",
-      "fileUrl": "12.png",
-      "documentType": "Agency License",
-      "agencyId": "964b"
+      "id": "94c3",
+      "name": "Rohit Bus  Services",
+      "logo": "icons8-renewable-energy-100.png",
+      "website": "https://www.df.com/index.html",
+      "title": "Rohit Bus  Services Company Document",
+      "fileUrl": "download (1).png",
+      "documentType": "Agency License"
     },
     {
-      "id": "af4c",
-      "name": "wwwww",
-      "logo": "12.png",
-      "website": "wwwww",
-      "title": "wwwww Company Document",
-      "fileUrl": "12.png",
+      "id": "7932",
+      "name": "Rohit Holiday Services",
+      "logo": "icons8-health-100.png",
+      "website": "https://new.mospi.gov.in/",
+      "title": "Rohit Holiday Services Company Document",
+      "fileUrl": "icons8-health-100.png",
       "documentType": "Agency License",
-      "agencyId": "af4c"
+      "agencyId": "7932"
     }
   ],
   "services": [
     {
-      "id": "d904",
-      "title": "Delhi to Nainital",
-      "providerId": "6951",
-      "providerName": "Prime Bus Pvt Ltd",
-      "price": "499",
+      "id": "3e6e",
+      "title": "Delhi - Manali ",
+      "providerId": "f6a5",
+      "providerName": "Prime cabs",
+      "price": "1299",
       "type": "Bus",
-      "duration": "6",
-      "amenities": "AC,Water Bottel, Charcger,Blanket",
+      "duration": "5 Hours",
+      "amenities": "AC, Water Bottle, Music System",
       "description": "\"PRIME BUS is a renowned brand in the bus operating industry. Our vision is to give a new face to the bus industry. Since our inception passenger comfort has been our top priority. We have frequently added luxury buses to our huge fleet of buses. The only thing we focus on is that the comfort quotient of our passengers should never be compromised. We have always tried our best to push our limits in order to develop our travel experience. Read further to understand what we offer that enhances our reputation in the market.\n\nLive Bus Tracking\n\nWe have integrated this great technology of live bus tracking in almost all of our buses. This helps the passengers to be informed about the live position of the bus, thus helping them in planning their commute to the bus stand. It also prevents the unwanted stress of missing or waiting for the bus in case of delays.\n\nOur Customer Support\n\nTo render the best service we strive to provide the best customer support. We have an attentive customer support team to which the passengers can report any issues regarding the journey. This team addresses all the issues of the passengers and comes out with a solution in the shortest possible time. This creates a warm feeling in the customers thus pushing them to be our regular customers.\nGreat Comfort\n\nNow, once a passenger boards the bus he will be surprised by the inner comfort of the bus. The buses have all the latest amenities like WiFi, charging point, water bottle and central TV. The seats are really very comfortable and create a feeling of a cosy bedroom. We have almost all the luxury brand buses in our fleet. Our luxurious fleet includes Mercedes Benz Multi-axle buses, Volvo Multi-axle buses, and Scania Multi-axle comfort buses. These buses help in smoothening the journey. Our motto to change the perception of bus travel makes us enhance our luxury levels regularly.\n\nSafety\n\nSafety is one of the most important criteria we look for while planning a bus route. We have the best drivers who completely understand the importance of safety and follow all the safety rules.\n\n\nRegular Offers\n\nWe at PRIME BUS strive to maintain the most reasonable rates in the market. This also makes our passengers happy and thus we further give them discount offers on a regular basis to enhance their happiness.\"",
       "status": "approved",
       "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png",
-      "location": "New Delhi",
-      "postedBy": "6951",
-      "agencyId": "6951",
+      "location": "Delhi - Manali ",
+      "postedBy": "f6a5",
+      "agencyId": "f6a5",
       "createdAt": "2026-04-01"
     },
     {
-      "id": "7109",
-      "title": "ww",
-      "providerId": "964b",
-      "providerName": "qq",
-      "price": "100",
+      "id": "3396",
+      "title": "qWE",
+      "providerId": "6312",
+      "providerName": "GoCabs",
+      "price": "1299",
       "type": "Bus",
-      "duration": "5",
-      "amenities": "ww",
-      "description": "ww",
+      "duration": "5 Hours",
+      "amenities": "AC, Water Bottle, Music System",
+      "description": "qweqr",
       "status": "approved",
-      "logo": "https://img.pikbest.com/png-images/20241022/stealth-masked-hacker-gaming-logo-for-gamers_10991543.png!f305cw",
-      "location": "qq",
-      "postedBy": "964b",
-      "agencyId": "964b",
+      "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png",
+      "location": "Delhi - Manali ",
+      "postedBy": "6312",
+      "agencyId": "6312",
       "createdAt": "2026-04-01"
     },
     {
-      "id": "40ea",
-      "title": "wwwww",
-      "providerId": "af4c",
-      "providerName": "wwwww",
-      "price": "4",
-      "type": "Cab",
-      "duration": "5",
+      "id": "5a5f",
+      "title": "New Delhi to Kanpur",
+      "providerName": "\tPrime cabs",
+      "providerId": "f6a5",
+      "agencyId": "f6a5",
+      "agencyName": "John Doe",
+      "location": "New Delhi to Kanpur",
+      "price": "399",
+      "type": "Bus",
+      "duration": "7",
+      "amenities": "AC, Water Bottle, Music System",
+      "description": "New Delhi to Kanpur",
+      "status": "approved",
+      "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png",
+      "postedBy": "f6a5",
+      "createdAt": "2026-04-02T06:46:30.851Z"
+    },
+    {
+      "id": "3c1d",
+      "title": "wwww",
+      "providerName": "GoCabs",
+      "providerId": "6312",
+      "agencyId": "6312",
+      "agencyName": "Roman ",
+      "location": "www",
+      "price": "wwww",
+      "type": "Bus",
+      "duration": "www",
       "amenities": "ww",
-      "description": "wwwww",
+      "description": "www",
       "status": "approved",
       "logo": "ww",
-      "location": "wwwww",
-      "postedBy": "af4c",
-      "agencyId": "af4c",
-      "createdAt": "2026-04-01"
+      "postedBy": "6312",
+      "createdAt": "2026-04-02T06:47:23.463Z"
+    },
+    {
+      "id": "3e91",
+      "title": "ww",
+      "providerId": "7932",
+      "providerName": "Rohit Holiday Services",
+      "price": "1799.00",
+      "type": "Bus",
+      "duration": "5 Hours",
+      "amenities": "AC, Water Bottle, Music System",
+      "description": "www",
+      "status": "approved",
+      "logo": "ww",
+      "location": "wwww",
+      "postedBy": "7932",
+      "agencyId": "7932",
+      "createdAt": "2026-04-02"
     }
   ],
   "bookings": [
     {
-      "id": "c83f",
-      "serviceId": "d904",
+      "id": "2957",
+      "serviceId": "3e6e",
       "serviceName": "New Delhi to Manali Luxury Cab",
       "serviceType": "Cab",
       "price": {
-        "amount": 499,
+        "amount": 12999,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -196,120 +230,120 @@
           "extraKm": "₹25 per km beyond 550 km"
         }
       },
-      "providerName": "Prime Bus Pvt Ltd",
       "fullName": "Rohit Kumar",
-      "email": "rrai2161@gmail.com",
+      "email": "rkumarplanetecomsolution7@gmail.com",
       "phone": "9711211930",
-      "pickupDate": "2026-04-30",
-      "pickupTime": "20:04",
-      "returnDate": "2026-05-30",
-      "returnTime": "21:05",
-      "passengers": "2",
-      "specialRequests": "Food and Hotel",
-      "paymentMethod": "Cash",
-      "agencyId": "6951"
-    },
-    {
-      "id": "dad2",
-      "serviceId": "7109",
-      "serviceName": "New Delhi to Manali Luxury Cab",
-      "serviceType": "Cab",
-      "price": {
-        "amount": 499,
-        "currency": "₹",
-        "period": "one-way",
-        "discounts": {
-          "roundTrip": "10% off on round trips",
-          "weekly": "15% off for weekly rentals",
-          "corporate": "Special corporate rates available",
-          "regularOffers": "We at PRIME BUS strive to maintain the most reasonable rates in the market and provide discount offers on a regular basis."
-        },
-        "additionalCharges": {
-          "nightTrip": "₹1000 (11 PM - 6 AM)",
-          "extraHour": "₹500 per hour",
-          "extraKm": "₹25 per km beyond 550 km"
-        }
-      },
-      "providerName": "qq Bus Pvt Ltd",
-      "fullName": "ww",
-      "email": "ww@gmail.com",
-      "phone": "ww",
       "pickupDate": "2026-04-05",
-      "pickupTime": "21:10",
-      "returnDate": "2026-04-24",
-      "returnTime": "00:10",
-      "passengers": "2",
+      "pickupTime": "19:15",
+      "returnDate": "2026-04-30",
+      "returnTime": "21:15",
+      "passengers": "4",
       "specialRequests": "ww",
       "paymentMethod": "UPI",
-      "agencyId": "964b"
+      "agencyId": "f6a5",
+      "providerName": "Prime cabs"
     },
     {
-      "id": "846f",
-      "serviceId": "d904",
-      "serviceName": "New Delhi to Manali Luxury Cab",
-      "serviceType": "Cab",
+      "id": "3f18",
+      "serviceId": "3396",
+      "serviceName": "qWE",
+      "serviceType": "Bus",
       "price": {
-        "amount": 499,
+        "amount": 1299,
         "currency": "₹",
-        "period": "one-way",
+        "period": "round-trip",
         "discounts": {
-          "roundTrip": "10% off on round trips",
-          "weekly": "15% off for weekly rentals",
-          "corporate": "Special corporate rates available",
-          "regularOffers": "We at PRIME BUS strive to maintain the most reasonable rates in the market and provide discount offers on a regular basis."
+          "roundTrip": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "weekly": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "corporate": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "regularOffers": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         },
         "additionalCharges": {
-          "nightTrip": "₹1000 (11 PM - 6 AM)",
-          "extraHour": "₹500 per hour",
-          "extraKm": "₹25 per km beyond 550 km"
+          "nightTrip": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "extraHour": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "extraKm": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         }
       },
-      "providerName": "Prime Bus Pvt Ltd",
-      "fullName": "awertyui",
-      "email": "er@gmail.com",
-      "phone": "+858658858",
-      "pickupDate": "2026-04-17",
-      "pickupTime": "01:12",
-      "returnDate": "2026-04-25",
-      "returnTime": "23:12",
-      "passengers": "4",
-      "specialRequests": "water and food",
+      "providerName": "GoCabs",
+      "fullName": "John Doe",
+      "email": "jidiye3421@bialode.com",
+      "phone": "9711211930",
+      "pickupDate": "2026-04-04",
+      "pickupTime": "12:38",
+      "returnDate": "2026-04-26",
+      "returnTime": "13:38",
+      "passengers": "1",
+      "specialRequests": "w",
       "paymentMethod": "UPI",
-      "agencyId": "6951"
+      "agencyId": "6312"
     },
     {
-      "id": "5bcd",
-      "serviceId": "d904",
-      "serviceName": "New Delhi to Manali Luxury Cab",
-      "serviceType": "Cab",
+      "id": "07c9",
+      "serviceId": "3396",
+      "serviceName": "qWE",
+      "serviceType": "Bus",
       "price": {
-        "amount": 499,
+        "amount": 1299,
+        "currency": "₹",
+        "period": "round-trip",
+        "discounts": {
+          "roundTrip": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "weekly": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "corporate": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "regularOffers": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
+        },
+        "additionalCharges": {
+          "nightTrip": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "extraHour": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "extraKm": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
+        }
+      },
+      "providerName": "GoCabs",
+      "fullName": "John Doe",
+      "email": "jidiye3421@bialode.com",
+      "phone": "9711211930",
+      "pickupDate": "2026-04-04",
+      "pickupTime": "13:47",
+      "returnDate": "2026-04-26",
+      "returnTime": "12:47",
+      "passengers": "10",
+      "specialRequests": "w",
+      "paymentMethod": "UPI",
+      "agencyId": "6312"
+    },
+    {
+      "id": "ac0f",
+      "serviceId": "3e91",
+      "serviceName": "ww",
+      "serviceType": "Bus",
+      "price": {
+        "amount": 1799,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
-          "roundTrip": "10% off on round trips",
-          "weekly": "15% off for weekly rentals",
-          "corporate": "Special corporate rates available",
-          "regularOffers": "We at PRIME BUS strive to maintain the most reasonable rates in the market and provide discount offers on a regular basis."
+          "roundTrip": "",
+          "weekly": "",
+          "corporate": "",
+          "regularOffers": ""
         },
         "additionalCharges": {
-          "nightTrip": "₹1000 (11 PM - 6 AM)",
-          "extraHour": "₹500 per hour",
-          "extraKm": "₹25 per km beyond 550 km"
+          "nightTrip": "",
+          "extraHour": "",
+          "extraKm": ""
         }
       },
-      "providerName": "Prime Bus Pvt Ltd",
-      "fullName": "ww",
-      "email": "ww@gmail.com",
-      "phone": "qq",
-      "pickupDate": "2026-04-09",
-      "pickupTime": "21:18",
-      "returnDate": "2026-04-25",
-      "returnTime": "01:18",
+      "providerName": "Rohit",
+      "fullName": "John Doe",
+      "email": "jidiye3421@bialode.com",
+      "phone": "9711211930",
+      "pickupDate": "2026-04-19",
+      "pickupTime": "12:34",
+      "returnDate": "2026-04-26",
+      "returnTime": "12:34",
       "passengers": 1,
       "specialRequests": "ww",
-      "paymentMethod": "Cash",
-      "agencyId": "6951"
+      "paymentMethod": "UPI",
+      "agencyId": "7932"
     }
   ],
   "savedServices": [
@@ -323,242 +357,165 @@
   "travelDocuments": [],
   "serviceDetails": [
     {
-      "id": "d904",
-      "title": "New Delhi to Manali Luxury Cab",
-      "slug": "new-delhi-manali-luxury-cab",
-      "agencyId": "6951",
-      "agencyName": "Prime Bus Pvt Ltd",
+      "id": "3396",
+      "title": "qWE",
+      "slug": "qwe",
+      "agencyId": "6312",
+      "agencyName": "GoCabs",
+      "serviceType": "Bus",
+      "vehicleType": "Luxury Bus",
+      "description": "qweqr",
+      "status": "approved",
+      "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png",
       "provider": {
-        "id": "6951",
-        "providerName": "Prime Bus Pvt Ltd",
+        "id": "6312",
+        "providerName": "GoCabs",
         "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png",
-        "website": "https://primebus.com",
-        "serviceType": "Luxury Bus & Cab Rental",
-        "companySize": "100-250 employees",
-        "founded": 2015,
-        "headOffice": "Delhi, India",
-        "about": "PRIME BUS is a renowned brand in the bus operating industry. Our vision is to give a new face to the bus industry. Since our inception passenger comfort has been our top priority. We have frequently added luxury buses to our huge fleet of buses, also offering premium cab services for smaller groups. The only thing we focus on is that the comfort quotient of our passengers should never be compromised. We have always tried our best to push our limits in order to develop our travel experience. Our motto to change the perception of travel makes us enhance our luxury levels regularly. We offer live bus tracking, attentive customer support, and the best drivers who completely understand the importance of safety and follow all safety rules. We strive to maintain the most reasonable rates in the market and provide regular discount offers."
+        "website": "http://localhost:3001/agency-add-manage-service-details",
+        "serviceType": "Bus operating industry",
+        "companySize": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "founded": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "headOffice": "Delhi - Manali ",
+        "about": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>"
       },
       "route": {
-        "from": "New Delhi",
-        "to": "Manali",
-        "distance": "550 km",
+        "from": "Delhi ",
+        "to": "Manali ",
+        "distance": "500",
         "stops": [
-          "Chandigarh (30 min break)",
-          "Mandir (sightseeing)",
-          "Sundernagar (lunch stop)",
-          "Kullu (optional river rafting view)",
-          "Manali Mall Road"
+          "Haldwani",
+          "Bhowali",
+          "Nainital"
         ],
-        "duration": "12-14 hours (with breaks)",
-        "highway": "Delhi-Manali Highway (NH44 & NH3)",
-        "tollCharges": "₹850 included",
-        "bestTimeToTravel": "Early morning (5 AM) to avoid traffic and enjoy mountain views"
+        "duration": "6",
+        "highway": "NH119",
+        "tollCharges": "499",
+        "bestTimeToTravel": "EveryTime and Day"
       },
-      "serviceType": "Cab",
-      "vehicleType": "Mercedes Benz Multi-axle / Luxury SUV",
       "vehicleDetails": {
-        "model": "Mercedes-Benz Sprinter / Volvo XC90",
-        "year": 2024,
-        "color": "White/Black",
-        "registration": "DL 01 XX 5678",
+        "model": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+        "year": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+        "color": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+        "registration": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
         "features": [
-          "Reclining leather seats",
-          "Ambient lighting",
-          "Dual-zone AC",
-          "Massage seats",
-          "Panoramic sunroof",
-          "WiFi hotspot",
-          "Entertainment screens with central TV",
-          "Mini fridge",
-          "Charging points",
-          "Live bus/car tracking"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         ]
       },
       "price": {
-        "amount": 499,
+        "amount": 1299,
         "currency": "₹",
-        "period": "one-way",
+        "period": "round-trip",
         "discounts": {
-          "roundTrip": "10% off on round trips",
-          "weekly": "15% off for weekly rentals",
-          "corporate": "Special corporate rates available",
-          "regularOffers": "We at PRIME BUS strive to maintain the most reasonable rates in the market and provide discount offers on a regular basis."
+          "roundTrip": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "weekly": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "corporate": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "regularOffers": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         },
         "additionalCharges": {
-          "nightTrip": "₹1000 (11 PM - 6 AM)",
-          "extraHour": "₹500 per hour",
-          "extraKm": "₹25 per km beyond 550 km"
+          "nightTrip": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "extraHour": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+          "extraKm": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         }
       },
       "duration": {
-        "hours": 12,
+        "hours": 0,
         "minutes": 0,
         "flexible": true,
-        "maxWaitingTime": "30 minutes free, ₹150 per 15 mins after"
+        "maxWaitingTime": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
       },
       "amenities": [
-        "Air Conditioning with temperature control",
-        "High-speed WiFi (up to 50 MBPS)",
-        "Complimentary mineral water (2 liters)",
-        "Charging ports (USB-C and regular)",
-        "Entertainment system with central TV",
-        "First aid kit",
-        "Phone charging cables (all types)",
-        "Tissues and sanitizer",
-        "Snacks box (premium cookies and chips)",
-        "Music System",
-        "Blanket and pillows (for night trips)",
-        "Umbrella (in case of rain)"
+        "AC",
+        "Water Bottle",
+        "Music System"
       ],
       "serviceHighlights": [
-        "Doorstep pickup from any location in Delhi NCR",
-        "Professional, uniformed driver with 12+ years experience in hilly terrain",
-        "Clean and sanitized car guaranteed",
-        "24/7 attentive customer support via call/chat",
-        "Real-time GPS tracking for safety",
-        "Flexible payment options (PayTM, Card, Cash, UPI)",
-        "Free cancellation up to 24 hours before trip",
-        "Trip insurance included (up to ₹7 lakhs cover)",
-        "Sightseeing stops included (Chandigarh, Kullu)",
-        "Complimentary pickup from airport/railway station",
-        "Child seats available on request",
-        "Pet-friendly option available (with prior notice)"
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
       ],
-      "description": "Experience royal comfort with our New Delhi to Manali luxury cab service. Travel in style with our Mercedes-Benz multi-axle or luxury SUV, featuring leather interiors, ambient lighting, and entertainment system. Our professional driver, experienced in mountain roads, ensures a smooth journey on the Delhi-Manali Highway with planned breaks at scenic locations. Perfect for families, couples, and tourists who value comfort and safety. The 12-14 hour journey includes optional sightseeing stops at Chandigarh and Kullu. We provide complimentary WiFi, mineral water, and snacks to make your journey enjoyable. Our cabs are sanitized before every trip and drivers follow strict safety protocols. Whether you're heading to Manali for a vacation, honeymoon, or adventure trip, our luxury cab service ensures you reach refreshed and relaxed. We have integrated great technology of live tracking to keep you informed about the live position of the vehicle, helping you plan your commute and preventing unwanted stress. Book now and experience the difference premium travel makes!",
       "driverDetails": {
-        "name": "Rajveer Singh Thakur",
-        "age": 45,
-        "experience": "18 years (including 10 years in hilly areas)",
+        "name": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+        "age": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+        "experience": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
         "languages": [
-          "Hindi",
-          "English",
-          "Punjabi",
-          "Pahari"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         ],
-        "rating": 4.9,
-        "totalTrips": 4200,
+        "rating": 5,
+        "totalTrips": 0,
         "badges": [
-          "Safe Driver Award 2024",
-          "5-Star Rated",
-          "Mountain Expert",
-          "Punctuality King"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         ],
-        "phone": "+91-9876543210 (for emergency)",
-        "photo": "https://randomuser.me/api/portraits/men/42.jpg",
+        "phone": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum",
+        "photo": "https://www.rajasthantourdriver.com/wp-content/uploads/2023/07/indiacar.jpg",
         "specialties": [
-          "Long drives",
-          "Mountain routes",
-          "Tour guide",
-          "Defensive driving",
-          "First aid trained"
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum"
         ]
       },
-      "cancellationPolicy": "Free cancellation up to 24 hours before scheduled pickup. 50% refund if cancelled between 24 hours and 6 hours. No refund for cancellations within 6 hours of pickup or no-show. In case of cab breakdown, we provide alternative cab within 60 minutes or full refund. Bad weather cancellations are fully refundable. To cancel, call our 24/7 support or use the app.",
+      "cancellationPolicy": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>",
       "paymentOptions": [
-        "Cash",
-        "Credit Card",
-        "Debit Card",
-        "UPI (Google Pay, PhonePe, PayTM)",
-        "Net Banking",
-        "PayPal",
-        "EMI options available for bookings above ₹10000"
+        "UPI",
+        "CASH",
+        "DEBIT-CREDIT CARD"
       ],
       "contactPerson": {
-        "id": "2afe101",
-        "name": "Vikram Rathore",
-        "designation": "Customer Experience Manager",
-        "email": "support@primebus.com",
-        "phone": "+91-9876543210",
-        "available": "24/7",
-        "responseTime": "Within 5 minutes"
+        "name": "Lorem Ipsum is simply dummy t",
+        "designation": "Lorem Ipsum is simply dummy t",
+        "email": "ww@gmail.com",
+        "phone": "Lorem Ipsum is simply dummy t",
+        "available": "Lorem Ipsum is simply dummy t",
+        "responseTime": "Lorem Ipsum is simply dummy t"
       },
       "bookingInfo": {
-        "method": "Book on portal or call",
-        "externalUrl": null,
-        "deadline": "2026-12-31",
-        "minAdvance": 2500,
-        "confirmationTime": "Instant",
-        "peakSeasonSurcharge": "May-Jul, Dec-Jan: 20% extra for weekend bookings"
+        "method": "Book on portal",
+        "externalUrl": "Lorem Ipsum is simply dummy t",
+        "deadline": "2026-04-04",
+        "minAdvance": "Lorem Ipsum is simply dummy t",
+        "confirmationTime": "Lorem Ipsum is simply dummy t",
+        "peakSeasonSurcharge": "Lorem Ipsum is simply dummy t"
       },
       "stats": {
-        "views": 12500,
-        "bookings": 980,
-        "cancelled": 35,
-        "avgRating": 4.7,
-        "fiveStarRatings": 750,
-        "reviews": 890
+        "views": 0,
+        "bookings": 0,
+        "cancelled": 0,
+        "avgRating": 0,
+        "fiveStarRatings": 0,
+        "reviews": 0
       },
-      "reviews": [
-        {
-          "user": "Amit Sharma",
-          "rating": 5,
-          "comment": "Best travel experience to Manali! Car was spotless and driver was very professional, handled mountain roads perfectly.",
-          "date": "2026-03-15"
-        },
-        {
-          "user": "Priya Singh",
-          "rating": 5,
-          "comment": "Luxury experience at affordable price. Loved the WiFi and snacks! The live tracking feature was very useful.",
-          "date": "2026-03-10"
-        },
-        {
-          "user": "Rahul Verma",
-          "rating": 4.5,
-          "comment": "Driver was very knowledgeable about Manali. Showed us good places along the way and gave great tips.",
-          "date": "2026-03-05"
-        }
-      ],
+      "reviews": [],
       "tags": [
-        "Delhi to Manali Cab",
-        "Luxury Cab Service",
-        "Mercedes Rental",
-        "Intercity Taxi",
-        "Himachal Tour",
-        "Airport Pickup",
-        "Honeymoon Transportation",
-        "Family Travel",
-        "Mountain Travel"
+        "Lorem Ipsum is simply dummy t"
       ],
-      "postedBy": "6951",
-      "createdAt": "2026-04-01",
-      "updatedAt": "2026-04-01",
-      "status": "approved",
-      "seasonalOffers": "Summer special: 10% off on bookings before June. Monsoon discount: 5% off on bookings during July-August.",
+      "seasonalOffers": "<p>Lorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy tLorem Ipsum is simply dummy t</p>",
       "nearbyAttractions": [
-        "Chandigarh Rock Garden",
-        "Kullu Valley",
-        "Manali Mall Road",
-        "Hadimba Temple",
-        "Solang Valley",
-        "Rohtang Pass",
-        "Vashisht Hot Water Springs"
-      ]
+        "Lorem Ipsum is simply dummy t"
+      ],
+      "postedBy": "6312",
+      "createdAt": "2026-04-02",
+      "updatedAt": "2026-04-02"
     },
     {
-      "id": "7109",
-      "title": "ww",
-      "slug": "ww",
-      "agencyId": "964b",
-      "agencyName": "qq",
+      "id": "3e6e",
+      "title": "Delhi - Manali ",
+      "slug": "delhi-manali",
+      "agencyId": "f6a5",
+      "agencyName": "Prime cabs",
       "serviceType": "Bus",
       "vehicleType": "Luxury Bus",
-      "description": "ww",
-      "status": "pending",
-      "logo": "https://img.pikbest.com/png-images/20241022/stealth-masked-hacker-gaming-logo-for-gamers_10991543.png!f305cw",
+      "description": "\"PRIME BUS is a renowned brand in the bus operating industry. Our vision is to give a new face to the bus industry. Since our inception passenger comfort has been our top priority. We have frequently added luxury buses to our huge fleet of buses. The only thing we focus on is that the comfort quotient of our passengers should never be compromised. We have always tried our best to push our limits in order to develop our travel experience. Read further to understand what we offer that enhances our reputation in the market.\n\nLive Bus Tracking\n\nWe have integrated this great technology of live bus tracking in almost all of our buses. This helps the passengers to be informed about the live position of the bus, thus helping them in planning their commute to the bus stand. It also prevents the unwanted stress of missing or waiting for the bus in case of delays.\n\nOur Customer Support\n\nTo render the best service we strive to provide the best customer support. We have an attentive customer support team to which the passengers can report any issues regarding the journey. This team addresses all the issues of the passengers and comes out with a solution in the shortest possible time. This creates a warm feeling in the customers thus pushing them to be our regular customers.\nGreat Comfort\n\nNow, once a passenger boards the bus he will be surprised by the inner comfort of the bus. The buses have all the latest amenities like WiFi, charging point, water bottle and central TV. The seats are really very comfortable and create a feeling of a cosy bedroom. We have almost all the luxury brand buses in our fleet. Our luxurious fleet includes Mercedes Benz Multi-axle buses, Volvo Multi-axle buses, and Scania Multi-axle comfort buses. These buses help in smoothening the journey. Our motto to change the perception of bus travel makes us enhance our luxury levels regularly.\n\nSafety\n\nSafety is one of the most important criteria we look for while planning a bus route. We have the best drivers who completely understand the importance of safety and follow all the safety rules.\n\n\nRegular Offers\n\nWe at PRIME BUS strive to maintain the most reasonable rates in the market. This also makes our passengers happy and thus we further give them discount offers on a regular basis to enhance their happiness.\"",
+      "status": "approved",
+      "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png",
       "provider": {
-        "id": "964b",
-        "providerName": "qq",
-        "logo": "https://img.pikbest.com/png-images/20241022/stealth-masked-hacker-gaming-logo-for-gamers_10991543.png!f305cw",
+        "id": "f6a5",
+        "providerName": "Prime cabs",
         "website": "",
         "serviceType": "Bus operating industry",
         "companySize": "",
         "founded": "",
-        "headOffice": "qq",
-        "about": "ww"
+        "headOffice": "Delhi - Manali ",
+        "about": "\"PRIME BUS is a renowned brand in the bus operating industry. Our vision is to give a new face to the bus industry. Since our inception passenger comfort has been our top priority. We have frequently added luxury buses to our huge fleet of buses. The only thing we focus on is that the comfort quotient of our passengers should never be compromised. We have always tried our best to push our limits in order to develop our travel experience. Read further to understand what we offer that enhances our reputation in the market.\n\nLive Bus Tracking\n\nWe have integrated this great technology of live bus tracking in almost all of our buses. This helps the passengers to be informed about the live position of the bus, thus helping them in planning their commute to the bus stand. It also prevents the unwanted stress of missing or waiting for the bus in case of delays.\n\nOur Customer Support\n\nTo render the best service we strive to provide the best customer support. We have an attentive customer support team to which the passengers can report any issues regarding the journey. This team addresses all the issues of the passengers and comes out with a solution in the shortest possible time. This creates a warm feeling in the customers thus pushing them to be our regular customers.\nGreat Comfort\n\nNow, once a passenger boards the bus he will be surprised by the inner comfort of the bus. The buses have all the latest amenities like WiFi, charging point, water bottle and central TV. The seats are really very comfortable and create a feeling of a cosy bedroom. We have almost all the luxury brand buses in our fleet. Our luxurious fleet includes Mercedes Benz Multi-axle buses, Volvo Multi-axle buses, and Scania Multi-axle comfort buses. These buses help in smoothening the journey. Our motto to change the perception of bus travel makes us enhance our luxury levels regularly.\n\nSafety\n\nSafety is one of the most important criteria we look for while planning a bus route. We have the best drivers who completely understand the importance of safety and follow all the safety rules.\n\n\nRegular Offers\n\nWe at PRIME BUS strive to maintain the most reasonable rates in the market. This also makes our passengers happy and thus we further give them discount offers on a regular basis to enhance their happiness.\"",
+        "logo": "https://gst-contracts.s3.ap-southeast-1.amazonaws.com/uploads/bcc/cms/asset/avatar/328200/prmb_logo.png"
       },
       "route": {
-        "from": "qq",
+        "from": "Delhi - Manali ",
+        "to": "",
         "distance": "",
         "stops": [],
         "duration": "",
@@ -574,7 +531,7 @@
         "features": []
       },
       "price": {
-        "amount": 100,
+        "amount": 1299,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -590,13 +547,15 @@
         }
       },
       "duration": {
-        "hours": 0,
-        "minutes": 0,
+        "hours": "",
+        "minutes": "",
         "flexible": false,
         "maxWaitingTime": ""
       },
       "amenities": [
-        "ww"
+        "AC",
+        "Water Bottle",
+        "Music System"
       ],
       "serviceHighlights": [],
       "driverDetails": {
@@ -604,8 +563,8 @@
         "age": "",
         "experience": "",
         "languages": [],
-        "rating": 0,
-        "totalTrips": 0,
+        "rating": "",
+        "totalTrips": "",
         "badges": [],
         "phone": "",
         "photo": "",
@@ -630,45 +589,44 @@
         "peakSeasonSurcharge": ""
       },
       "stats": {
-        "views": 0,
-        "bookings": 0,
-        "cancelled": 0,
-        "avgRating": 0,
-        "fiveStarRatings": 0,
-        "reviews": 0
+        "views": "",
+        "bookings": "",
+        "cancelled": "",
+        "avgRating": "",
+        "fiveStarRatings": "",
+        "reviews": ""
       },
-      "reviews": [],
       "tags": [],
       "seasonalOffers": "",
       "nearbyAttractions": [],
-      "postedBy": "964b",
-      "createdAt": "2026-04-01",
-      "updatedAt": "2026-04-01"
+      "postedBy": "f6a5",
+      "createdAt": "2026-04-02",
+      "updatedAt": "2026-04-02"
     },
     {
-      "id": "40ea",
-      "title": "wwwww",
-      "slug": "wwwww",
-      "agencyId": "af4c",
-      "agencyName": "wwwww",
-      "serviceType": "Cab",
-      "vehicleType": "Luxury SUV",
-      "description": "wwwww",
+      "id": "3e91",
+      "title": "ww",
+      "slug": "ww",
+      "agencyId": "7932",
+      "agencyName": "Rohit",
+      "serviceType": "Bus",
+      "vehicleType": "Luxury Bus",
+      "description": "www",
       "status": "pending",
       "logo": "ww",
       "provider": {
-        "id": "af4c",
-        "providerName": "wwwww",
+        "id": "7932",
+        "providerName": "Rohit",
         "logo": "ww",
         "website": "",
-        "serviceType": "Cab service",
+        "serviceType": "Bus operating industry",
         "companySize": "",
         "founded": "",
-        "headOffice": "wwwww",
-        "about": "wwwww"
+        "headOffice": "wwww",
+        "about": "www"
       },
       "route": {
-        "from": "wwwww",
+        "from": "wwww",
         "distance": "",
         "stops": [],
         "duration": "",
@@ -684,7 +642,7 @@
         "features": []
       },
       "price": {
-        "amount": 4,
+        "amount": 1799,
         "currency": "₹",
         "period": "one-way",
         "discounts": {
@@ -706,7 +664,9 @@
         "maxWaitingTime": ""
       },
       "amenities": [
-        "ww"
+        "AC",
+        "Water Bottle",
+        "Music System"
       ],
       "serviceHighlights": [],
       "driverDetails": {
@@ -751,9 +711,9 @@
       "tags": [],
       "seasonalOffers": "",
       "nearbyAttractions": [],
-      "postedBy": "af4c",
-      "createdAt": "2026-04-01",
-      "updatedAt": "2026-04-01"
+      "postedBy": "7932",
+      "createdAt": "2026-04-02",
+      "updatedAt": "2026-04-02"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

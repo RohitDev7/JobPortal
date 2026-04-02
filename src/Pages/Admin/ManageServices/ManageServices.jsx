@@ -795,6 +795,7 @@ export default function ManageServices({ sidebarOpen, setSidebarOpen }) {
                                                 <th>ID</th>
                                                 <th>Title</th>
                                                 <th>Provider Name</th>
+                                                <th>Provider Id</th>
                                                 <th>Location</th>
                                                 <th>Price</th>
                                                 <th>Type</th>
@@ -813,6 +814,7 @@ export default function ManageServices({ sidebarOpen, setSidebarOpen }) {
                                                    <td>{item.id}</td>
                                                     <td>{item.title}</td>
                                                      <td>{item.providerName}</td>
+                                                      <td>{item.providerId}</td>
                                                      <td>{item.location}</td>
                                                       <td>{item.price}</td>
                                                        <td>{item.type}</td>

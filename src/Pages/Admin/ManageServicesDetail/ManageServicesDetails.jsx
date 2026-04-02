@@ -10,8 +10,7 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedRows, setExpandedRows] = useState({});
 
-  // Remove agencyId filtering for admin view
-  // const agencyId = localStorage.getItem("agencyId") || "";
+
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -19,8 +18,6 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
         const res = await axios.get("http://localhost:5002/serviceDetails");
         console.log("Fetched services:", res.data);
         
-        // For admin - show ALL services without filtering
-        // Remove the filter that was checking postedBy
         const allServices = res.data;
         
         console.log("All services:", allServices);
@@ -31,7 +28,7 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
     };
 
     fetchServices();
-  }, []); // Remove agencyId dependency
+  }, []); 
 
   const filteredServices = services.filter(item =>
     item.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -72,6 +69,48 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
         )}
       </span>
     );
+  };
+
+  const updateServiceStatus = async (id, newStatus) => {
+    try {
+      const serviceToUpdate = services.find(item => item.id === id);
+      const updatedService = { ...serviceToUpdate, status: newStatus };
+      
+      await axios.put(`http://localhost:5002/serviceDetails/${id}`, updatedService);
+      
+      setServices(services.map(item => 
+        item.id === id ? { ...item, status: newStatus } : item
+      ));
+      
+      alert(`Service ${newStatus} successfully!`);
+    } catch (err) {
+      console.error(`Error updating service status to ${newStatus}:`, err);
+      alert(`Failed to ${newStatus} service. Please try again.`);
+    }
+  };
+
+  const handleApprove = (id) => {
+    if (window.confirm("Are you sure you want to approve this service?")) {
+      updateServiceStatus(id, "approved");
+    }
+  };
+
+  const handleReject = (id) => {
+    if (window.confirm("Are you sure you want to reject this service?")) {
+      updateServiceStatus(id, "rejected");
+    }
+  };
+
+  const handlePending = (id) => {
+    if (window.confirm("Are you sure you want to mark this service as pending?")) {
+      updateServiceStatus(id, "pending");
+    }
+  };
+
+  const handleBan = (id) => {
+    if (window.confirm("Are you sure you want to ban this service? This action can be reversed.")) {
+      updateServiceStatus(id, "banned");
+    }
   };
 
   return (
@@ -177,11 +216,12 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
                       <th>Updated At</th>
                       <th>Status</th>
                       <th>Action</th>
+                      <th>ISME Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredServices.length === 0 ? (
-                      <tr><td colSpan="70">No services found.</td></tr>
+                      <tr><td colSpan="71">No services found.</td></tr>
                     ) : (
                       filteredServices.map(item => (
                         <tr key={item.id}>
@@ -259,7 +299,7 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
                           <td>{item.createdAt}</td>
                           <td>{item.updatedAt}</td>
                           <td>
-                            <span className={item.status === "approved" ? "text-success" : item.status === "pending" ? "text-warning" : "text-danger"}>
+                            <span className={item.status === "approved" ? "text-success" : item.status === "pending" ? "text-warning" : item.status === "rejected" ? "text-danger" : item.status === "banned" ? "text-dark" : "text-muted"}>
                               {item.status}
                             </span>
                           </td>
@@ -268,6 +308,38 @@ export default function ManageServicesDetails({ sidebarOpen, setSidebarOpen }) {
                               <button className="btn btn-sm btn-primary me-2 mb-1">Edit</button>
                             </Link>
                             <button onClick={() => deleteItem(item.id)} className="btn btn-sm btn-danger">Delete</button>
+                          </td>
+                          <td>
+                            <div className="d-flex flex-column gap-1">
+                              {item.status !== "approved" && (
+                                <button 
+                                  onClick={() => handleApprove(item.id)} 
+                                  className="btn btn-sm btn-success"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                  Approve
+                                </button>
+                              )}
+                              {item.status !== "rejected" && (
+                                <button 
+                                  onClick={() => handleReject(item.id)} 
+                                  className="btn btn-sm btn-danger"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                 Reject
+                                </button>
+                              )}
+                              {item.status !== "pending" && (
+                                <button 
+                                  onClick={() => handlePending(item.id)} 
+                                  className="btn btn-sm btn-warning"
+                                  style={{ fontSize: "12px" }}
+                                >
+                                 Pending
+                                </button>
+                              )}
+                            
+                            </div>
                           </td>
                         </tr>
                       ))
